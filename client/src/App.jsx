@@ -1,12 +1,12 @@
-import './App.css'
-
+import Navigation from './Navigation';
+import './App.css';
 function App() {
 
   return (
     <>
-    <h1>Lisgo Construction ltd.</h1>      
+     <Navigation/>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
