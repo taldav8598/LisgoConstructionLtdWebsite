@@ -21,8 +21,3 @@ img, picture, svg, video {
     display: block;
     max-width: 100%;
 }
-
-.navigation-container-wrapper {
-    display: flex;
-    justify-content: center;
-}

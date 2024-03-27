@@ -2,8 +2,30 @@
     background-color: #121212;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
+    max-width: 100%;
 }
 
 .MuiLink-root.navigation-link {
     color: #ffd70d;
+}
+
+.LisgoLogoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5em;
+}
+
+.LisgoLogo {
+    display: flex;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin: 0.5em;
+}
+
+.Lisgo-Logo-Heading {
+    text-align: center;
 }
