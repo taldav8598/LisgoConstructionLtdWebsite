@@ -46,8 +46,9 @@
     margin: 0 1em 1em 1em;
 }
 
-.ReviewCarousel {
-    height: 500px;
+.Carousel {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
     width: 600px;
-    border: 1px solid #ffd70d;
 }
