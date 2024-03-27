@@ -1,0 +1,34 @@
+.HomeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.LisgoHeadingContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 1em;
+    transform: rotate(-5deg);
+}
+
+.MuiLink-root.about-us-link{
+    color: #ffd70d;
+    text-decoration: underline;
+    padding: 1em;
+}
+
+.LisgoHomeLogoContainer {
+    margin: 1em;
+}
+
+.LisgoHomeLogo {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+
+.leading-company-heading {
+    font-size: 2.5rem;
+}

@@ -4,14 +4,18 @@ import LisgoLogo from './assets/LisgoLogo.jpg';
 
 export default function Navigation() {
     return (
-        <section>
+        <section className='HomeSection'>
+            <div className='HomeContainer'>
+                <div className='LisgoHeadingContainer'>
+                    <h1 className='leading-company-heading'>Leading Construction Company</h1>
+                    <Link href='#' className='about-us-link'>See about us</Link>
+                </div>
             <div className='LisgoHomeLogoContainer'>
-            <h1>Leading Construction Company</h1>
-            <Link href='#' className='about-us-link' underline='hover'>See about us</Link>
             <img
             className='LisgoHomeLogo'
             src={LisgoLogo}
             />
+            </div>
             </div>
         </section>
     );
