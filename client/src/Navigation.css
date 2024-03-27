@@ -1,7 +1,9 @@
-.navigation-container {
+.MuiContainer-root.navigation-container {
     background-color: #121212;
+    display: flex;
+    justify-content: space-evenly;
 }
 
-.navigation-link {
-    color: #ffd70d
+.MuiLink-root.navigation-link {
+    color: #ffd70d;
 }
