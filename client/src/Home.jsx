@@ -25,7 +25,7 @@ export default function Navigation() {
     ];
     return (
         <section className='HomeSection'>
-            <div className='HomeContainer'>
+            <div className='HomeHeadingContainer'>
                 <div className='LisgoHeadingContainer'>
                     <h1 className='leading-company-heading'>Leading Construction Company</h1>
                     <Link href='#' className='about-us-link'>See about us</Link>
