@@ -4,6 +4,10 @@
     justify-content: space-evenly;
     align-items: center;
     max-width: 100%;
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    z-index: 100;
 }
 
 .MuiLink-root.navigation-link {
@@ -18,14 +22,32 @@
     margin: 0.5em;
 }
 
+@keyframes rotate {
+    0% {
+    transform: rotate(0deg); /* Starting position */
+    }
+    50% {
+    transform: rotate(90deg); /* Rotate 90 degrees clockwise */
+    }
+    100% {
+    transform: rotate(0deg); /* Back to starting position */
+    }
+    }
+
 .LisgoLogo {
     display: flex;
     height: 50px;
     width: 50px;
     border-radius: 50%;
     margin: 0.5em;
+    animation: rotate 10s linear infinite;
 }
 
 .Lisgo-Logo-Heading {
     text-align: center;
 }
+      
+/* Apply the animation to the logo
+.logo { */
+ /* Rotate animation, 2 seconds duration, linear easing, infinitely repeated */
+/* } */

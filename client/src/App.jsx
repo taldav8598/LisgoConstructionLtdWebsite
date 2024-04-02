@@ -1,5 +1,8 @@
 import Navigation from './Navigation';
 import Home from  './Home';
+import EnquireNow from  './EnquireNow';
+
+
 import './App.css';
 function App() {
 
@@ -7,6 +10,17 @@ function App() {
     <>
      <Navigation/>
      <Home/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <EnquireNow/>
     </>
   );
 }

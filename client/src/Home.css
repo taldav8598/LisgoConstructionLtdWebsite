@@ -29,6 +29,8 @@
     width: 150px;
     border-radius: 50%;
     margin-left: 5em;
+    animation: rotate 10s linear infinite;
+    
 }
 
 .leading-company-heading {
@@ -53,3 +55,16 @@
     padding: 1em;
     width: 600px;
 }
+
+@keyframes rotate {
+    0% {
+    transform: rotate(0deg); /* Starting position */
+    }
+    50% {
+    transform: rotate(90deg); /* Rotate 90 degrees clockwise */
+    }
+    100% {
+    transform: rotate(0deg); /* Back to starting position */
+    }
+    }
+

@@ -29,6 +29,7 @@ export default function Navigation() {
                 <div className='LisgoHeadingContainer'>
                     <h1 className='leading-company-heading'>Leading Construction Company</h1>
                     <Link href='#' className='about-us-link'>See about us</Link>
+                    <button><a href='#test'>Enquire now</a></button>
                 </div>
                 <div className='LisgoHomeLogoContainer'>
                     <img

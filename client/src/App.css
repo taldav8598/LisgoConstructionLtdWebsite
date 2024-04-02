@@ -10,6 +10,8 @@
 
 html {
     color-scheme: dark light;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
 }
 
 body {
