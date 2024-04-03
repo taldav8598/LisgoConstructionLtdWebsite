@@ -17,9 +17,15 @@ html {
 body {
     min-height: 100vh;
     font-family: 'roboto';
+    margin: 0 auto;
 }
 
 img, picture, svg, video {
     display: block;
     max-width: 100%;
+}
+
+.main-container {
+    max-width: 2000px;
+    margin: 0 auto;
 }

@@ -5,24 +5,16 @@
 
 .HomeHeadingContainer {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5em 0 5em 0;
+    margin: 0;
 }
 
 .LisgoHeadingContainer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    margin: 1em;
-    transform: rotate(-5deg);
 }
 
-.MuiLink-root.about-us-link{
-    color: #ffd70d;
-    text-decoration: underline;
-    padding: 1em;
+.LisgoHeadingContainer a {
+    color: #ffffff;
 }
 
 .LisgoHomeLogoContainer {
@@ -30,16 +22,15 @@
 }
 
 .LisgoHomeLogo {
-    height: 150px;
-    width: 150px;
+    height: 16.875rem;
+    width: 16.875rem;
     border-radius: 50%;
     margin-left: 5em;
     animation: rotate 10s linear infinite;
-    
 }
 
 .leading-company-heading {
-    font-size: 2.5rem;
+    font-size: 4rem;
 }
 
 .ReviewContainer{
@@ -66,17 +57,15 @@
     background-color: #272727;
 }
 
-#root > section.HomeSection > div.ReviewContainer > div > div.css-1f8sh1y > div > div > div > div > div {
+.Carousel div {    
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    background-color: transparent;
+    background-color: transparent !important;
     border: none;
     color: #ffffff;
     box-shadow: none;
     font-style: italic;
 }
-
 .MuiButtonBase-root.MuiIconButton-root.MuiIconButton-sizeMedium.css-8ucetn-MuiButtonBase-root-MuiIconButton-root {
     color: #ffd70d;
 }
@@ -93,3 +82,24 @@
     }
     }
 
+.about-us-link {
+    margin-bottom: 1em;
+}
+
+.enquire-now-link {
+    margin-bottom: 1em;
+}
+
+.LisgoHeadingContainer h3 {
+    margin: 1em 0 !important;
+}
+
+.LisgoHeadingContainer h4 {
+    margin: 0.25em 0 !important;
+}
+
+.home-title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

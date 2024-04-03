@@ -1,5 +1,5 @@
 import Carousel from 'react-material-ui-carousel'
-import { Link } from '@mui/material';
+import { Link, Typography } from '@mui/material';
 import './Home.css';
 import Item from './Item';
 import LisgoLogo from './assets/LisgoLogo.jpg';
@@ -32,17 +32,26 @@ export default function Navigation() {
                         }
                     </Carousel>
                 </div>
+                <div className="home-title-container">
+                    <h1 className='leading-company-heading'>Leading Construction Company</h1>
             <div className='HomeHeadingContainer'>
                 <div className='LisgoHeadingContainer'>
-                    <h1 className='leading-company-heading'>Leading Construction Company</h1>
+                    <Typography variant="h3">
+                    Lisgo Construction Ltd.
+                    </Typography>
+                    <Typography className='' variant="h4">
                     <Link href='#' className='about-us-link'>See about us</Link>
-                    <button><a href='#test'>Enquire now</a></button>
+                    </Typography>
+                    <Typography variant="h4">
+                    <Link className='enquire-now-link' href='#test'>Enquire now</Link>
+                    </Typography>
                 </div>
                 <div className='LisgoHomeLogoContainer'>
                     <img
                     className='LisgoHomeLogo'
                     src={LisgoLogo}
                     />
+                </div>
                 </div>
             </div>
         </section>

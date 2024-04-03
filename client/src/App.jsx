@@ -1,3 +1,5 @@
+import { Container } from '@mui/material';
+
 import Navigation from './Navigation';
 import Home from  './Home';
 import EnquireNow from  './EnquireNow';
@@ -7,7 +9,7 @@ import './App.css';
 function App() {
 
   return (
-    <>
+    <Container maxWidth="lg">
      <Navigation/>
      <Home/>
      <br/>
@@ -21,7 +23,7 @@ function App() {
      <br/>
      <br/>
      <EnquireNow/>
-    </>
+    </Container>
   );
 }
 

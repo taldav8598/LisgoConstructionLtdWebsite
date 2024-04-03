@@ -9,5 +9,5 @@ export default function Item({ item }) {
             <h2 className='reviewName'>{item.name}</h2>
             </div>
         </Paper>
-    )
+    );
 }
