@@ -12,11 +12,11 @@ export default function Navigation() {
             />
             <p className='Lisgo-Logo-Heading'>Lisgo Construction Ltd.</p>
             </div>
-            <Link href='#' className='navigation-link' underline='hover'>Home</Link>
-            <Link href='#' className='navigation-link' underline='hover'>About us</Link>
-            <Link href='#' className='navigation-link' underline='hover'>Services</Link>
-            <Link href='#' className='navigation-link' underline='hover'>Gallery</Link>
-            <Link href='#' className='navigation-link' underline='hover'>Contacts</Link>
+            <Link href='#home' className='navigation-link' underline='hover'>Home</Link>
+            <Link href='#aboutUs' className='navigation-link' underline='hover'>About us</Link>
+            <Link href='#enquireNow' className='navigation-link' underline='hover'>Enquire now</Link>
+            <Link href='#services' className='navigation-link' underline='hover'>Services</Link>
+            <Link href='#gallery' className='navigation-link' underline='hover'>Gallery</Link>
         </Container>
     );
 }
