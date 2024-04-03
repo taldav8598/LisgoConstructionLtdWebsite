@@ -5,6 +5,7 @@ import Item from './Item';
 import LisgoLogo from './assets/LisgoLogo.jpg';
 
 export default function Navigation() {
+    
     const reviews = [
         {
             name: "John",
