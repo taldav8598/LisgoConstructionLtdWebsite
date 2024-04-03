@@ -60,6 +60,9 @@ export default function Navigation() {
                     />
                 </div>
                 </div>
+                <Typography variant="h6">
+                    <Link className='enquire-now-link' href='#test'>Enquire now</Link>
+                </Typography>
             </div>
         </section>
     );
