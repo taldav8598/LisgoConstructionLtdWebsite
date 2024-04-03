@@ -9,7 +9,7 @@ import './App.css';
 function App() {
 
   return (
-    <Container maxWidth="lg">
+    <Container className='app-container' maxWidth="lg">
      <Navigation/>
      <Home/>
      <br/>

@@ -26,7 +26,14 @@ export default function Navigation() {
     return (
         <section className='HomeSection'>
                 <div className='ReviewContainer'>
-                    <Carousel className='Carousel'>
+                    <Carousel 
+                    className='Carousel'
+                    activeIndicatorIconButtonProps={{
+                        style: {
+                            color: '#ffd70d'
+                        }
+                    }}
+                    >
                         {
                             reviews.map( (item, i) => <Item className="item" key={i} item={item} /> )
                         }

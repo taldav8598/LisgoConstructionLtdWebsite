@@ -65,9 +65,7 @@
     color: #ffffff;
     box-shadow: none;
     font-style: italic;
-}
-.MuiButtonBase-root.MuiIconButton-root.MuiIconButton-sizeMedium.css-8ucetn-MuiButtonBase-root-MuiIconButton-root {
-    color: #ffd70d;
+    height: 50px;
 }
 
 @keyframes rotate {
