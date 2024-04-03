@@ -1,9 +1,7 @@
 import { useEffect } from 'react';
 import axios from 'axios';
-import {process} from 'dotenv'
 
 export default function EnquireNow() {
-    console.log(process.env.CALENDAR_ID)
     const date = new Date();
 
 // RFC 3339 format
