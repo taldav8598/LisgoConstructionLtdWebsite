@@ -4,8 +4,10 @@ import './Item.css';
 export default function Item({ item }) {
     return (
         <Paper>
-            <p>{item.review}</p>
-            <h2>{item.name}</h2>
+            <div className='reviewContainer'>
+            <p className='review'>{item.review}</p>
+            <h2 className='reviewName'>{item.name}</h2>
+            </div>
         </Paper>
     )
 }

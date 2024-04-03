@@ -25,6 +25,13 @@ export default function Navigation() {
     ];
     return (
         <section className='HomeSection'>
+                <div className='ReviewContainer'>
+                    <Carousel className='Carousel'>
+                        {
+                            reviews.map( (item, i) => <Item className="item" key={i} item={item} /> )
+                        }
+                    </Carousel>
+                </div>
             <div className='HomeHeadingContainer'>
                 <div className='LisgoHeadingContainer'>
                     <h1 className='leading-company-heading'>Leading Construction Company</h1>
@@ -37,14 +44,6 @@ export default function Navigation() {
                     src={LisgoLogo}
                     />
                 </div>
-            </div>
-            <div className='ReviewContainer'>
-                <h2 className='ReviewHeading'>Reviews</h2>
-                <Carousel className='Carousel'>
-            {
-                reviews.map( (item, i) => <Item className="item" key={i} item={item} /> )
-            }
-        </Carousel>
             </div>
         </section>
     );

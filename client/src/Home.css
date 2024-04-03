@@ -1,3 +1,8 @@
+.HomeSection {
+    margin: 0;
+    padding: 0;
+}
+
 .HomeHeadingContainer {
     display: flex;
     justify-content: center;
@@ -42,8 +47,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 7em 0;
+    width: 100%;
+    padding: 0;
 }
-
 .ReviewHeading {
     font-size: 2rem;
     margin: 0 1em 1em 1em;
@@ -52,8 +59,26 @@
 .Carousel {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     padding: 1em;
-    width: 600px;
+    background-color: #272727;
+}
+
+#root > section.HomeSection > div.ReviewContainer > div > div.css-1f8sh1y > div > div > div > div > div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    box-shadow: none;
+    font-style: italic;
+}
+
+.MuiButtonBase-root.MuiIconButton-root.MuiIconButton-sizeMedium.css-8ucetn-MuiButtonBase-root-MuiIconButton-root {
+    color: #ffd70d;
 }
 
 @keyframes rotate {
