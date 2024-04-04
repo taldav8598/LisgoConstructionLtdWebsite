@@ -1,0 +1,16 @@
+.enquire-now-section {
+    display: flex;
+    border: 1px solid salmon;
+    height: 100vh;
+}
+
+.enquire-now-container {
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+    border: 1px solid salmon;
+}
+
+.enquire-now-section h2 {
+    text-align: center;
+}

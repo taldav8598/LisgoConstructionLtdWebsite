@@ -13,15 +13,6 @@ function App() {
      <Navigation/>
      <Home/>
      <br/>
-     <br/>
-     <br/>
-     <br/>
-     <br/>
-     <br/>
-     <br/>
-     <br/>
-     <br/>
-     <br/>
      <EnquireNow/>
     </Container>
   );
