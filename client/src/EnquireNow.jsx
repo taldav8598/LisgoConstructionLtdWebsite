@@ -19,23 +19,33 @@ export default function EnquireNow() {
     const dateFormatting = async () => {
         const date = new Date();
         const formattedMinDate = date.toISOString();
-
-
-        const isInCurrentYear = (date) => date.get('year') === dayjs().get('year');
+        const timeStampDate = Date.parse(formattedMinDate);
+        console.log("dateString", new Date(timeStampDate));
         
-        console.log(isInCurrentYear);
         await axios
-        .get(`https://www.googleapis.com/calendar/v3/calendars/24dd8a69a809ae107ee7047d82890a76acb6944dfc635d195d7fe5a313e8c158@group.calendar.google.com/events?key=AIzaSyDENYFe9hlrFL_zp_d50TS520ujLU0Dqg0&timeMin=${formattedMinDate}`)
-        .then(({data}) => {
-            const {items} = data;
-            let dateObjectList = { start: [], end: [] };
+        .get(``)
+        .then(({ data }) => {
+            // console.log("data", data);
+            const { items } = data;
+            console.log('items', items);
+            // dates: ["2024-04-04"], dateTimes: {"2024-04-04-16:30:00"}
+            let dateObjectList = { dates: [], dateTimes: {}};
+
             items.forEach(item => {
-                dateObjectList.start.push(item.start.dateTime);
-                dateObjectList.end.push(item.end.dateTime);
+                // start:[{date: 2024-04-04}, {time: 16:30:00}]
+                // dateObjectList.start.push(date); 
+                // dateObjectList.end.push(item.end.dateTime);
+                console.log("start Datetime", item.start.dateTime);
+                if (item.start.dateTime) {
+                    const date = new Date(item.start.dateTime)
+                    let shortenedDate = `${date.getFullYear()}-${(date.getMonth() + 1) < 10 ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1)}-${date.getDate() < 10 ? "0" + date.getDate() : date.getDate()}`;
+                    // console.log("shortenedDate", shortenedDate);
+                    dateObjectList.dates.push(shortenedDate);
+                }
             });
-            console.log("dateObjectList", dateObjectList);
+            // console.log("dateObjectList", dateObjectList);
             // setDateLists(dateObjectList);
-            console.log(dateLists);
+            // console.log(dateLists);
             return setDateLists(prevState => ({...prevState, dateObjectList}));
         });
     } 
@@ -43,19 +53,38 @@ export default function EnquireNow() {
         dateFormatting();
     }, []);
 
+    // const isInCurrentYear = (date) => date.get('year') === dayjs().get('year');
+    // console.log(isInCurrentYear());
+
     const disabledDates = (date) => {
-            const formattedDate = `${date.get('year')}-${date.get('month') < 10 ? `0${date.get('month')}` : date.get('month')}-${date.get('day') < 10 ? `0${date.get('day')}` : date.get('day')}`;
-            console.log(formattedDate);
+            console.log("date", date);
+
+            const formattedDate = `${date['$y']}-${ date['$M'] + 1 < 10 ? "0" + (date['$M'] + 1) : (date['$M'] + 1)}-${date['$D'] < 10 ? "0" + date['$D'] : date['$D']}`;
+
+            // const date = new Date();
+            // console.log(date)
+            // console.log("Date-ISOString", date.toISOString().slice(0, 19) + "+01:00");
+            // const original = date.toISOString();
+            // const formattedDate = `${date.toISOString().slice(0, 19)}+01:00`;
+            // console.log("originalISOString", original);
+            // console.log("formattedDate", formattedDate)
+            // const formattedDate = `${date.get('year')}-${date.get('month') < 10 ? `0${date.get('month')}` : date.get('month')}-${date.get('day') < 10 ? `0${date.get('day')}` : date.get('day')}`;
+
+            // const formattedDate = `${date.get('year')}-${date.get('month') < 10 ? `0${date.get('month')}` : date.get('month')}-${date.get('day') < 10 ? `0${date.get('day')}` : date.get('day')}`;
+            // console.log(formattedDate);
             // const isInCurrentYear = (date) => date.get('year') === dayjs().get('year');
-            console.log(date['$d']);
-            console.log('dateLists', dateLists.dateObjectList.start?.includes(formattedDate));
-            return dateLists.dateObjectList.start?.includes(formattedDate);
+            // console.log(date['$d']);
+            // console.log('dateLists', dateLists.dateObjectList.start.includes(formattedDate));
+            // console.log('dateLists', dateLists.dateObjectList?.start);
+            console.log("dateLists.dateObjectList?.dates", dateLists.dateObjectList?.dates, "formattedDate", formattedDate);
+            
+            return dateLists.dateObjectList?.dates.includes(formattedDate);
     }
-    // console.log("",disabledDates);
+    console.log("disabledDates", disabledDates(new Date()));
 
     return (
         <section id="enquire-now-section" className='enquire-now-section'>
-            <h1>{dateLists.start}</h1>
+            {/* <h1>{dateLists.start}</h1> */}
             <Container className='enquire-now-container'>
             <Typography className='enquire-now-heading' variant='h2'>Enquire now</Typography>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -66,7 +95,9 @@ export default function EnquireNow() {
                             sx={{
                                 color: 'white'
                             }} 
-                            shouldDisableYear={disabledDates} 
+                            shouldDisableDate={disabledDates}
+                            disablePast={true}
+                            timeSteps={{minute: 30}}
                             />
                         </DemoItem>
                 </DemoContainer>
