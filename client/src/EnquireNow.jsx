@@ -17,35 +17,28 @@ export default function EnquireNow() {
     const today = dayjs();
 
     const dateFormatting = async () => {
+        //uncommented for git push
         const date = new Date();
         const formattedMinDate = date.toISOString();
-        const timeStampDate = Date.parse(formattedMinDate);
-        console.log("dateString", new Date(timeStampDate));
-        
         await axios
-        .get(``)
+        .get(`https://www.googleapis.com/calendar/v3/calendars/24dd8a69a809ae107ee7047d82890a76acb6944dfc635d195d7fe5a313e8c158@group.calendar.google.com/events?key=AIzaSyDENYFe9hlrFL_zp_d50TS520ujLU0Dqg0&timeMin=${formattedMinDate}`)
         .then(({ data }) => {
-            // console.log("data", data);
             const { items } = data;
-            console.log('items', items);
-            // dates: ["2024-04-04"], dateTimes: {"2024-04-04-16:30:00"}
-            let dateObjectList = { dates: [], dateTimes: {}};
+            let dateObjectList = { dates: [], dateTimes: {start: [], end: []}};
 
             items.forEach(item => {
-                // start:[{date: 2024-04-04}, {time: 16:30:00}]
-                // dateObjectList.start.push(date); 
-                // dateObjectList.end.push(item.end.dateTime);
-                console.log("start Datetime", item.start.dateTime);
                 if (item.start.dateTime) {
                     const date = new Date(item.start.dateTime)
+                    const endDate = new Date(item.end.dateTime)
+                    const localeString = date.toLocaleTimeString('en-UK');
+                    const localeStringEnd = endDate.toLocaleTimeString('en-UK');
+                    console.log('localeString', localeString);
                     let shortenedDate = `${date.getFullYear()}-${(date.getMonth() + 1) < 10 ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1)}-${date.getDate() < 10 ? "0" + date.getDate() : date.getDate()}`;
-                    // console.log("shortenedDate", shortenedDate);
                     dateObjectList.dates.push(shortenedDate);
+                    dateObjectList.dateTimes.start.push(Number(localeString.split(':').join('')));
+                    dateObjectList.dateTimes.end.push(Number(localeStringEnd.split(':').join('')));
                 }
             });
-            // console.log("dateObjectList", dateObjectList);
-            // setDateLists(dateObjectList);
-            // console.log(dateLists);
             return setDateLists(prevState => ({...prevState, dateObjectList}));
         });
     } 
@@ -56,31 +49,35 @@ export default function EnquireNow() {
     // const isInCurrentYear = (date) => date.get('year') === dayjs().get('year');
     // console.log(isInCurrentYear());
 
-    const disabledDates = (date) => {
-            console.log("date", date);
+    // const disabledDates = (date) => {
 
-            const formattedDate = `${date['$y']}-${ date['$M'] + 1 < 10 ? "0" + (date['$M'] + 1) : (date['$M'] + 1)}-${date['$D'] < 10 ? "0" + date['$D'] : date['$D']}`;
-
-            // const date = new Date();
-            // console.log(date)
-            // console.log("Date-ISOString", date.toISOString().slice(0, 19) + "+01:00");
-            // const original = date.toISOString();
-            // const formattedDate = `${date.toISOString().slice(0, 19)}+01:00`;
-            // console.log("originalISOString", original);
-            // console.log("formattedDate", formattedDate)
-            // const formattedDate = `${date.get('year')}-${date.get('month') < 10 ? `0${date.get('month')}` : date.get('month')}-${date.get('day') < 10 ? `0${date.get('day')}` : date.get('day')}`;
-
-            // const formattedDate = `${date.get('year')}-${date.get('month') < 10 ? `0${date.get('month')}` : date.get('month')}-${date.get('day') < 10 ? `0${date.get('day')}` : date.get('day')}`;
-            // console.log(formattedDate);
-            // const isInCurrentYear = (date) => date.get('year') === dayjs().get('year');
-            // console.log(date['$d']);
-            // console.log('dateLists', dateLists.dateObjectList.start.includes(formattedDate));
-            // console.log('dateLists', dateLists.dateObjectList?.start);
-            console.log("dateLists.dateObjectList?.dates", dateLists.dateObjectList?.dates, "formattedDate", formattedDate);
+    //         // if a full day is booked up
+    //         const formattedDate = `${date['$y']}-${ date['$M'] + 1 < 10 ? "0" + (date['$M'] + 1) : (date['$M'] + 1)}-${date['$D'] < 10 ? "0" + date['$D'] : date['$D']}`;
             
-            return dateLists.dateObjectList?.dates.includes(formattedDate);
+    //         return dateLists.dateObjectList?.dates.includes(formattedDate);
+    // }
+
+    const disabledTimes = (date) => {
+        let hour = date['$H']
+        const formattedDate = `${date['$y']}-${ date['$M'] + 1 < 10 ? "0" + (date['$M'] + 1) : (date['$M'] + 1)}-${date['$D'] < 10 ? "0" + date['$D'] : date['$D']}`;
+
+        let formattedHour = Number(hour + '0000')
+
+        const timeCheck = dateLists.dateObjectList?.dates.find((indivdualDate, index) => {
+            if (formattedDate !== indivdualDate) {
+                return false
+            } else if (!(date['$H'] >= 9 && date['$H'] <= 17)) {
+                return true
+            } else {
+                if (formattedHour < dateLists.dateObjectList?.dateTimes.start[index] || formattedHour > dateLists.dateObjectList?.dateTimes.end[index]) {
+                    return false
+                } else {
+                    return true
+                }
+            }
+        })
+        return timeCheck
     }
-    console.log("disabledDates", disabledDates(new Date()));
 
     return (
         <section id="enquire-now-section" className='enquire-now-section'>
@@ -95,9 +92,9 @@ export default function EnquireNow() {
                             sx={{
                                 color: 'white'
                             }} 
-                            shouldDisableDate={disabledDates}
+                            // shouldDisableDate={disabledDates}
+                            shouldDisableTime={disabledTimes}
                             disablePast={true}
-                            timeSteps={{minute: 30}}
                             />
                         </DemoItem>
                 </DemoContainer>
