@@ -1,0 +1,17 @@
+.footer-container {
+    background-color: #E0C123;
+    height: 150px;
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+    color: black !important;
+    padding: 0.5rem 2rem;
+}
+
+.info {
+    margin-bottom: 10px
+}
+
+.info a{
+    text-decoration-color: black !important;
+}

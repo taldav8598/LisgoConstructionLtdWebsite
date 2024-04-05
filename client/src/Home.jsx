@@ -1,8 +1,9 @@
 import Carousel from 'react-material-ui-carousel'
-import { Link, Typography } from '@mui/material';
+import { Link, Typography, Grid } from '@mui/material';
 import './Home.css';
 import Item from './Item';
 import LisgoLogo from './assets/LisgoLogo.jpg';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export default function Navigation() {
     
@@ -42,29 +43,37 @@ export default function Navigation() {
                 </div>
                 <div className="home-title-container">
                     <h1 className='leading-company-heading'>Leading Construction Company</h1>
-            <div className='HomeHeadingContainer'>
-                <div className='LisgoHeadingContainer'>
-                    <Typography variant="h3">
-                    Lisgo Construction Ltd.
-                    </Typography>
-                    <Typography className='' variant="h4">
-                    <Link href='#' className='about-us-link'>See about us</Link>
-                    </Typography>
-                    <Typography variant="h4">
-                    <Link className='enquire-now-link' href='#test'>Enquire now</Link>
-                    </Typography>
-                </div>
+            <Grid container spacing={2}>
+                <Grid item xs={8}>
+                    <div className='LisgoHeadingContainer'>
+                        <Typography variant="h3">
+                        Lisgo Construction Ltd.
+                        </Typography>
+                        <Typography className='' variant="h4">
+                        <Link href='#aboutUs' className='about-us-link'>See about us</Link>
+                        </Typography>
+                        <Typography variant="h4">
+                        <Link href='#enquire'>Enquire now</Link>
+                        </Typography>
+                    </div>
+                </Grid>
+                <Grid item xs={4}>
                 <div className='LisgoHomeLogoContainer'>
                     <img
                     className='LisgoHomeLogo'
                     src={LisgoLogo}
                     />
                 </div>
-                </div>
-                <Typography variant="h6">
-                    <Link className='enquire-now-link' href='#test'>Enquire now</Link>
+                </Grid>
+            </Grid>
+            <div className="cheveron-container">
+                <Typography className='enquire-now-link' variant="h5">
+                    <Link href='#enquire'>Enquire now</Link>
                 </Typography>
+                <ExpandMoreIcon className='cheveron' color='white' />
             </div>
+        </div>
+               
         </section>
     );
 }

@@ -13,12 +13,18 @@ html {
     scroll-behavior: smooth;
     overflow-y: scroll;
     overflow-x: hidden;
+    background-color: #121212;
+    color: white
 }
 
 body {
     min-height: 100vh;
     font-family: 'roboto';
     margin: 0 auto;
+}
+
+a {
+    text-decoration-color: white !important
 }
 
 img, picture, svg, video {
