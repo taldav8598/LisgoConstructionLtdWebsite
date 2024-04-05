@@ -13,6 +13,8 @@ html {
     scroll-behavior: smooth;
     overflow-y: scroll;
     overflow-x: hidden;
+    background-color: #121212;
+    color: white
 }
 
 body {
