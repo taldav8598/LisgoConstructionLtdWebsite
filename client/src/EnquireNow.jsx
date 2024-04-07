@@ -32,7 +32,7 @@ export default function EnquireNow() {
                     const endDate = new Date(item.end.dateTime)
                     const localeString = date.toLocaleTimeString('en-UK');
                     const localeStringEnd = endDate.toLocaleTimeString('en-UK');
-                    console.log('localeString', localeString);
+                    // console.log('localeString', localeString);
                     let shortenedDate = `${date.getFullYear()}-${(date.getMonth() + 1) < 10 ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1)}-${date.getDate() < 10 ? "0" + date.getDate() : date.getDate()}`;
                     dateObjectList.dates.push(shortenedDate);
                     dateObjectList.dateTimes.start.push(Number(localeString.split(':').join('')));
@@ -58,25 +58,40 @@ export default function EnquireNow() {
     // }
 
     const disabledTimes = (date) => {
-        let hour = date['$H']
+        let hour = date['$H'];
+        
         const formattedDate = `${date['$y']}-${ date['$M'] + 1 < 10 ? "0" + (date['$M'] + 1) : (date['$M'] + 1)}-${date['$D'] < 10 ? "0" + date['$D'] : date['$D']}`;
 
-        let formattedHour = Number(hour + '0000')
+        let formattedHour = Number(hour + '0000');
 
-        const timeCheck = dateLists.dateObjectList?.dates.find((indivdualDate, index) => {
-            if (formattedDate !== indivdualDate) {
-                return false
-            } else if (!(date['$H'] >= 9 && date['$H'] <= 17)) {
-                return true
-            } else {
-                if (formattedHour < dateLists.dateObjectList?.dateTimes.start[index] || formattedHour > dateLists.dateObjectList?.dateTimes.end[index]) {
+        // If the dates array contains the selected formatted date check if an appointment time is free.
+        if (dateLists.dateObjectList?.dates.includes(formattedDate)) {
+            const timeCheck = dateLists.dateObjectList?.dates.find((individualDate, index) => {
+                // If the formatted date is not equal to the individualDate return false
+    
+                if (formattedDate !== individualDate) {
                     return false
-                } else {
+                // Else if the time in hours is not between 9am and 5pm return true
+                } else if (!(date['$H'] >= 9 && date['$H'] <= 17)) {
                     return true
+                } else {
+                // Else, if the formattedHour is less than the index of the start time or 
+                // if the formattedHour is greater than or equal to the index of the end time return false, else return true.
+                    if (formattedHour < dateLists.dateObjectList?.dateTimes.start[index] || formattedHour >= dateLists.dateObjectList?.dateTimes.end[index]) {
+                        return false
+                    } else {
+                        return true
+                    }
                 }
+            });
+            return timeCheck
+        } else {
+            // if the time in hours is not between 9am and 5pm return true
+            if (!(date['$H'] >= 9 && date['$H'] <= 17)) {
+                return true
             }
-        })
-        return timeCheck
+        }
+
     }
 
     return (
