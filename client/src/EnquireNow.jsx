@@ -59,7 +59,6 @@ export default function EnquireNow() {
 
     const disabledTimes = (date) => {
         let hour = date['$H'];
-        let minute = date['$m'];
         
         const formattedDate = `${date['$y']}-${ date['$M'] + 1 < 10 ? "0" + (date['$M'] + 1) : (date['$M'] + 1)}-${date['$D'] < 10 ? "0" + date['$D'] : date['$D']}`;
 
@@ -72,8 +71,8 @@ export default function EnquireNow() {
     
                 if (formattedDate !== individualDate) {
                     return false
-                // Else if the time in hours is not between 9am and 5pm and minutes is not equal to 15, 30, 45 or 0 disable the times.
-                } else if ((!(hour >= 9 && hour <= 17)) && (!(minute == 15 || minute == 30 || minute == 45 || minute == 0))) {
+                // Else if the time in hours is not between 9am and 5pm return true and minutes is not equal to 15, 30, 45 or 0 disable the times.
+                } else if (!(hour >= 9 && hour <= 17)) {
                     return true
                 } else {
                 // Else, if the formattedHour is less than the index of the start time or 
@@ -88,7 +87,7 @@ export default function EnquireNow() {
             return timeCheck
         } else {
             // if the time in hours is not between 9am and 5pm return true
-            if ((!(hour >= 9 && hour <= 17)) && (!(minute == 15 || minute == 30 || minute == 45 || minute == 0))) {
+            if (!(hour >= 9 && hour <= 17)) {
                 return true
             }
         }
@@ -111,6 +110,7 @@ export default function EnquireNow() {
                             // shouldDisableDate={disabledDates}
                             shouldDisableTime={disabledTimes}
                             disablePast={true}
+                            timeSteps={{minutes: 15}}
                             />
                         </DemoItem>
                 </DemoContainer>
