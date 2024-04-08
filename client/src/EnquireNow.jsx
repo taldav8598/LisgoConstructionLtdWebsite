@@ -24,7 +24,16 @@ export default function EnquireNow() {
         .get(`https://www.googleapis.com/calendar/v3/calendars/24dd8a69a809ae107ee7047d82890a76acb6944dfc635d195d7fe5a313e8c158@group.calendar.google.com/events?key=AIzaSyDENYFe9hlrFL_zp_d50TS520ujLU0Dqg0&timeMin=${formattedMinDate}`)
         .then(({ data }) => {
             const { items } = data;
-            let dateObjectList = { dates: [], dateTimes: {start: [], end: []}};
+            // {
+            //     dateIndex = 0
+            //     dates: [ '2024-04-08' ],
+            //     dateTimeIndex = 0 in start and end for the 8th April 2024 or 2024-04-08 
+            //     dateTime: { start: [ [ '090000', '091500', '093000', '094500' ] ], end: [ [ '091500', '093000', '094500', '100000' ] ] }
+            // }
+            let dateObjectList = { 
+                dates: [],
+                dateTimes: { start: [], end: [] } 
+            };
 
             items.forEach(item => {
                 if (item.start.dateTime) {
@@ -62,21 +71,22 @@ export default function EnquireNow() {
         
         const formattedDate = `${date['$y']}-${ date['$M'] + 1 < 10 ? "0" + (date['$M'] + 1) : (date['$M'] + 1)}-${date['$D'] < 10 ? "0" + date['$D'] : date['$D']}`;
 
+        // Output for number 9 = 90000, number 14 = 140000
         let formattedHour = Number(hour + '0000');
 
         // If the dates array contains the selected formatted date check if an appointment time is free.
         if (dateLists.dateObjectList?.dates.includes(formattedDate)) {
             const timeCheck = dateLists.dateObjectList?.dates.find((individualDate, index) => {
+
                 // If the formatted date is not equal to the individualDate return false
-    
                 if (formattedDate !== individualDate) {
                     return false
-                // Else if the time in hours is not between 9am and 5pm return true and minutes is not equal to 15, 30, 45 or 0 disable the times.
+                // Else if the time in hours is not between 9am and 5pm disable those times.
                 } else if (!(hour >= 9 && hour <= 17)) {
                     return true
                 } else {
-                // Else, if the formattedHour is less than the index of the start time or 
-                // if the formattedHour is greater than or equal to the index of the end time return false, else return true.
+                // Else, if the formattedHour is less than the value of the start time at the current index or 
+                // if the formattedHour is greater than or equal to the value of the end time at the current index return false, else return true.
                     if (formattedHour < dateLists.dateObjectList?.dateTimes.start[index] || formattedHour >= dateLists.dateObjectList?.dateTimes.end[index]) {
                         return false
                     } else {
@@ -86,12 +96,11 @@ export default function EnquireNow() {
             });
             return timeCheck
         } else {
-            // if the time in hours is not between 9am and 5pm return true
+            // if the time in hours is not between 9am and 5pm disable those times
             if (!(hour >= 9 && hour <= 17)) {
                 return true
             }
         }
-
     }
 
     return (
@@ -105,7 +114,7 @@ export default function EnquireNow() {
                             <DateTimePicker 
                             defaultValue={today}
                             sx={{
-                                color: 'white'
+                                color: '#fff'
                             }} 
                             // shouldDisableDate={disabledDates}
                             shouldDisableTime={disabledTimes}
