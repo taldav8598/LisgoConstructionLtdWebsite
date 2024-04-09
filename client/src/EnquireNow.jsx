@@ -180,11 +180,14 @@ export default function EnquireNow() {
 
 
     return (
-        <section id="enquire-now-section" className='enquire-now-section'>
+        <section id="enquire" className='enquire-now-section'>
             {/* <h1>{dateLists.start}</h1> */}
             <ThemeProvider theme={theme}>
             <Container className='enquire-now-container'>
-            <Typography className='enquire-now-heading' variant='h2' sx={{textAlign: 'center'}}>Enquire now</Typography>
+            <Typography className='enquire-now-heading' variant='h3' sx={{textAlign: 'center'}}>Enquire now</Typography>
+            <p>Please see the services section if you’re unsure about your enquiry classification or want to find out more about the <a href="#services">services</a> that we offer.</p>  
+            <p>If you have any queries feel free to <a href="">contact us.</a></p>
+            <br />
             <form className='enquire-now-form'>
                 <div className='label-wrapper'>
                 <InputLabel htmlFor="name-input">Name</InputLabel>
@@ -198,7 +201,7 @@ export default function EnquireNow() {
                 <Input id='email-input' variant='outlined'></Input>
                 <InputLabel htmlFor="phone-number-input">Phone number</InputLabel>
                 <Input id='phone-number-input' variant='outlined'></Input>
-                <InputLabel htmlFor="enquiry-description-textfield">Enquiry description</InputLabel>
+                <InputLabel htmlFor="enquiry-description-textfield">Message</InputLabel>
                 <TextField
                 id="enquiry-description-textfield"
                 multiline

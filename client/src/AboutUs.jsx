@@ -13,9 +13,6 @@ export default function AboutUs() {
                         <p className='info'>Welcome to Lisgo, where craftmanship meets dedication and excellence.</p>
                     </Grid>
                     <Grid item xs={6}>
-                        {/* <p className='info'>&nbsp; testing</p> */}
-                    {/* <Typography variant="h6">Social media</Typography> */}
-
                     </Grid>
                 </Grid>
                 <br />
@@ -25,8 +22,6 @@ export default function AboutUs() {
                     </Grid>
                     <Grid className='inner-journey-part-two' item xs={8}>
                         <p className='info'>We are not just builders; we are creators of spaces that inspire, innovate, and endure.</p>
-                    {/* <Typography variant="h6">Social media</Typography> */}
-
                     </Grid>
                 </Grid>
                 <p className='last-journey-part'>With 3 years in the industry, we have honed our expertise to deliver exceptional construction solutions tailored to meet your unique needs.</p> 

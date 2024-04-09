@@ -29,6 +29,10 @@
     margin: 5px
 }
 
+.social-media-content svg {
+    color: black
+}
+
 .social-media-content {
     font-size: 17px;
 }
