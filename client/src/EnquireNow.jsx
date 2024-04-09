@@ -37,17 +37,24 @@ export default function EnquireNow() {
 
             items.forEach(item => {
                 if (item.start.dateTime) {
-                    const date = new Date(item.start.dateTime)
-                    const endDate = new Date(item.end.dateTime)
+                    const date = new Date(item.start.dateTime);
+                    const endDate = new Date(item.end.dateTime);
+                    
                     const localeString = date.toLocaleTimeString('en-UK');
                     const localeStringEnd = endDate.toLocaleTimeString('en-UK');
-                    // console.log('localeString', localeString);
+
                     let shortenedDate = `${date.getFullYear()}-${(date.getMonth() + 1) < 10 ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1)}-${date.getDate() < 10 ? "0" + date.getDate() : date.getDate()}`;
-                    dateObjectList.dates.push(shortenedDate);
+                    
+                    const formattedLocaleString = Number(localeString.split(':').join(''));
+                    console.log(!dateObjectList.dates.includes(formattedLocaleString) ? dateObjectList.dates : false);
+
+                    dateObjectList.dates.push(Number(shortenedDate.replaceAll('-', '')));
+                    
                     dateObjectList.dateTimes.start.push(Number(localeString.split(':').join('')));
                     dateObjectList.dateTimes.end.push(Number(localeStringEnd.split(':').join('')));
                 }
             });
+            console.log(dateObjectList.dates, dateObjectList.dateTimes)
             return setDateLists(prevState => ({...prevState, dateObjectList}));
         });
     } 
@@ -68,6 +75,11 @@ export default function EnquireNow() {
 
     const disabledTimes = (date) => {
         let hour = date['$H'];
+        let minute = date['$m'];
+
+        let formattedMinute = Number(minute + '00')
+
+        console.log(formattedMinute < Number(dateLists.dateObjectList.dateTimes.start[0].toString().slice(2, dateLists.dateObjectList.dateTimes.start[0].length)));
         
         const formattedDate = `${date['$y']}-${ date['$M'] + 1 < 10 ? "0" + (date['$M'] + 1) : (date['$M'] + 1)}-${date['$D'] < 10 ? "0" + date['$D'] : date['$D']}`;
 
@@ -85,8 +97,8 @@ export default function EnquireNow() {
                 } else if (!(hour >= 9 && hour <= 17)) {
                     return true
                 } else {
-                // Else, if the formattedHour is less than the value of the start time at the current index or 
-                // if the formattedHour is greater than or equal to the value of the end time at the current index return false, else return true.
+                // Else, if the formattedHour is less than the value of the starting hour or 
+                // if the formattedHour is greater than or equal to the end hour return false, else return true.
                     if (formattedHour < dateLists.dateObjectList?.dateTimes.start[index] || formattedHour >= dateLists.dateObjectList?.dateTimes.end[index]) {
                         return false
                     } else {
