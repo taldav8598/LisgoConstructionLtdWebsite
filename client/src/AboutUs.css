@@ -1,0 +1,50 @@
+.header {
+    text-align: center;
+}
+
+.about-container {
+    border-bottom: 2px solid #FFD70D;
+    border-right: 2px solid #FFD70D;
+    border-left: 2px solid #FFD70D;
+    padding: 1rem;
+}
+.about-container div {
+    margin-left: -10px !important;
+}
+
+.first-journey-part {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem !important;
+    border-bottom: 2px solid #FFD70D;
+}
+.inner-journey-part-one {
+    border-right: 2px solid #FFD70D;
+}
+
+.inner-journey-part-two {
+    border-left: 2px solid #FFD70D;
+}
+
+.last-journey-part {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.mention-container {
+    border-right: 2px solid #FFD70D;
+    border-left: 2px solid #FFD70D;
+}
+
+.cheveron-container {
+    text-align: center;
+}
+
+.mention {
+    opacity: 0.7;
+    font-style: italic;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+.mention p {
+    margin-bottom: 1rem;
+}

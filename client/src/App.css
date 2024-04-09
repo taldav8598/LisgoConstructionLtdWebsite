@@ -14,13 +14,31 @@ html {
     overflow-y: scroll;
     overflow-x: hidden;
     background-color: #121212;
-    color: white
+    color: white;
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
 body {
     min-height: 100vh;
     font-family: 'roboto';
     margin: 0 auto;
+}
+
+.cheveron-container {
+    margin: 0 auto;
+    cursor: pointer;
+}
+.cheveron {
+    height: 5rem !important;
+    width: 5rem !important;
+    cursor: pointer;
+    margin-left: -1rem;
+}
+
+a {
+    text-decoration-color: white !important
 }
 
 img, picture, svg, video {
@@ -31,4 +49,13 @@ img, picture, svg, video {
 .main-container {
     max-width: 2000px;
     margin: 0 auto;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

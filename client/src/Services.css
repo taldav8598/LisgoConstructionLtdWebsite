@@ -1,0 +1,21 @@
+.accordion {
+    padding: 0;
+    margin-bottom: 1rem;
+    background-color: black !important;
+    color: white !important;
+    border: 2px solid #FFD70D;
+    margin-top: 1rem;
+    border-radius: 5px;
+
+}
+
+.accordion a {
+    color: white;
+}
+
+.accordion svg {
+    color: white;
+    font-size: 30px;
+}
+
+
