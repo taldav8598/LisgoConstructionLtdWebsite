@@ -1,4 +1,4 @@
-import { Container, Typography } from '@mui/material';
+import { Container, FormControl, Typography } from '@mui/material';
 
 import dayjs from 'dayjs';
 import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
@@ -119,7 +119,10 @@ export default function EnquireNow() {
         <section id="enquire-now-section" className='enquire-now-section'>
             {/* <h1>{dateLists.start}</h1> */}
             <Container className='enquire-now-container'>
-            <Typography className='enquire-now-heading' variant='h2'>Enquire now</Typography>
+            <Typography className='enquire-now-heading' variant='h2' sx={{textAlign: 'center'}}>Enquire now</Typography>
+            <FormControl className='enquire-now-form'>
+
+            </FormControl>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DemoContainer components={['DateTimePicker']}>
                         <DemoItem label="DateTimePicker">
