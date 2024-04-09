@@ -198,13 +198,13 @@ export default function EnquireNow() {
                 <Input id='email-input' variant='outlined'></Input>
                 <InputLabel htmlFor="phone-number-input">Phone number</InputLabel>
                 <Input id='phone-number-input' variant='outlined'></Input>
-                <InputLabel htmlFor="enquiry-description-textfield">Enquiry description</InputLabel>
+                <InputLabel htmlFor="message-textfield">Message</InputLabel>
                 <TextField
-                id="enquiry-description-textfield"
+                id="message-textfield"
                 multiline
                 rows={4}
                 fullWidth={true}
-                placeholder="Please provide a description of your enquiry"
+                placeholder="Please provide a message for additional information"
                 />
                 {/* <InputLabel htmlFor="choose-file-picker">Choose a file</InputLabel>
                 <Button id="choose-file-button">Choose a file</Button> */}
@@ -214,9 +214,6 @@ export default function EnquireNow() {
                         <DemoItem>
                             <DateTimePicker 
                             defaultValue={today}
-                            sx={{
-                                color: '#fff'
-                            }} 
                             // shouldDisableDate={disabledDates}
                             shouldDisableTime={disabledTimes}
                             disablePast={true}
