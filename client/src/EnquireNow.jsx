@@ -84,7 +84,7 @@ export default function EnquireNow() {
         const date = new Date();
         const formattedMinDate = date.toISOString();
         await axios
-        .get(`https://www.googleapis.com/calendar/v3/calendars/24dd8a69a809ae107ee7047d82890a76acb6944dfc635d195d7fe5a313e8c158@group.calendar.google.com/events?key=AIzaSyDENYFe9hlrFL_zp_d50TS520ujLU0Dqg0&timeMin=${formattedMinDate}`)
+        .get(``)
         .then(({ data }) => {
             const { items } = data;
             // {
