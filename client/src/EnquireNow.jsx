@@ -1,4 +1,4 @@
-import { Button, Container, FormControl, Input, InputLabel, TextField, Typography } from '@mui/material';
+import { Button, Container, Input, InputLabel, TextField, Typography } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import dayjs from 'dayjs';
 import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
@@ -26,6 +26,16 @@ const theme = createTheme({
                 textTransform: 'lowercase',
                 margin: '3em 0',
                 fontWeight: 'bolder',
+                ":hover": {
+                    fontSize: '1rem',
+                color: '#FFD70D',
+                border: '4px solid #FFD70D',
+                borderRadius: '14px',
+                backgroundColor: '#111111',
+                textTransform: 'lowercase',
+                margin: '3em 0',
+                fontWeight: 'bolder',
+                }
               },
             },
           },
@@ -175,8 +185,7 @@ export default function EnquireNow() {
             <ThemeProvider theme={theme}>
             <Container className='enquire-now-container'>
             <Typography className='enquire-now-heading' variant='h2' sx={{textAlign: 'center'}}>Enquire now</Typography>
-            <FormControl className='enquire-now-form'>
-            </FormControl>
+            <form className='enquire-now-form'>
                 <div className='label-wrapper'>
                 <InputLabel htmlFor="name-input">Name</InputLabel>
                 <InputLabel htmlFor="name-input">*required field</InputLabel>
@@ -217,6 +226,7 @@ export default function EnquireNow() {
                 </DemoContainer>
             </LocalizationProvider>
             <Button id="submit-button" fullWidth={true}>submit</Button>
+            </form>
             </Container>
             </ThemeProvider>
 
