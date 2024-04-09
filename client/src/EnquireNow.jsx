@@ -1,5 +1,5 @@
-import { Container, FormControl, InputLabel, Typography } from '@mui/material';
-
+import { Button, Container, FormControl, Input, InputLabel, TextField, Typography } from '@mui/material';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import dayjs from 'dayjs';
 import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -8,6 +8,59 @@ import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import './EnquireNow.css'
+// import { ThemeProvider } from '@emotion/react';
+
+const theme = createTheme({
+    components: {
+        MuiButton: {
+            styleOverrides: {
+              // Name of the slot
+              root: {
+                // Some CSS
+                fontSize: '1rem',
+                color: '#111111',
+                border: '4px solid #FFD70D',
+                borderRadius: '14px',
+                backgroundColor: '#FFD70D',
+                textTransform: 'lowercase',
+                margin: '3em 0',
+                fontWeight: 'bolder',
+              },
+            },
+          },
+      MuiInputBase: {
+        styleOverrides: {
+          // Name of the slot
+          root: {
+            // Some CSS
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            fontSize: '1rem',
+            backgroundColor: '111111',
+            color: '#fff',
+            border: '4px solid #FFD70D',
+            borderRadius: '4px',
+            margin: '0 0 1em 0',
+            paddingLeft: '0.5em',
+          },
+        },
+      },
+      MuiInputLabel: {
+        styleOverrides: {
+          // Name of the slot
+          root: {
+            // Some CSS
+            fontSize: '1rem',
+            backgroundColor: '111111',
+            color: '#fff',
+            margin: '0.1em 0.25em',
+          },
+        },
+      },
+    },
+  });
 
 export default function EnquireNow() {
     const [dateLists, setDateLists] = useState({});
@@ -115,22 +168,41 @@ export default function EnquireNow() {
         }
     }
 
+
     return (
         <section id="enquire-now-section" className='enquire-now-section'>
             {/* <h1>{dateLists.start}</h1> */}
+            <ThemeProvider theme={theme}>
             <Container className='enquire-now-container'>
             <Typography className='enquire-now-heading' variant='h2' sx={{textAlign: 'center'}}>Enquire now</Typography>
             <FormControl className='enquire-now-form'>
-                <InputLabel htmlFor="name-input">Name</InputLabel>
-                <InputLabel htmlFor="name-input">Email</InputLabel>
-                <InputLabel htmlFor="name-input">Phone number</InputLabel>
-                <InputLabel htmlFor="name-input">Enquiry description</InputLabel>
-                <InputLabel htmlFor="name-input">Choose file</InputLabel>
-                <InputLabel htmlFor="name-input">Choose a time for your appointment</InputLabel>
             </FormControl>
+                <div className='label-wrapper'>
+                <InputLabel htmlFor="name-input">Name</InputLabel>
+                <InputLabel htmlFor="name-input">*required field</InputLabel>
+                </div>
+                <Input id='name-input' variant='outlined'></Input>
+                <div className='label-wrapper'>
+                <InputLabel htmlFor="email-input">Email</InputLabel>
+                <InputLabel htmlFor="name-input">*required field</InputLabel>
+                </div>
+                <Input id='email-input' variant='outlined'></Input>
+                <InputLabel htmlFor="phone-number-input">Phone number</InputLabel>
+                <Input id='phone-number-input' variant='outlined'></Input>
+                <InputLabel htmlFor="enquiry-description-textfield">Enquiry description</InputLabel>
+                <TextField
+                id="enquiry-description-textfield"
+                multiline
+                rows={4}
+                fullWidth={true}
+                placeholder="Please provide a description of your enquiry"
+                />
+                {/* <InputLabel htmlFor="choose-file-picker">Choose a file</InputLabel>
+                <Button id="choose-file-button">Choose a file</Button> */}
+                <InputLabel htmlFor="name-input">Choose a time for your appointment</InputLabel>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DemoContainer components={['DateTimePicker']}>
-                        <DemoItem label="DateTimePicker">
+                        <DemoItem>
                             <DateTimePicker 
                             defaultValue={today}
                             sx={{
@@ -144,7 +216,9 @@ export default function EnquireNow() {
                         </DemoItem>
                 </DemoContainer>
             </LocalizationProvider>
+            <Button id="submit-button" fullWidth={true}>submit</Button>
             </Container>
+            </ThemeProvider>
 
         </section>
     );
