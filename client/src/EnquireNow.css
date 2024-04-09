@@ -1,16 +1,29 @@
 .enquire-now-section {
     display: flex;
-    border: 1px solid salmon;
     height: 100vh;
 }
 
 .enquire-now-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin: 1em;
-    border: 1px solid salmon;
 }
 
-.enquire-now-section h2 {
+.MuiTypography-h2 {
     text-align: center;
+}
+
+.label-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.enquire-now-form {
+    padding: 0 10em;
+}
+
+svg {
+    color: #FFD70D;
 }
