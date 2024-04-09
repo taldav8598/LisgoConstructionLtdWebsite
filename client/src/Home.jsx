@@ -26,7 +26,7 @@ export default function Navigation() {
         }
     ];
     return (
-        <section className='HomeSection'>
+        <section id="home" className='HomeSection'>
                 <div className='ReviewContainer'>
                     <Carousel 
                     className='Carousel'
@@ -40,6 +40,7 @@ export default function Navigation() {
                             reviews.map( (item, i) => <Item className="item" key={i} item={item} /> )
                         }
                     </Carousel>
+                    <Link target="_blank" href="https://www.google.com/search?q=lisgo+construction+ltd&rlz=1C5GCCM_en&oq=lisgo+co&gs_lcrp=EgZjaHJvbWUqDAgAECMYJxiABBiKBTIMCAAQIxgnGIAEGIoFMg0IARAuGK8BGMcBGIAEMgYIAhBFGDkyCAgDEAAYFhgeqAIAsAIA&sourceid=chrome&ie=UTF-8#lrd=0xa51f849c094cefd3:0xc770e71668c7846d,1,,,,">See more reviews</Link>
                 </div>
                 <div className="home-title-container">
                     <h1 className='leading-company-heading'>Leading Construction Company</h1>
@@ -66,8 +67,8 @@ export default function Navigation() {
                 </div>
                 </Grid>
             </Grid>
-            <div className="cheveron-container">
-                <Typography className='enquire-now-link' variant="h5">
+            <div onClick={() => document.getElementById('enquire').scrollIntoView()} className="cheveron-container">
+                <Typography href='#enquire' className='enquire-now-link' variant="h5">
                     <Link href='#enquire'>Enquire now</Link>
                 </Typography>
                 <ExpandMoreIcon className='cheveron' color='white' />

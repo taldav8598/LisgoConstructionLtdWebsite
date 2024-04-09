@@ -5,13 +5,7 @@
 }
 
 .HomeHeadingContainer {
-    /* display: flex; */
     margin: 0;
-}
-
-.LisgoHeadingContainer {
-    /* display: flex;
-    flex-direction: column; */
 }
 
 .LisgoHeadingContainer a {
@@ -41,6 +35,15 @@
     margin-top: 7em;
     width: 100%;
     padding: 0;
+    background-color: #272727;
+}
+
+.ReviewContainer a {
+    width: 100vw;
+    text-align: center;
+    color: white;
+    text-decoration-color: white;
+    background-color: #272727;
 }
 .ReviewHeading {
     font-size: 2rem;
@@ -107,16 +110,6 @@
 
 .LisgoHeadingContainer h4 {
     margin-top: 2rem;
-}
-
-.cheveron-container {
-    margin: 0 auto;
-}
-.cheveron {
-    height: 5rem !important;
-    width: 5rem !important;
-    cursor: pointer;
-    
 }
 
 .home-title-container {

@@ -14,4 +14,21 @@
 
 .info a{
     text-decoration-color: black !important;
+    color: black;
+}
+
+.social-media-content {
+    display: flex;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.social-media-content img {
+    height: 60px;
+    width: 60px;
+    margin: 5px
+}
+
+.social-media-content {
+    font-size: 17px;
 }

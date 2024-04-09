@@ -83,7 +83,7 @@ export default function EnquireNow() {
     console.log("disabledDates", disabledDates(new Date()));
 
     return (
-        <section id="enquire-now-section" className='enquire-now-section'>
+        <section id="enquire" className='enquire-now-section'>
             {/* <h1>{dateLists.start}</h1> */}
             <Container className='enquire-now-container'>
             <Typography className='enquire-now-heading' variant='h2'>Enquire now</Typography>
