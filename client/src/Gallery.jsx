@@ -16,7 +16,7 @@ export default function Gallery() {
             <div className="imageSeven"></div>
             <div className="imageEight"></div>
         </div>
-        <div className='empty'></div>
+        {/* <div className='empty'></div> */}
         </section>
     );
 }
