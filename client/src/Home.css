@@ -5,13 +5,7 @@
 }
 
 .HomeHeadingContainer {
-    display: flex;
     margin: 0;
-}
-
-.LisgoHeadingContainer {
-    display: flex;
-    flex-direction: column;
 }
 
 .LisgoHeadingContainer a {
@@ -23,10 +17,9 @@
 }
 
 .LisgoHomeLogo {
-    height: 16.875rem;
-    width: 16.875rem;
+    height: 18rem;
+    width: 18rem;
     border-radius: 50%;
-    margin-left: 5em;
     animation: rotate 10s linear infinite;
 }
 
@@ -39,9 +32,18 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 7em 0;
+    margin-top: 7em;
     width: 100%;
     padding: 0;
+    background-color: #272727;
+}
+
+.ReviewContainer a {
+    width: 100vw;
+    text-align: center;
+    color: white;
+    text-decoration-color: white;
+    background-color: #272727;
 }
 .ReviewHeading {
     font-size: 2rem;
@@ -89,19 +91,29 @@
 }
 
 .enquire-now-link {
-    margin-bottom: 1em;
+    margin-left: -1.5rem !important;
+    margin-bottom: 0;
 }
+
+.enquire-now-link a {
+   text-decoration: none;
+   color: white;
+}
+.enquire-now-link a {
+    text-decoration: none;
+    color: white;
+ }
 
 .LisgoHeadingContainer h3 {
     margin: 1em 0 !important;
 }
 
 .LisgoHeadingContainer h4 {
-    margin: 0.25em 0 !important;
+    margin-top: 2rem;
 }
 
 .home-title-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    margin-top: 2rem
 }

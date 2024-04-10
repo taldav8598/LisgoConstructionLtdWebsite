@@ -1,0 +1,38 @@
+.footer-container {
+    background-color: #E0C123;
+    height: 150px;
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+    color: black !important;
+    padding: 0.5rem 2rem;
+}
+
+.info {
+    margin-bottom: 10px
+}
+
+.info a{
+    text-decoration-color: black !important;
+    color: black;
+}
+
+.social-media-content {
+    display: flex;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.social-media-content img {
+    height: 60px;
+    width: 60px;
+    margin: 5px
+}
+
+.social-media-content svg {
+    color: black
+}
+
+.social-media-content {
+    font-size: 17px;
+}
