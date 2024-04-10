@@ -19,6 +19,11 @@
     text-decoration-color: white;
 }
 
+.success-message {
+    color: white;
+    font-size: 3rem;
+}
+
 .MuiTypography-h2 {
     text-align: center;
 }
