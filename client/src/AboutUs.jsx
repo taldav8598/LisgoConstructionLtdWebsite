@@ -5,7 +5,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export default function AboutUs() {
     return (
-        <section className=''>
+        <section className='about-us-section'>
             <Typography className='header' variant="h3">About us</Typography>
             <div className="about-container">
                 <Grid className='first-journey-part' container spacing={2}>

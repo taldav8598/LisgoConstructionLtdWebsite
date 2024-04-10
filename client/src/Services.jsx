@@ -4,7 +4,7 @@ import './Services.css';
 
 export default function Services() {
     return (
-        <section id="services" className=''>
+        <section id="services" className='services-section'>
             <Typography className='header' variant="h3">Services</Typography>
             <Accordion className="accordion">
         <AccordionSummary

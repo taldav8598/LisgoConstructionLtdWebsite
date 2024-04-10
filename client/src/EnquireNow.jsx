@@ -138,60 +138,113 @@ export default function EnquireNow() {
     // const isInCurrentYear = (date) => date.get('year') === dayjs().get('year');
     // console.log(isInCurrentYear());
 
-    // const disabledDates = (date) => {
+    const disabledDates = (date) => {
+        // console.log(date);
+        let day = new Date(date['$d']).getDay();
+        // console.log('------> day', day)
 
-    //         // if a full day is booked up
-    //         const formattedDate = `${date['$y']}-${ date['$M'] + 1 < 10 ? "0" + (date['$M'] + 1) : (date['$M'] + 1)}-${date['$D'] < 10 ? "0" + date['$D'] : date['$D']}`;
-            
-    //         return dateLists.dateObjectList?.dates.includes(formattedDate);
+        const days = { 
+            0: 'Sunday',
+            1: 'Monday',
+            2: 'Tuesday', 
+            3: 'Wednesday', 
+            4: 'Thursday', 
+            5: 'Friday', 
+            6: 'Saturday', 
+        };
+        
+        const formattedDate = `${date['$y']}${ date['$M'] + 1 < 10 ? "0" + (date['$M'] + 1) : (date['$M'] + 1)}${date['$D'] < 10 ? "0" + date['$D'] : date['$D']}`;
+
+        let numberDate = Number(formattedDate.split('-').join(''));
+
+        if (days[day] === 'Saturday') {
+            return true;
+        } else if (days[day] === 'Sunday') {
+            return false;
+        } else {
+            // console.log("object ----->",dateLists.dateObjectList?.dates, 'formatted Date', numberDate)
+            return dateLists.dateObjectList?.dates.includes(numberDate);
+        }
+    }
+
+    function sliceHour(num) {
+        const numberString = num.toString();
+    
+        if (numberString.length % 2 === 0) {
+            return +numberString.slice(0,2);
+        } else {
+            return +numberString.slice(0,1);
+        }
+    }
+
+    sliceHour(90000);
+    
+    // function sliceMinute(num) {
+    //     console.log("Minute NUMBER ----->", num)
+    //     const numberString = num.toString();
+    
+    //     if (numberString.length % 2 === 0) {
+    //         return +numberString.slice(2,4);
+    //     } else {
+    //         return +numberString.slice(1, 3);
+    //     }
     // }
 
     const disabledTimes = (date) => {
-        let hour = date['$H'];
-        let minute = date['$m'];
-
+        // let minute = date['$m'];
         // let formattedMinute = Number(minute + '00')
-
         // console.log(formattedMinute < Number(dateLists.dateObjectList.dateTimes.start[0].toString().slice(2, dateLists.dateObjectList.dateTimes.start[0].length)));
-        
-        const formattedDate = `${date['$y']}-${ date['$M'] + 1 < 10 ? "0" + (date['$M'] + 1) : (date['$M'] + 1)}-${date['$D'] < 10 ? "0" + date['$D'] : date['$D']}`;
-
+        // const formattedHourString = `${}`
         // Output for number 9 = 90000, number 14 = 140000
-        let formattedHour = Number(hour + '0000');
+        // let formattedHour = `${hour}${formattedMinute}`;
+        // console.log('hour', hour, 'formattedHour', Number(formattedHour))
+        // console.log("formattedTime ------->", formattedHour, "date object ------->", dateLists.dateObjectList?.dateTimes.start);
+        
+        // const formattedTime = new Date(date['$d']).toLocaleTimeString('en-UK').split(':').join('');
+        // console.log("formattedTime", formattedTime);
+        
+        let hour = date['$H'];
+        // let minute = date['$m'];
 
+        const formattedDate = `${date['$y']}${ date['$M'] + 1 < 10 ? "0" + (date['$M'] + 1) : (date['$M'] + 1)}${date['$D'] < 10 ? "0" + date['$D'] : date['$D']}`;
+        
+        // console.log('hour', hour, 'minute', minute);
         // If the dates array contains the selected formatted date check if an appointment time is free.
-        if (dateLists.dateObjectList?.dates.includes(formattedDate)) {
-            const timeCheck = dateLists.dateObjectList?.dates.find((individualDate, index) => {
-
+        // if (dateLists.dateObjectList?.dates.includes(formattedDate)) {
+            return dateLists.dateObjectList?.dates.find((individualDate, index) => {
+                
+                console.log("sliceHour -------->", hour, sliceHour(dateLists.dateObjectList?.dateTimes.start[index]), sliceHour(dateLists.dateObjectList?.dateTimes.end[index]));
+                
                 // If the formatted date is not equal to the individualDate return false
                 if (formattedDate !== individualDate) {
-                    return false
-                // Else if the time in hours is not between 9am and 5pm disable those times.
-                } else if (!(hour >= 9 && hour <= 17)) {
-                    return true
-                } else {
-                // Else, if the formattedHour is less than the value of the starting hour or 
-                // if the formattedHour is greater than or equal to the end hour return false, else return true.
-                    if (formattedHour < dateLists.dateObjectList?.dateTimes.start[index] || formattedHour >= dateLists.dateObjectList?.dateTimes.end[index]) {
-                        return false
-                    } else {
+                    console.log("------------>", formattedDate, individualDate)
+                    if (!(hour >= 9 && hour <= 17)) {
                         return true
+                    } else {
+                    // Else, if the formattedHour is less than the value of the starting hour or 
+                    // if the formattedHour is greater than or equal to the end hour return false, else return true.
+                        if ((hour < sliceHour(dateLists.dateObjectList?.dateTimes.start[index]) || hour >= sliceHour(dateLists.dateObjectList?.dateTimes.end[index]))) {
+                            return false
+                        } else {
+                            return true
+                        }
                     }
-                }
+                // Else if the time in hours is not between 9am and 5pm disable those times.
+                } 
             });
-            return timeCheck
-        } else {
-            // if the time in hours is not between 9am and 5pm disable those times
-            if (!(hour >= 9 && hour <= 17)) {
-                return true
-            }
-        }
+        // } else {
+        //     // if the time in hours is not between 9am and 5pm disable those times
+        //     if (!(hour >= 9 && hour <= 17)) {
+        //         return true
+        //     }
+        // }
     }
 
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
         document.getElementById('enquiry-description-textfield').value =  `Details: Name: ${name} \n Email: ${email} \n Phone number: ${phoneNumber} \n Date of appointment: ${dateInput} \n Enquiry info: ${message}`;
         const element = document.getElementById('enquiry-description-textfield');
         element.style.display = 'none';
@@ -203,7 +256,6 @@ export default function EnquireNow() {
         setShowSuccessMessage(true)
         setTimeout(() => {
             setShowSuccessMessage(false)
-             // Or any other display value you want
         }, 5000);
         console.log(result.text);
       }, (error) => {
@@ -259,10 +311,10 @@ export default function EnquireNow() {
                             sx={{
                                 color: '#fff'
                             }} 
-                            // shouldDisableDate={disabledDates}
+                            shouldDisableDate={disabledDates}
                             shouldDisableTime={disabledTimes}
                             disablePast={true}
-                            timeSteps={{minutes: 15}}
+                            timeSteps={{minutes: 30}}
                             onChange={handleDateChange}
                             name="start_date"
                             />

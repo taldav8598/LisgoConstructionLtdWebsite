@@ -5,7 +5,8 @@ import Home from  './Home';
 import EnquireNow from  './EnquireNow';
 import Footer from './Footer'
 import AboutUs from './AboutUs';
-import Services from './Services'
+import Services from './Services';
+import Gallery from './Gallery';
 import './App.css';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       </div>
       <EnquireNow/>
       <Services />
+      <Gallery />
     </Container>
     <Footer />
     </>
