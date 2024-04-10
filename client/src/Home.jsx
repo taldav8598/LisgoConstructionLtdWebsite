@@ -5,7 +5,7 @@ import Item from './Item';
 import LisgoLogo from './assets/LisgoLogo.jpg';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-export default function Navigation() {
+export default function Home() {
     
     const reviews = [
         {
@@ -71,7 +71,11 @@ export default function Navigation() {
                 <Typography href='#enquire' className='enquire-now-link' variant="h5">
                     <Link href='#enquire'>Enquire now</Link>
                 </Typography>
-                <ExpandMoreIcon className='cheveron' color='white' />
+                <ExpandMoreIcon 
+                className='cheveron' 
+                color='white'
+                fontSize="small"
+                />
             </div>
         </div>
                
