@@ -1,0 +1,84 @@
+.gallery-section {
+    height: 100vh;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+}
+
+.MuiTypography-h3 {
+    text-align: center;
+}
+
+.imageOne {
+    height: 300px;
+    width: 300px;
+    margin: 0.5em;
+    background-color: seagreen;
+    border: 5px solid #fff;
+    border-radius: 20px;
+}
+
+.imageTwo {
+    height: 300px;
+    width: 300px;
+    margin: 0.5em;
+    background-color: rgb(255, 72, 72);
+    border: 5px solid #fff;
+    border-radius: 20px;
+}
+
+.imageThree {
+    height: 300px;
+    width: 300px;
+    margin: 0.5em;
+    background-color: rgb(255, 154, 72);
+    border: 5px solid #fff;
+    border-radius: 20px;
+}
+
+.imageFour {
+    height: 400px;
+    width: 428.34px;
+    margin: 0.5em;
+    background-color: rgb(72, 255, 240);
+    border: 5px solid #fff;
+    border-radius: 20px;
+}
+
+.imageFive {
+    height: 300px;
+    width: 300px;
+    margin: 0.5em;
+    background-color: rgb(72, 167, 255);
+    border: 5px solid #fff;
+    border-radius: 20px;
+}
+
+.imageSix {
+    height: 300px;
+    width: 300px;
+    margin: 0.5em;
+    background-color: rgb(240, 255, 109);
+    border: 5px solid #fff;
+    border-radius: 20px;
+}
+
+.imageSeven {
+    height: 349px;
+    width: 432px;
+    margin: 0.5em;
+    background-color: rgb(177, 83, 255);
+    border: 5px solid #fff;
+    border-radius: 20px;
+}
+
+.imageEight {
+    height: 300px;
+    width: 300px;
+    margin: 0.5em;
+    background-color: rgb(255, 143, 249);
+    border: 5px solid #fff;
+    border-radius: 20px;
+}
