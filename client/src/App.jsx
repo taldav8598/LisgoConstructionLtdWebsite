@@ -3,7 +3,7 @@ import { Container } from '@mui/material';
 import Navigation from './Navigation';
 import Home from  './Home';
 import EnquireNow from  './EnquireNow';
-// import Footer from './Footer'
+import Footer from './Footer'
 import AboutUs from './AboutUs';
 import Services from './Services';
 import Gallery from './Gallery';
@@ -23,7 +23,7 @@ function App() {
       <Services />
       <Gallery />
     </Container>
-    {/* <Footer /> */}
+    <Footer />
     </>
   );
 }
