@@ -40,7 +40,7 @@ export default function Home() {
                             border: 'none',
                             height: '11px',
                             width: '11px',
-                            margin: '0.05em',                       
+                            margin: '0.1em',                       
                         }
                     }}
                     >
