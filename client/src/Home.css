@@ -50,6 +50,17 @@
     margin: 0 1em 1em 1em;
 }
 
+#home > div.ReviewContainer > div > div.css-1m9128y > button > svg {
+    color: inherit;
+    border: none;
+    padding: 0;
+}
+
+#home > div.ReviewContainer > div > div.css-1m9128y > button > svg > circle {
+    color: inherit;
+    padding: 0;
+}
+
 .Carousel {
     display: flex;
     flex-direction: column;
@@ -128,9 +139,9 @@
     width: 3rem !important;
     /* border: 1px solid salmon; */
 }
-
+/* 
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
     40% {transform: translateY(-30px);} 
     60% {transform: translateY(-15px);} 
- } 
+ }  */
