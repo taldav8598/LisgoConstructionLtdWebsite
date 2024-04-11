@@ -41,3 +41,11 @@
 svg {
     color: #FFF;
 }
+
+#submit-button {
+    font-size: 1.25rem;
+}
+
+#submit-button:disabled {
+    color: #a3a3a3b4;
+}

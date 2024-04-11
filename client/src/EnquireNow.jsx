@@ -20,10 +20,10 @@ const theme = createTheme({
               root: {
                 // Some CSS
                 fontSize: '1rem',
-                color: '#111111',
+                color: '#ffffff',
                 border: '4px solid #FFD70D',
                 borderRadius: '14px',
-                backgroundColor: '#FFD70D',
+                backgroundColor: '#111111',
                 textTransform: 'lowercase',
                 margin: '3em 0',
                 fontWeight: 'bolder',
