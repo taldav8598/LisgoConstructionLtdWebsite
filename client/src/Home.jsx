@@ -32,15 +32,7 @@ export default function Home() {
                     className='Carousel'
                     activeIndicatorIconButtonProps={{
                         style: {
-                            display: 'flex',
-                            justifySelf: 'center',
-                            alignSelf: 'center',
-                            backgroundColor: '#ffd70d',
                             color: '#ffd70d',
-                            border: 'none',
-                            height: '11px',
-                            width: '11px',
-                            margin: '0.1em',                       
                         }
                     }}
                     >
