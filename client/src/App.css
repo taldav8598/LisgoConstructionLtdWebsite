@@ -11,6 +11,8 @@
 html {
     color-scheme: dark light;
     scroll-behavior: smooth;
+    /* scroll-snap-type: y mandatory; */
+    /* scroll-padding-top: 6em; */
     overflow-y: scroll;
     overflow-x: hidden;
     background-color: #121212;
@@ -25,6 +27,12 @@ body {
     font-family: 'roboto';
     margin: 0 auto;
 }
+
+/* section {
+    /* background-color: seagreen; */
+    /* scroll-snap-align: start; */
+    /* border: 2px solid black; */
+/* } */
 
 .cheveron-container {
     margin: 0 auto;

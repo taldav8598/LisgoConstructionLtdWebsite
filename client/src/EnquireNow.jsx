@@ -89,15 +89,15 @@ export default function EnquireNow() {
 
     const dateFormatting = async () => {
         //uncommented for git push
-        // const date = new Date();
-        // const formattedMinDate = date.toISOString();
+        const date = new Date();
+        const formattedMinDate = date.toISOString();
 
 
         // const timeStampDate = Date.parse(formattedMinDate);
         // console.log("dateString", new Date(timeStampDate));
         
         await axios
-        .get(``)
+        .get(`https://www.googleapis.com/calendar/v3/calendars/24dd8a69a809ae107ee7047d82890a76acb6944dfc635d195d7fe5a313e8c158@group.calendar.google.com/events?key=AIzaSyDENYFe9hlrFL_zp_d50TS520ujLU0Dqg0&timeMin=${formattedMinDate}`)
         .then(({ data }) => {
             const { items } = data;
         
