@@ -1,10 +1,11 @@
-import { Typography, Accordion, AccordionSummary, AccordionDetails, AccordionActions, Button } from '@mui/material';
+import { Container, Typography, Accordion, AccordionSummary, AccordionDetails, AccordionActions, Button } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import './Services.css';
 
 export default function Services() {
     return (
         <section id="services" className='services-section'>
+          <Container className='services-container'>
             <Typography className='header' variant="h3">Services</Typography>
             <Accordion className="accordion">
         <AccordionSummary
@@ -61,6 +62,7 @@ export default function Services() {
           malesuada lacus ex, sit amet blandit leo lobortis eget.
         </AccordionDetails>
       </Accordion>
+          </Container>
         </section>
     );
 }

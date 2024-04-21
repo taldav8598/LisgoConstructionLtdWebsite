@@ -1,7 +1,7 @@
 .HomeSection {
     margin: 0;
     padding: 0;
-    height: 100%;
+    scroll-margin-top: 6em;
 }
 
 .HomeHeadingContainer {
@@ -32,9 +32,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 7em;
     width: 100%;
     padding: 0;
+    margin-top: 6.1em;
     background-color: #272727;
 }
 
@@ -44,10 +44,22 @@
     color: white;
     text-decoration-color: white;
     background-color: #272727;
+    padding: 1em 0;
 }
 .ReviewHeading {
     font-size: 2rem;
     margin: 0 1em 1em 1em;
+}
+
+#home > div.ReviewContainer > div > div.css-1m9128y > button > svg {
+    color: inherit;
+    border: none;
+    padding: 0;
+}
+
+#home > div.ReviewContainer > div > div.css-1m9128y > button > svg > circle {
+    color: inherit;
+    padding: 0;
 }
 
 .Carousel {
@@ -72,6 +84,10 @@
 
 .Carousel > :nth-child(4) {
     margin: .5em;
+}
+
+.Carousel > :nth-child(4) > button:active {
+    color: yellow;
 }
 
 @keyframes rotate {
@@ -126,7 +142,11 @@
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
-    40% {transform: translateY(-30px);} 
-    60% {transform: translateY(-15px);} 
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+	40% {transform: translateY(-15px);}
+	60% {transform: translateY(-10px);}
  } 
+
+.cheveron {
+    animation: bounce 5s linear infinite;
+}

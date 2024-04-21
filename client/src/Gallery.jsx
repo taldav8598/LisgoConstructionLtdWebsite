@@ -4,7 +4,7 @@ import './Gallery.css';
 export default function Gallery() {
 
     return (
-        <section className='gallery-section'>
+        <section id="gallery" className='gallery-section'>
         <div className='gallery-container'>
             <div className="imageOne"></div>
             <Typography variant="h3">Gallery</Typography>

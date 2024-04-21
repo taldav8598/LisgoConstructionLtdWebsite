@@ -1,15 +1,11 @@
-.gallery-section {
-    height: 100%;
-    margin: 1em 0;
-}
 
 .gallery-container {
     display: grid; 
- 
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
-    
     gap: 0.75em;
+    margin-top: -8em;
+    margin-bottom: 1em;
  }
    
  .imageOne {    
@@ -133,9 +129,4 @@
     border: 5px solid #fff;
     border-radius: 20px;
     height: 300px;
- }
-
- .empty{
-    height: 300px;
-    width: 300px;
  }

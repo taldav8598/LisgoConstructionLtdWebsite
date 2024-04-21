@@ -32,7 +32,7 @@ export default function Home() {
                     className='Carousel'
                     activeIndicatorIconButtonProps={{
                         style: {
-                            color: '#ffd70d'
+                            color: '#ffd70d',
                         }
                     }}
                     >
