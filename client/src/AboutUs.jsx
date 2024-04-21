@@ -1,7 +1,6 @@
 import { Typography, Grid, Link } from '@mui/material';
 import './AboutUs.css';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 
 export default function AboutUs() {
     return (
@@ -42,10 +41,10 @@ export default function AboutUs() {
             </div>
             
             <div onClick={() => document.getElementById('enquire').scrollIntoView()} className="cheveron-container">
+                <ExpandLessIcon className='cheveron' color='white' />
                 <Typography href='#enquire' className='enquire-now-link' variant="h5">
                     <Link href='#enquire'>Enquire now</Link>
                 </Typography>
-                <ExpandMoreIcon className='cheveron' color='white' />
             </div>
             
         </section>

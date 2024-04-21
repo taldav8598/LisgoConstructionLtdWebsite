@@ -155,7 +155,7 @@ const days = {
 
 
         if (days[day] !== 'Sunday') {
-             if (!(hour >= 9 && hour <= 17)) {
+             if (!(hour >= 9 && hour < 17)) {
                 return true
             } else {
                 return false;
@@ -164,7 +164,7 @@ const days = {
             let minutes = date['$m'];
 
             if (dateLists.dateObjectList?.dates.includes(Number(formattedDate))) {
-                if (!(hour >= 9 && hour <= 17)) {
+                if (!(hour >= 9 && hour < 17)) {
                     return true
                 } else {
 
@@ -187,11 +187,18 @@ const days = {
                             return true
                         }
 
+                        if (String(endHour).includes('.3')) {
+                            endHour = endHour - 1
+                        }
+
+                        if (hour >= startHour && hour < endHour) {
+                            return true
+                        }
+
                         let time = `${hour}${minutes}${minutes == 30 ? ('00') : ("000")}`;
 
                         if (minutes === 0 || minutes === 30) {
-
-                            if (Number(time) > startTime && Number(time) < endTime) {
+                            if (Number(time) >= startTime && Number(time) < endTime) {
                                 return true
                             } else {
                                 return false
@@ -268,8 +275,7 @@ const days = {
             <ThemeProvider theme={theme}>
             <Container className='enquire-now-container'>
             <Typography className='enquire-now-heading' variant='h3' sx={{textAlign: 'center'}}>Enquire now</Typography>
-            <p>Please see the services section if you’re unsure about your enquiry classification or want to find out more about the <a href="#services">services</a> that we offer.</p>  
-            <p>If you have any queries feel free to <a href="">contact us.</a></p>
+            <p>Please see the services section if you’re unsure about your enquiry or want to find out more about the <a href="#services">services</a> we offer.</p>  
             <br />
             <form className='enquire-now-form' onSubmit={name && email && postcode ? handleSubmit : null}>
                 <div className='label-wrapper'>

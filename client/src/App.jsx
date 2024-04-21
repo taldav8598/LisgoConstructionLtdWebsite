@@ -16,11 +16,11 @@ function App() {
        <Navigation/>
     <Container className='app-container' maxWidth="lg">
       <Home/>
+      <EnquireNow/>
+      <Services />
       <div id="aboutUs">
       <AboutUs />
       </div>
-      <EnquireNow/>
-      <Services />
       <Gallery />
     </Container>
     <Footer />

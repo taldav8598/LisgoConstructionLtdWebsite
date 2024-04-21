@@ -3,8 +3,8 @@
 }
 
 .about-us-section {
-    height: 100vh;
     scroll-margin-top: 6em;
+    margin-bottom: 3rem;
 }
 
 .about-container {

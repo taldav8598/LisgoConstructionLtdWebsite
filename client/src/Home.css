@@ -1,5 +1,5 @@
 .HomeSection {
-    margin: 0;
+    margin-bottom: 3rem;
     padding: 0;
     scroll-margin-top: 6em;
 }
@@ -136,9 +136,8 @@
 }
 
 .cheveron-container > svg {
-    height: 3rem !important;
-    width: 3rem !important;
-    /* border: 1px solid salmon; */
+    height: 4rem !important;
+    width: 4rem !important;
 }
 
 @keyframes bounce {
