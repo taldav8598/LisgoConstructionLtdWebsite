@@ -19,9 +19,8 @@
     text-decoration-color: white;
 }
 
-.success-message {
-    color: white;
-    font-size: 3rem;
+.success-message svg {
+    color: green;
 }
 
 .MuiTypography-h2 {
