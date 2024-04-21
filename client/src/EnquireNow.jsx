@@ -1,4 +1,4 @@
-import { Button, Container, Input, InputLabel, TextField, Typography } from '@mui/material';
+import { Button, Container, Input, InputLabel, TextField, Typography, Alert } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import dayjs from 'dayjs';
 import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
@@ -10,15 +10,12 @@ import { useEffect, useState } from 'react';
 import emailjs from 'emailjs-com';
 import axios from 'axios';
 import './EnquireNow.css'
-// import { ThemeProvider } from '@emotion/react';
 
 const theme = createTheme({
     components: {
         MuiButton: {
             styleOverrides: {
-              // Name of the slot
               root: {
-                // Some CSS
                 fontSize: '1rem',
                 color: '#ffffff',
                 border: '4px solid #FFD70D',
@@ -42,9 +39,7 @@ const theme = createTheme({
           },
       MuiInputBase: {
         styleOverrides: {
-          // Name of the slot
           root: {
-            // Some CSS
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
@@ -60,9 +55,7 @@ const theme = createTheme({
       },
       MuiInputLabel: {
         styleOverrides: {
-          // Name of the slot
           root: {
-            // Some CSS
             fontSize: '1rem',
             backgroundColor: '111111',
             color: '#fff',
@@ -82,17 +75,26 @@ export default function EnquireNow() {
     const [message, setMessage] = useState('');
     const [dateInput, setDateInput] = useState(new Date(today).toLocaleString());
     const [showSuccessMessage, setShowSuccessMessage] = useState('');
+    const [postcode, setPostcode] = useState('');
+    const [validEmail, setValidEmail] = useState(true);
+    const [validPostcode, setValidPostcode] = useState(true);
 
 // RFC 3339 format
 
    
-
+const days = { 
+    0: 'Sunday',
+    1: 'Monday',
+    2: 'Tuesday', 
+    3: 'Wednesday', 
+    4: 'Thursday', 
+    5: 'Friday', 
+    6: 'Saturday', 
+};
     const dateFormatting = async () => {
         //uncommented for git push
         const date = new Date();
         const formattedMinDate = date.toISOString();
-
-
         // const timeStampDate = Date.parse(formattedMinDate);
         // console.log("dateString", new Date(timeStampDate));
         
@@ -107,9 +109,6 @@ export default function EnquireNow() {
             };
 
             items.forEach(item => {
-                // start:[{date: 2024-04-04}, {time: 16:30:00}]
-                // dateObjectList.start.push(date); 
-                // dateObjectList.end.push(item.end.dateTime);
                 if (item.start.dateTime) {
                     const date = new Date(item.start.dateTime);
                     const endDate = new Date(item.end.dateTime);
@@ -118,9 +117,6 @@ export default function EnquireNow() {
                     const localeStringEnd = endDate.toLocaleTimeString('en-UK');
 
                     let shortenedDate = `${date.getFullYear()}-${(date.getMonth() + 1) < 10 ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1)}-${date.getDate() < 10 ? "0" + date.getDate() : date.getDate()}`;
-                    
-                    // const formattedLocaleString = Number(localeString.split(':').join(''));
-                    // console.log(!dateObjectList.dates.includes(formattedLocaleString) ? dateObjectList.dates : false);
 
                     dateObjectList.dates.push(Number(shortenedDate.replaceAll('-', '')));
                     
@@ -135,24 +131,8 @@ export default function EnquireNow() {
         dateFormatting();
     }, []);
 
-    // const isInCurrentYear = (date) => date.get('year') === dayjs().get('year');
-    // console.log(isInCurrentYear());
-
     const disabledDates = (date) => {
-        // console.log(date);
-        let day = new Date(date['$d']).getDay();
-        // console.log('------> day', day)
-
-        const days = { 
-            0: 'Sunday',
-            1: 'Monday',
-            2: 'Tuesday', 
-            3: 'Wednesday', 
-            4: 'Thursday', 
-            5: 'Friday', 
-            6: 'Saturday', 
-        };
-        
+        let day = new Date(date['$d']).getDay();  
         const formattedDate = `${date['$y']}${ date['$M'] + 1 < 10 ? "0" + (date['$M'] + 1) : (date['$M'] + 1)}${date['$D'] < 10 ? "0" + date['$D'] : date['$D']}`;
 
         let numberDate = Number(formattedDate.split('-').join(''));
@@ -162,105 +142,110 @@ export default function EnquireNow() {
         } else if (days[day] === 'Sunday') {
             return false;
         } else {
-            // console.log("object ----->",dateLists.dateObjectList?.dates, 'formatted Date', numberDate)
             return dateLists.dateObjectList?.dates.includes(numberDate);
         }
     }
 
-    function sliceHour(num) {
-        const numberString = num.toString();
-    
-        if (numberString.length % 2 === 0) {
-            return +numberString.slice(0,2);
-        } else {
-            return +numberString.slice(0,1);
-        }
-    }
-
-    sliceHour(90000);
-    
-    // function sliceMinute(num) {
-    //     console.log("Minute NUMBER ----->", num)
-    //     const numberString = num.toString();
-    
-    //     if (numberString.length % 2 === 0) {
-    //         return +numberString.slice(2,4);
-    //     } else {
-    //         return +numberString.slice(1, 3);
-    //     }
-    // }
-
     const disabledTimes = (date) => {
-        // let minute = date['$m'];
-        // let formattedMinute = Number(minute + '00')
-        // console.log(formattedMinute < Number(dateLists.dateObjectList.dateTimes.start[0].toString().slice(2, dateLists.dateObjectList.dateTimes.start[0].length)));
-        // const formattedHourString = `${}`
-        // Output for number 9 = 90000, number 14 = 140000
-        // let formattedHour = `${hour}${formattedMinute}`;
-        // console.log('hour', hour, 'formattedHour', Number(formattedHour))
-        // console.log("formattedTime ------->", formattedHour, "date object ------->", dateLists.dateObjectList?.dateTimes.start);
-        
-        // const formattedTime = new Date(date['$d']).toLocaleTimeString('en-UK').split(':').join('');
-        // console.log("formattedTime", formattedTime);
-        
-        let hour = date['$H'];
-        // let minute = date['$m'];
 
+        let day = new Date(date['$d']).getDay();
+        let hour = date['$H'];
         const formattedDate = `${date['$y']}${ date['$M'] + 1 < 10 ? "0" + (date['$M'] + 1) : (date['$M'] + 1)}${date['$D'] < 10 ? "0" + date['$D'] : date['$D']}`;
-        
-        // console.log('hour', hour, 'minute', minute);
-        // If the dates array contains the selected formatted date check if an appointment time is free.
-        // if (dateLists.dateObjectList?.dates.includes(formattedDate)) {
-            return dateLists.dateObjectList?.dates.find((individualDate, index) => {
-                
-                console.log("sliceHour -------->", hour, sliceHour(dateLists.dateObjectList?.dateTimes.start[index]), sliceHour(dateLists.dateObjectList?.dateTimes.end[index]));
-                
-                // If the formatted date is not equal to the individualDate return false
-                if (formattedDate !== individualDate) {
-                    console.log("------------>", formattedDate, individualDate)
-                    if (!(hour >= 9 && hour <= 17)) {
-                        return true
-                    } else {
-                    // Else, if the formattedHour is less than the value of the starting hour or 
-                    // if the formattedHour is greater than or equal to the end hour return false, else return true.
-                        if ((hour < sliceHour(dateLists.dateObjectList?.dateTimes.start[index]) || hour >= sliceHour(dateLists.dateObjectList?.dateTimes.end[index]))) {
-                            return false
-                        } else {
+
+
+
+        if (days[day] !== 'Sunday') {
+             if (!(hour >= 9 && hour <= 17)) {
+                return true
+            } else {
+                return false;
+            }
+        } else {
+            let minutes = date['$m'];
+
+            if (dateLists.dateObjectList?.dates.includes(Number(formattedDate))) {
+                if (!(hour >= 9 && hour <= 17)) {
+                    return true
+                } else {
+
+                    let mappedObj = dateLists.dateObjectList?.dates.map((individualDate, index) => {
+                        if (individualDate === Number(formattedDate)) {
+                            return index
+                        }
+                    })
+                    let timeIndexes = mappedObj.filter(Number)
+                    
+    
+                    return timeIndexes.find((index) => {
+                        let startTime = dateLists.dateObjectList?.dateTimes.start[index];
+                        let endTime =  dateLists.dateObjectList?.dateTimes.end[index];
+
+                        let startHour = startTime / 10000;
+                        let endHour = endTime / 10000;
+
+                        if(hour >= startHour && hour < endHour && (!String(startTime).includes('30') || !String(endTime).includes('30'))) {
                             return true
                         }
-                    }
-                // Else if the time in hours is not between 9am and 5pm disable those times.
-                } 
-            });
-        // } else {
-        //     // if the time in hours is not between 9am and 5pm disable those times
-        //     if (!(hour >= 9 && hour <= 17)) {
-        //         return true
-        //     }
-        // }
+
+                        let time = `${hour}${minutes}${minutes == 30 ? ('00') : ("000")}`;
+
+                        if (minutes === 0 || minutes === 30) {
+
+                            if (Number(time) > startTime && Number(time) < endTime) {
+                                return true
+                            } else {
+                                return false
+                            }
+                        }
+                    })
+                }
+            }
+        } 
     }
-
-
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setValidPostcode(true)
+        setValidEmail(true)
+        let postcodeCheck = true;
+        let emailCheck = true;
 
-        document.getElementById('enquiry-description-textfield').value =  `Details: Name: ${name} \n Email: ${email} \n Phone number: ${phoneNumber} \n Date of appointment: ${dateInput} \n Enquiry info: ${message}`;
-        const element = document.getElementById('enquiry-description-textfield');
-        element.style.display = 'none';
+        if (!validateEmail(email)) {
+            setValidEmail(false);
+            emailCheck = false
+            setTimeout(() => {
+                setValidEmail(true)
+            }, 30000)
+        }
+        if (!validatePostcode(postcode)) {
+            setValidPostcode(false);
+            postcodeCheck = false
+            setTimeout(() => {
+                setValidPostcode(true)
+            }, 30000)
+        }
+
+        if(!emailCheck || !postcodeCheck) {
+            return
+        } else {
+            document.getElementById('enquiry-description-textfield').value =  `Details: Name: ${name} \n Email: ${email} \n Postcode: ${postcode} \n Phone number: ${phoneNumber} \n Date of appointment: ${dateInput} \n Enquiry info: ${message}`;
+            const element = document.getElementById('enquiry-description-textfield');
+            element.style.display = 'none';
         
-    emailjs.sendForm('service_rzgfdla', 'template_7mhh8i9', e.target, 'iejlvPp_cY_iY6NNE')
-      .then((result) => {
-        e.target.reset();
-        element.style.display = 'block';
-        setShowSuccessMessage(true)
-        setTimeout(() => {
-            setShowSuccessMessage(false)
-        }, 5000);
-        console.log(result.text);
-      }, (error) => {
-        console.log(error.text);
-      });
+            emailjs.sendForm('service_rzgfdla', 'template_7mhh8i9', e.target, 'iejlvPp_cY_iY6NNE')
+                .then((result) => {
+                    e.target.reset();
+                    element.style.display = 'block';
+                      
+                setShowSuccessMessage(true)
+                    setTimeout(() => {
+                        setShowSuccessMessage(false)
+                    }, 10000);
+                    console.log(result.text);
+                }, (error) => {
+                    console.log(error.text);
+            });
+        }
     }
 
     const handleDateChange = (date) => {
@@ -268,29 +253,46 @@ export default function EnquireNow() {
         return setDateInput(date2.toLocaleString());
     }
 
+    const validateEmail = (email) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    };
+
+    const validatePostcode = (postcode) => {
+        const postcodeRegex = /^[A-Za-z]{1,2}\d{1,2}[A-Za-z]?\s?\d[A-Za-z]{2}$/;
+        return postcodeRegex.test(postcode);
+    };
+
     return (
         <section id="enquire" className='enquire-now-section'>
-            {/* <h1>{dateLists.start}</h1> */}
             <ThemeProvider theme={theme}>
             <Container className='enquire-now-container'>
             <Typography className='enquire-now-heading' variant='h3' sx={{textAlign: 'center'}}>Enquire now</Typography>
             <p>Please see the services section if you’re unsure about your enquiry classification or want to find out more about the <a href="#services">services</a> that we offer.</p>  
             <p>If you have any queries feel free to <a href="">contact us.</a></p>
             <br />
-            <form className='enquire-now-form' onSubmit={name && email ? handleSubmit : null}>
+            <form className='enquire-now-form' onSubmit={name && email && postcode ? handleSubmit : null}>
                 <div className='label-wrapper'>
                 <InputLabel htmlFor="name-input">Name</InputLabel>
-                <InputLabel htmlFor="name-input">*required field</InputLabel>
+                <InputLabel htmlFor="name-input">* required field</InputLabel>
                 </div>
                 <Input name="from_name" id='name-input' variant='outlined' onChange={({ target }) => setName(target.value)} value={name}></Input>
                 <div className='label-wrapper'>
                 <InputLabel htmlFor="email-input">Email</InputLabel>
-                <InputLabel htmlFor="name-input">*required field</InputLabel>
+                <InputLabel htmlFor="name-input">* required field</InputLabel>
                 </div>
+                
                 <Input name="email" id='email-input' variant='outlined' value={email} onChange={({ target }) => (setEmail(target.value))}></Input>
+                {!validEmail && <p> * Not a valid email. Please try again.</p>}
+                <div className='label-wrapper'>
+                <InputLabel htmlFor="postcode">Postcode</InputLabel>
+                <InputLabel htmlFor="postcode-input">* required field</InputLabel>
+                </div>
+                <Input name="postcode" id='postcode-input' variant='outlined' value={postcode} onChange={({ target }) => (setPostcode(target.value))}></Input>
+                {!validPostcode && <p> * Not a valid postcode. Please try again.</p>}
                 <InputLabel htmlFor="phone-number-input">Phone number</InputLabel>
                 <Input name="phone_number" id='phone-number-input' variant='outlined' value={phoneNumber} onChange={({ target }) => (setPhoneNumber(target.value))}></Input>
-                <InputLabel htmlFor="enquiry-description-textfield">Message</InputLabel>
+                <InputLabel htmlFor="enquiry-description-textfield">Message - Please be as detailed as possible *</InputLabel>
                 <TextField
                 id="enquiry-description-textfield"
                 name="message"
@@ -300,8 +302,6 @@ export default function EnquireNow() {
                 placeholder="Please provide a description of your enquiry"
                 onChange={({ target }) => (setMessage(target.value))}
                 />
-                {/* <InputLabel htmlFor="choose-file-picker">Choose a file</InputLabel>
-                <Button id="choose-file-button">Choose a file</Button> */}
                 <InputLabel htmlFor="name-input">Choose a date or time of when you want the work to start or when you would like an appointment</InputLabel>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DemoContainer components={['DateTimePicker']}>
@@ -321,12 +321,14 @@ export default function EnquireNow() {
                         </DemoItem>
                 </DemoContainer>
             </LocalizationProvider>
-            <Button id="submit-button" type='submit' fullWidth={true} disabled={ !name || !email } variant='contain'>submit</Button>
+            <Button id="submit-button" type='submit' fullWidth={true} disabled={ !name || !email || !postcode } variant='contain'>submit</Button>
 
             </form>
-            {showSuccessMessage && (<p className='success-message'>Message sent successfully</p>)}
-
-
+            {showSuccessMessage && (
+                <>
+                    <Alert className='success-message' severity="success" onClose={() => {setShowSuccessMessage(false)}}>Message sent successfully!</Alert>
+                </>
+            )}
             </Container>
             </ThemeProvider>
 
