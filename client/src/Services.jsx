@@ -1,5 +1,7 @@
-import { Container, Typography, Accordion, AccordionSummary, AccordionDetails, AccordionActions, Button } from '@mui/material';
+import { Container, Typography, Accordion, AccordionSummary, AccordionDetails, Link } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+
 import './Services.css';
 
 export default function Services() {
@@ -63,6 +65,12 @@ export default function Services() {
         </AccordionDetails>
       </Accordion>
           </Container>
+          <div onClick={() => document.getElementById('enquire').scrollIntoView()} className="cheveron-container">
+                <ExpandLessIcon className='cheveron' color='white' />
+                <Typography href='#enquire' className='enquire-now-link' variant="h5">
+                    <Link href='#enquire'>Enquire now</Link>
+                </Typography>
+            </div>
         </section>
     );
 }

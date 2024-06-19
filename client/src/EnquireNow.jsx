@@ -1,10 +1,12 @@
-import { Button, Container, Input, InputLabel, TextField, Typography, Alert } from '@mui/material';
+import { Button, Container, Input, InputLabel, TextField, Typography, Alert, Link } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import dayjs from 'dayjs';
 import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
 
 import { useEffect, useState } from 'react';
 import emailjs from 'emailjs-com';
@@ -14,28 +16,28 @@ import './EnquireNow.css'
 const theme = createTheme({
     components: {
         MuiButton: {
-            styleOverrides: {
-              root: {
-                fontSize: '1rem',
-                color: '#ffffff',
-                border: '4px solid #FFD70D',
-                borderRadius: '14px',
-                backgroundColor: '#111111',
-                textTransform: 'lowercase',
-                margin: '3em 0',
-                fontWeight: 'bolder',
-                ":hover": {
-                    fontSize: '1rem',
-                color: '#FFD70D',
-                border: '4px solid #FFD70D',
-                borderRadius: '14px',
-                backgroundColor: '#111111',
-                textTransform: 'lowercase',
-                margin: '3em 0',
-                fontWeight: 'bolder',
-                }
-              },
-            },
+            // styleOverrides: {
+            //   root: {
+            //     fontSize: '1rem',
+            //     color: '#ffffff',
+            //     border: '4px solid #FFD70D',
+            //     borderRadius: '14px',
+            //     backgroundColor: '#111111',
+            //     textTransform: 'lowercase',
+            //     margin: '3em 0',
+            //     fontWeight: 'bolder',
+            //     ":hover": {
+            //         fontSize: '1rem',
+            //     color: '#FFD70D',
+            //     border: '4px solid #FFD70D',
+            //     borderRadius: '14px',
+            //     backgroundColor: '#111111',
+            //     textTransform: 'lowercase',
+            //     margin: '3em 0',
+            //     fontWeight: 'bolder',
+            //     }
+            //   },
+            // },
           },
       MuiInputBase: {
         styleOverrides: {
@@ -67,6 +69,7 @@ const theme = createTheme({
   });
 
 export default function EnquireNow() {
+    const apiUrl = import.meta.env.VITE_API_URL;
     const today = dayjs();
     const [dateLists, setDateLists] = useState({});
     const [name, setName] = useState('');
@@ -92,14 +95,10 @@ const days = {
     6: 'Saturday', 
 };
     const dateFormatting = async () => {
-        //uncommented for git push
         const date = new Date();
         const formattedMinDate = date.toISOString();
-        // const timeStampDate = Date.parse(formattedMinDate);
-        // console.log("dateString", new Date(timeStampDate));
-        
         await axios
-        .get(`https://www.googleapis.com/calendar/v3/calendars/24dd8a69a809ae107ee7047d82890a76acb6944dfc635d195d7fe5a313e8c158@group.calendar.google.com/events?key=AIzaSyDENYFe9hlrFL_zp_d50TS520ujLU0Dqg0&timeMin=${formattedMinDate}`)
+        .get(`${apiUrl}${formattedMinDate}`)
         .then(({ data }) => {
             const { items } = data;
         
@@ -280,19 +279,19 @@ const days = {
             <form className='enquire-now-form' onSubmit={name && email && postcode ? handleSubmit : null}>
                 <div className='label-wrapper'>
                 <InputLabel htmlFor="name-input">Name</InputLabel>
-                <InputLabel htmlFor="name-input">* required field</InputLabel>
+                <InputLabel htmlFor="name-input">* Required field</InputLabel>
                 </div>
                 <Input name="from_name" id='name-input' variant='outlined' onChange={({ target }) => setName(target.value)} value={name}></Input>
                 <div className='label-wrapper'>
                 <InputLabel htmlFor="email-input">Email</InputLabel>
-                <InputLabel htmlFor="name-input">* required field</InputLabel>
+                <InputLabel htmlFor="name-input">* Required field</InputLabel>
                 </div>
                 
                 <Input name="email" id='email-input' variant='outlined' value={email} onChange={({ target }) => (setEmail(target.value))}></Input>
                 {!validEmail && <p> * Not a valid email. Please try again.</p>}
                 <div className='label-wrapper'>
                 <InputLabel htmlFor="postcode">Postcode</InputLabel>
-                <InputLabel htmlFor="postcode-input">* required field</InputLabel>
+                <InputLabel htmlFor="postcode-input">* Required field</InputLabel>
                 </div>
                 <Input name="postcode" id='postcode-input' variant='outlined' value={postcode} onChange={({ target }) => (setPostcode(target.value))}></Input>
                 {!validPostcode && <p> * Not a valid postcode. Please try again.</p>}
@@ -335,8 +334,16 @@ const days = {
                     <Alert className='success-message' severity="success" onClose={() => {setShowSuccessMessage(false)}}>Message sent successfully!</Alert>
                 </>
             )}
+            <div onClick={() => document.getElementById('services').scrollIntoView()} className="cheveron-container">
+                <ExpandMoreIcon className='cheveron' color='white' />
+                <Typography href='#services' className='enquire-now-link' variant="h5">
+                    <Link href='#services'>Services</Link>
+                </Typography>
+            </div>
             </Container>
+            
             </ThemeProvider>
+            
 
         </section>
     );
