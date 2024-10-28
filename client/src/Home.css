@@ -15,7 +15,6 @@
 
 .LisgoHomeLogoContainer {
   margin: 2em;
-  border: 1px solid seagreen;
 }
 
 .LisgoHomeLogoContainer > svg {
@@ -32,7 +31,8 @@
 }
 
 .leading-company-heading {
-  font-size: 4rem;
+  font-size: 4.7rem;
+  text-align: center;
 }
 
 .ReviewContainer {
