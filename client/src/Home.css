@@ -117,7 +117,6 @@
 }
 
 .enquire-now-link {
-  margin-left: -1.5rem !important;
   margin-bottom: 0;
 }
 
@@ -145,7 +144,15 @@
   margin-top: 0;
 }
 
+.cheveron-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .cheveron-container > svg {
+  margin: 0 auto;
   height: 4rem !important;
   width: 4rem !important;
 }
