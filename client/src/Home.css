@@ -6,21 +6,22 @@
 
 .HomeHeadingContainer {
   margin: 0;
-  border: 1px solid yellow;
+}
+
+.LisgoHeadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-self: center;
 }
 
 .LisgoHeadingContainer a {
   color: #ffffff;
 }
 
-.LisgoHomeLogoContainer {
-  margin: 2em;
-}
-
 .LisgoHomeLogoContainer > svg {
-  height: 500px !important;
-  width: 500px !important;
-  border: 1px solid yellow;
+  height: 450px !important;
+  width: 450px !important;
 }
 
 .LisgoHomeLogo {
@@ -33,6 +34,7 @@
 .leading-company-heading {
   font-size: 4.7rem;
   text-align: center;
+  margin: 0.4em 0;
 }
 
 .ReviewContainer {
@@ -129,11 +131,11 @@
 }
 
 .LisgoHeadingContainer h3 {
-  margin: 1em 0 !important;
+  margin: 1.5em 0 0.25em 0 !important;
 }
 
 .LisgoHeadingContainer h4 {
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 
 .home-title-container {
@@ -141,7 +143,6 @@
   justify-content: center;
   flex-direction: column;
   margin-top: 0;
-  border: 1px solid orange;
 }
 
 .cheveron-container > svg {

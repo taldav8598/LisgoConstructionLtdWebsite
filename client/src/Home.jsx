@@ -89,8 +89,14 @@ export default function Home() {
         <h1 className="leading-company-heading">
           Leading Construction Company
         </h1>
-        <Grid container spacing={0}>
-          <Grid lg={6} style={{ border: "1px solid red" }}>
+        <Grid
+          container
+          style={{
+            display: "flex",
+            justifyContent: "space-around",
+          }}
+        >
+          <Grid size="grow">
             <div className="LisgoHeadingContainer">
               <Typography variant="h3">Lisgo Construction Ltd.</Typography>
               <Typography className="" variant="h4">
@@ -103,7 +109,7 @@ export default function Home() {
               </Typography>
             </div>
           </Grid>
-          <Grid size="grow" style={{ border: "1px solid purple" }}>
+          <Grid size="grow">
             <div className="LisgoHomeLogoContainer">
               <svg
                 className="LisgoHomeLogo"
