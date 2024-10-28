@@ -1,240 +1,250 @@
 .HomeSection {
-    margin-bottom: 3rem;
-    padding: 0;
-    scroll-margin-top: 6em;
+  margin-bottom: 3rem;
+  padding: 0;
+  scroll-margin-top: 6em;
 }
 
 .HomeHeadingContainer {
-    margin: 0;
+  margin: 0;
+  border: 1px solid yellow;
 }
 
 .LisgoHeadingContainer a {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .LisgoHomeLogoContainer {
-    margin: 1em;
+  margin: 2em;
+  border: 1px solid seagreen;
+}
+
+.LisgoHomeLogoContainer > svg {
+  height: 500px !important;
+  width: 500px !important;
+  border: 1px solid yellow;
 }
 
 .LisgoHomeLogo {
-    height: 18rem;
-    width: 18rem;
-    border-radius: 50%;
-    animation: rotate 10s linear infinite;
+  height: 18rem;
+  width: 18rem;
+  border-radius: 50%;
+  animation: rotate 10s linear infinite;
 }
 
 .leading-company-heading {
-    font-size: 4rem;
+  font-size: 4rem;
 }
 
-.ReviewContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 0;
-    margin-top: 6.1em;
-    background-color: #272727;
+.ReviewContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+  margin-top: 6.1em;
+  background-color: #272727;
 }
 
 .ReviewContainer a {
-    width: 100vw;
-    text-align: center;
-    color: white;
-    text-decoration-color: white;
-    background-color: #272727;
-    padding: 1em 0;
+  width: 100vw;
+  text-align: center;
+  color: white;
+  text-decoration-color: white;
+  background-color: #272727;
+  padding: 1em 0;
 }
 .ReviewHeading {
-    font-size: 2rem;
-    margin: 0 1em 1em 1em;
+  font-size: 2rem;
+  margin: 0 1em 1em 1em;
 }
 
 #home > div.ReviewContainer > div > div.css-1m9128y > button > svg {
-    color: inherit;
-    border: none;
-    padding: 0;
+  color: inherit;
+  border: none;
+  padding: 0;
 }
 
 #home > div.ReviewContainer > div > div.css-1m9128y > button > svg > circle {
-    color: inherit;
-    padding: 0;
+  color: inherit;
+  padding: 0;
 }
 
 .Carousel {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100px;
-    background-color: #272727;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100px;
+  background-color: #272727;
 }
 
-.Carousel div {    
-    display: flex;
-    justify-content: center;
-    background-color: transparent !important;
-    border: none;
-    color: #ffffff;
-    box-shadow: none;
-    font-style: italic;
+.Carousel div {
+  display: flex;
+  justify-content: center;
+  background-color: transparent !important;
+  border: none;
+  color: #ffffff;
+  box-shadow: none;
+  font-style: italic;
 }
 
 .Carousel > :nth-child(4) {
-    margin: .5em;
+  margin: 0.5em;
 }
 
 .Carousel > :nth-child(4) > button:active {
-    color: yellow;
+  color: yellow;
 }
 
 @keyframes rotate {
-    0% {
+  0% {
     transform: rotate(0deg); /* Starting position */
-    }
-    50% {
+  }
+  50% {
     transform: rotate(90deg); /* Rotate 90 degrees clockwise */
-    }
-    100% {
+  }
+  100% {
     transform: rotate(0deg); /* Back to starting position */
-    }
-    }
+  }
+}
 
 .about-us-link {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 .enquire-now-link {
-    margin-left: -1.5rem !important;
-    margin-bottom: 0;
+  margin-left: -1.5rem !important;
+  margin-bottom: 0;
 }
 
 .enquire-now-link a {
-   text-decoration: none;
-   color: white;
+  text-decoration: none;
+  color: white;
 }
 .enquire-now-link a {
-    text-decoration: none;
-    color: white;
- }
+  text-decoration: none;
+  color: white;
+}
 
 .LisgoHeadingContainer h3 {
-    margin: 1em 0 !important;
+  margin: 1em 0 !important;
 }
 
 .LisgoHeadingContainer h4 {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 
 .home-title-container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 2rem
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 0;
+  border: 1px solid orange;
 }
 
 .cheveron-container > svg {
-    height: 4rem !important;
-    width: 4rem !important;
+  height: 4rem !important;
+  width: 4rem !important;
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-	40% {transform: translateY(-15px);}
-	60% {transform: translateY(-10px);}
- } 
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-15px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
 
 .cheveron {
-    animation: bounce 5s linear infinite;
+  animation: bounce 5s linear infinite;
 }
 
 .check-a-trade-container {
-    
-    background-color: white !important;
-    max-height: 100px;
-    width: 100%;
-    color: black;
+  background-color: white !important;
+  max-height: 100px;
+  width: 100%;
+  color: black;
 }
 .check-a-trade-container img {
-    max-width: 250px;
-    max-height: 70px;
+  max-width: 250px;
+  max-height: 70px;
 }
 
-
-
 .star {
-    color: #ebcb2b;
-    font-size: 2rem !important;
+  color: #ebcb2b;
+  font-size: 2rem !important;
 }
 
 .rating-container {
-    display: flex;
-    margin-right: 1rem;
-    margin-top: 1rem;
+  display: flex;
+  margin-right: 1rem;
+  margin-top: 1rem;
 }
 
 .rating-and-img {
-    display: flex;
-    justify-content: space-around;
-
+  display: flex;
+  justify-content: space-around;
 }
 
 .rating-container h5 {
-    margin-top: 0.4rem;
-    margin-right: 1rem;
+  margin-top: 0.4rem;
+  margin-right: 1rem;
 }
 
 .rating-container h6 {
-    display: inline-block;
+  display: inline-block;
 }
 
 .as-of {
-    color: black;
-    text-align: right;
-    margin-top: -1rem;
-    padding-right: 1rem;
+  color: black;
+  text-align: right;
+  margin-top: -1rem;
+  padding-right: 1rem;
 }
 
+@media screen and (max-width: 700px) {
+  /* CSS rules inside this block will apply when the screen width is 768px or wider */
+
+  /* Example rule */
+  .check-a-trade-container img {
+    max-width: 180px;
+    max-height: 70px;
+  }
+  .star {
+    font-size: 20px !important;
+  }
+  .rating-container h5 {
+    font-size: 16px;
+    margin: 0;
+  }
+}
 
 @media screen and (max-width: 700px) {
-    /* CSS rules inside this block will apply when the screen width is 768px or wider */
-    
-    /* Example rule */
-    .check-a-trade-container img {
-        max-width: 180px;
-        max-height:70px;
-    }
-    .star {
-        font-size: 20px !important;
-    }
-    .rating-container h5 {
-        font-size: 16px;
-        margin: 0;
+  /* CSS rules inside this block will apply when the screen width is 768px or wider */
 
-    }
+  /* Example rule */
+  .check-a-trade-container img {
+    max-width: 150px;
+    max-height: 70px;
   }
-
-  @media screen and (max-width: 700px) {
-    /* CSS rules inside this block will apply when the screen width is 768px or wider */
-    
-    /* Example rule */
-    .check-a-trade-container img {
-        max-width: 150px;
-        max-height:70px;
-    }
-    .star {
-        font-size: 14px !important;
-    }
-    .rating-container h5 {
-        font-size: 14px;
-        margin: 0;
-
-    }
-    .as-of span {
-        font-size: 14px;
-    }
+  .star {
+    font-size: 14px !important;
   }
-
-
+  .rating-container h5 {
+    font-size: 14px;
+    margin: 0;
+  }
+  .as-of span {
+    font-size: 14px;
+  }
+}
