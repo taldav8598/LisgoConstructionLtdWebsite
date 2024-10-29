@@ -32,7 +32,7 @@
 }
 
 .leading-company-heading {
-  font-size: 4.7rem;
+  font-size: 5rem;
   text-align: center;
   margin: 0.4em 0;
 }
@@ -44,7 +44,7 @@
   justify-content: center;
   width: 100%;
   padding: 0;
-  margin-top: 6.1em;
+  margin-top: 7.1em;
   background-color: #272727;
 }
 
@@ -78,7 +78,7 @@
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 100px;
+  height: 150px;
   background-color: #272727;
 }
 
@@ -129,6 +129,23 @@
   color: white;
 }
 
+.LisgoHeadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.lisgo-heading {
+  font-size: 3.75rem !important;
+}
+
+.about-us-heading {
+  font-size: 2rem !important;
+}
+
+.enquire-now-heading {
+  font-size: 2rem !important;
+}
 .LisgoHeadingContainer h3 {
   margin: 1.5em 0 0.25em 0 !important;
 }

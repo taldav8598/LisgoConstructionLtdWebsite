@@ -64,13 +64,15 @@ export default function Home() {
         >
           <Grid size="grow">
             <div className="LisgoHeadingContainer">
-              <Typography variant="h3">Lisgo Construction Ltd.</Typography>
-              <Typography className="" variant="h4">
+              <Typography className="lisgo-heading" variant="h3">
+                Lisgo Construction Ltd.
+              </Typography>
+              <Typography className="about-us-heading" variant="h4">
                 <Link href="#aboutUs" className="about-us-link">
-                  See about us
+                  About us
                 </Link>
               </Typography>
-              <Typography variant="h4">
+              <Typography className="enquire-now-heading" variant="h4">
                 <Link href="#enquire">Enquire now</Link>
               </Typography>
             </div>
