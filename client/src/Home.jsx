@@ -2,7 +2,6 @@ import Carousel from "react-material-ui-carousel";
 import { Link, Typography, Grid } from "@mui/material";
 import "./Home.css";
 import Item from "./Item";
-import StarIcon from "@mui/icons-material/Star";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 export default function Home() {
@@ -28,7 +27,6 @@ export default function Home() {
         "Reliable and trustworthy, this construction company exceeded all our expectations. Their commitment to quality workmanship and customer service sets them apart in the industry. A top choice for any construction needs.",
     },
   ];
-  const starNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   return (
     <section id="home" className="HomeSection">
       <div className="ReviewContainer">
@@ -52,39 +50,7 @@ export default function Home() {
           See more reviews
         </Link>
       </div>
-      <a
-        target="_blank"
-        href="https://www.checkatrade.com/trades/lisgoconstruction892696"
-      >
-        <div className="check-a-trade-container">
-          <div className="rating-and-img">
-            <img
-              src="http://www.checkatrade.com/Images/CAT_Approved_member_logo.jpg"
-              alt="check a trade"
-            />
-            <div className="rating-container">
-              <Typography variant="h5">10/10</Typography>
-              <tbody>
-                {starNums.map((_, i) => (
-                  <StarIcon
-                    key={i}
-                    className="star"
-                    style={{ opacity: 1 }}
-                    fontSize="inherit"
-                  ></StarIcon>
-                ))}
-              </tbody>
-            </div>
-          </div>
-          <div className="as-of">
-            <Typography variant="p">
-              * Rating snapshot taken from 01/05/2024
-            </Typography>
-          </div>
 
-          {/* {starNums.map(num && )} */}
-        </div>
-      </a>
       <div className="home-title-container">
         <h1 className="leading-company-heading">
           Leading Construction Company
