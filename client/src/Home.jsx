@@ -37,6 +37,7 @@ export default function Home() {
               color: "#ffd70d",
             },
           }}
+          interval={7500}
         >
           {reviews.map((item, i) => (
             <Item className="item" key={i} item={item} />
