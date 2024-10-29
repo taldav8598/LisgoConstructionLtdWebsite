@@ -43,6 +43,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           border: "6px solid #FFD70D",
+          boxShadow: "2px 4px 4px 4px #000",
         },
       },
     },
