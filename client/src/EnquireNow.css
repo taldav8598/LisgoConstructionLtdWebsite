@@ -1,51 +1,51 @@
 .enquire-now-section {
-    display: flex;
-    margin-bottom: 3rem;
-    scroll-margin-top: 6em;
+  display: flex;
+  margin-bottom: 3rem;
+  scroll-margin-top: 6em;
 }
 
 .enquire-now-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1em;
 }
 
 .enquire-now-container h3 {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .enquire-now-container a {
-    color: white;
-    text-decoration-color: white;
+  color: white;
+  text-decoration-color: white;
 }
 
 .success-message svg {
-    color: green;
+  color: green;
 }
 
 .MuiTypography-h2 {
-    text-align: center;
+  text-align: center;
 }
 
 .label-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .enquire-now-form {
-    padding: 0;
+  padding: 0;
 }
 
 svg {
-    color: #FFF;
+  color: #fff;
 }
 
 #submit-button {
-    font-size: 1.25rem;
+  font-size: 1.25rem;
 }
 
 #submit-button:disabled {
-    color: #a3a3a3b4;
+  color: #a3a3a3b4;
 }
