@@ -24,7 +24,6 @@ import "./EnquireNow.css";
 
 const theme = createTheme({
   palette: {
-    // mode: "dark",
     text: {
       primary: "#fff",
       secondary: "#fff",
@@ -115,6 +114,7 @@ export default function EnquireNow() {
   const [validPostcode, setValidPostcode] = useState(true);
 
   // RFC 3339 format
+  console.log("dateLists", dateLists);
 
   const days = {
     0: "Sunday",
@@ -165,7 +165,7 @@ export default function EnquireNow() {
   };
   useEffect(() => {
     dateFormatting();
-  }, []);
+  });
 
   const disabledDates = (date) => {
     let day = new Date(date["$d"]).getDay();
@@ -192,13 +192,15 @@ export default function EnquireNow() {
     }${date["$D"] < 10 ? "0" + date["$D"] : date["$D"]}`;
 
     if (days[day] === "Sunday") {
-      // If hours available between 9 and 17 change line 196 to -> if (!(hour >= 9 && hour < 17)) {
       if (!(hour >= 9 && hour < 17)) {
         return true;
       } else {
         return false;
       }
     } else {
+      // Previous -> if day is Sunday
+
+      // get the
       let minutes = date["$m"];
 
       if (dateLists.dateObjectList?.dates.includes(Number(formattedDate))) {
@@ -406,6 +408,9 @@ export default function EnquireNow() {
             <InputLabel htmlFor="name-input">
               Choose a date or time of when you want the work to start or when
               you would like an appointment
+            </InputLabel>
+            <InputLabel htmlFor="name-input">
+              * Note: on Sunday we do in person quotations
             </InputLabel>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DemoContainer components={["DateTimePicker"]}>

@@ -95,7 +95,7 @@ export default function Home() {
                   x="0"
                   y="0"
                   maskUnits="userSpaceOnUse"
-                  style={{ "mask-type": "alpha" }}
+                  style={{ maskType: "alpha" }}
                 >
                   <circle cx="500" cy="500" r="500" fill="#181818" />
                 </mask>
