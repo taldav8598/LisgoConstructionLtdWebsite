@@ -191,7 +191,8 @@ export default function EnquireNow() {
       date["$M"] + 1 < 10 ? "0" + (date["$M"] + 1) : date["$M"] + 1
     }${date["$D"] < 10 ? "0" + date["$D"] : date["$D"]}`;
 
-    if (days[day] !== "Sunday") {
+    if (days[day] === "Sunday") {
+      // If hours available between 9 and 17 change line 196 to -> if (!(hour >= 9 && hour < 17)) {
       if (!(hour >= 9 && hour < 17)) {
         return true;
       } else {
@@ -414,6 +415,16 @@ export default function EnquireNow() {
                     defaultValue={today}
                     shouldDisableDate={disabledDates}
                     shouldDisableTime={disabledTimes}
+                    format={
+                      days[new Date(dateInput).getDay()] === "Sunday"
+                        ? "DD/MM/YYYY hh:mm"
+                        : "DD/MM/YYYY"
+                    }
+                    views={
+                      days[new Date(dateInput).getDay()] === "Sunday"
+                        ? ["day", "hours", "minutes"]
+                        : ["day"]
+                    }
                     disablePast={true}
                     timeSteps={{ minutes: 30 }}
                     onChange={handleDateChange}
