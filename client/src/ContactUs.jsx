@@ -43,7 +43,7 @@ export default function ContactUs() {
             </div>
             <Typography variant="h4">Location</Typography>
             <Typography variant="body" className="address">
-              24 woodstock road, Manchester, United Kingdom
+              24 Woodstock Road, Manchester, United Kingdom
             </Typography>
           </Grid>
         </Grid>
