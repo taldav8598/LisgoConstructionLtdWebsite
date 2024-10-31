@@ -4,7 +4,6 @@ import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import "./ContactUs.css";
-import Grid2 from "@mui/material/Unstable_Grid2";
 
 export default function ContactUs() {
   return (
