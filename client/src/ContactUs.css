@@ -11,19 +11,17 @@
 }
 
 .contact-us-grid {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  column-gap: 10em;
   margin-top: 7.5em;
-  padding: 0 2em;
 }
 
-.contact-item-container {
+.contact-us-item-container {
   display: flex;
-  justify-content: start;
-  align-items: center;
   flex-direction: column;
-  text-align: center;
+  justify-content: start !important;
+  align-items: center !important;
+  flex-direction: column !important;
+  text-align: center !important;
+  width: 25%;
 }
 
 .email-container {
@@ -33,7 +31,6 @@
   background-color: #ffd70d;
   height: 150px;
   width: 150px;
-  /* padding: 2.5em; */
   border-radius: 50%;
 }
 
@@ -49,7 +46,6 @@
   background-color: #ffd70d;
   height: 150px;
   width: 150px;
-  /* padding: 2.5em; */
   border-radius: 50%;
 }
 
@@ -65,7 +61,6 @@
   background-color: #ffd70d;
   height: 150px;
   width: 150px;
-  /* padding: 2.5em; */
   border-radius: 50%;
 }
 
@@ -81,7 +76,6 @@
   background-color: #ffd70d;
   height: 150px;
   width: 150px;
-  /* padding: 2.5em; */
   border-radius: 50%;
 }
 
