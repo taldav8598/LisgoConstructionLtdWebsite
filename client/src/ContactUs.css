@@ -1,0 +1,109 @@
+.contact-us-section {
+  width: 100%;
+}
+
+.contact-us-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 7.5em 0;
+}
+
+.contact-us-grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  column-gap: 10em;
+  margin-top: 7.5em;
+  padding: 0 2em;
+}
+
+.contact-item-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.email-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffd70d;
+  height: 150px;
+  width: 150px;
+  /* padding: 2.5em; */
+  border-radius: 50%;
+}
+
+.email-icon {
+  font-size: 75px !important;
+  color: #181818 !important;
+}
+
+.phone-no-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffd70d;
+  height: 150px;
+  width: 150px;
+  /* padding: 2.5em; */
+  border-radius: 50%;
+}
+
+.phone-icon {
+  font-size: 75px !important;
+  color: #181818 !important;
+}
+
+.facebook-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffd70d;
+  height: 150px;
+  width: 150px;
+  /* padding: 2.5em; */
+  border-radius: 50%;
+}
+
+.facebook-icon {
+  font-size: 75px !important;
+  color: #181818 !important;
+}
+
+.location-on-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffd70d;
+  height: 150px;
+  width: 150px;
+  /* padding: 2.5em; */
+  border-radius: 50%;
+}
+
+.location-on-icon {
+  font-size: 75px !important;
+  color: #181818 !important;
+}
+
+.address {
+  margin-top: 2em;
+  text-wrap: wrap;
+}
+
+.MuiTypography-h4 {
+  margin-top: 1em !important;
+}
+
+.MuiTypography-body {
+  margin-top: 2em !important;
+}
+
+.css-1ps4owl-MuiTypography-root-MuiLink-root {
+  color: inherit !important;
+  cursor: pointer;
+}
