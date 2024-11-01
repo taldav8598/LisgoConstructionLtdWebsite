@@ -1,7 +1,17 @@
-import { Container, Link, Typography } from "@mui/material";
+import { Button, Container, Link, Typography } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import { useState, useEffect } from "react";
 import "./Navigation.css";
 
 export default function Navigation() {
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <Container className="navigation-container">
       <div className="LisgoLogoContainer">
@@ -33,57 +43,65 @@ export default function Navigation() {
           </g>
         </svg>
         <Typography className="Lisgo-Logo-Heading" variant="h6">
-          Lisgo Construction Ltd.
+          Lisgo Construction Ltd. {width}
         </Typography>
       </div>
-      <Link
-        href="#home"
-        className="navigation-link"
-        underline="hover"
-        variant="h6"
-      >
-        Home
-      </Link>
-      <Link
-        href="#about-us"
-        className="navigation-link"
-        underline="hover"
-        variant="h6"
-      >
-        About us
-      </Link>
-      <Link
-        href="#enquire"
-        className="navigation-link"
-        underline="hover"
-        variant="h6"
-      >
-        Enquire now
-      </Link>
-      <Link
-        href="#services"
-        className="navigation-link"
-        underline="hover"
-        variant="h6"
-      >
-        Services
-      </Link>
-      <Link
-        href="#gallery"
-        className="navigation-link"
-        underline="hover"
-        variant="h6"
-      >
-        Gallery
-      </Link>
-      <Link
-        href="#contact-us"
-        className="navigation-link"
-        underline="hover"
-        variant="h6"
-      >
-        Contact us
-      </Link>
+      {width >= 768 ? (
+        <>
+          <Link
+            href="#home"
+            className="navigation-link"
+            underline="hover"
+            variant="h6"
+          >
+            Home
+          </Link>
+          <Link
+            href="#about-us"
+            className="navigation-link"
+            underline="hover"
+            variant="h6"
+          >
+            About us
+          </Link>
+          <Link
+            href="#enquire"
+            className="navigation-link"
+            underline="hover"
+            variant="h6"
+          >
+            Enquire now
+          </Link>
+          <Link
+            href="#services"
+            className="navigation-link"
+            underline="hover"
+            variant="h6"
+          >
+            Services
+          </Link>
+          <Link
+            href="#gallery"
+            className="navigation-link"
+            underline="hover"
+            variant="h6"
+          >
+            Gallery
+          </Link>
+          <Link
+            href="#contact-us"
+            className="navigation-link"
+            underline="hover"
+            variant="h6"
+          >
+            Contact us
+          </Link>
+        </>
+      ) : (
+        <Button>
+          <MenuIcon></MenuIcon>
+        </Button>
+      )}
     </Container>
   );
 }
