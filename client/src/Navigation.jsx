@@ -99,7 +99,7 @@ export default function Navigation() {
         </>
       ) : (
         <Button>
-          <MenuIcon></MenuIcon>
+          <MenuIcon className="menu-icon"></MenuIcon>
         </Button>
       )}
     </Container>
