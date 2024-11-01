@@ -10,7 +10,17 @@ import Gallery from "./Gallery";
 import ContactUs from "./ContactUs";
 import "./App.css";
 
+import { useState, useEffect } from "react";
+
 function App() {
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
       <Navigation />
@@ -24,7 +34,7 @@ function App() {
         <Gallery />
         <ContactUs />
       </Container>
-      <Footer />
+      {width > 769 ? <Footer /> : null}
     </>
   );
 }
