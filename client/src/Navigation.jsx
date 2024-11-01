@@ -46,7 +46,7 @@ export default function Navigation() {
           Lisgo Construction Ltd. {width}
         </Typography>
       </div>
-      {width >= 768 ? (
+      {width > 768 ? (
         <>
           <Link
             href="#home"

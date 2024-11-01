@@ -195,3 +195,21 @@
 .cheveron {
   animation: bounce 5s linear infinite;
 }
+
+@media only screen and (min-width: 768px) {
+  .leading-company-heading {
+    font-size: clamp(2.5rem, 2.75vw + 0.5rem, 7rem);
+  }
+  .lisgo-heading {
+    font-size: clamp(1.5rem, 2vw + 0.5rem, 5rem) !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .leading-company-heading {
+    font-size: 2.5rem;
+  }
+  .lisgo-heading {
+    font-size: 1.5rem !important;
+  }
+}

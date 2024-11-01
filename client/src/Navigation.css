@@ -9,11 +9,12 @@
   top: 0;
   left: 0;
   z-index: 100;
+  border: 1px solid red;
+  margin: 0;
 }
 
 .MuiLink-root.navigation-link {
   color: #ffffff;
-  font-size: 1rem;
 }
 
 .LisgoLogoContainer {
@@ -55,10 +56,29 @@
   font-size: 4rem !important;
 }
 
+@media only screen and (min-width: 768px) {
+  .MuiContainer-root.navigation-container {
+    content: "";
+    justify-content: space-around;
+  }
+  .MuiLink-root.navigation-link {
+    font-size: clamp(0.75rem, 0.75vw + 0.5rem, 2rem);
+  }
+  .MuiTypography-root.Lisgo-Logo-Heading {
+    font-size: clamp(0.75rem, 0.75vw + 0.5rem, 2rem);
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .MuiContainer-root.navigation-container {
     content: "";
     justify-content: space-between;
+  }
+  .MuiLink-root.navigation-link {
+    font-size: 0.75rem;
+  }
+  .MuiTypography-root.Lisgo-Logo-Heading {
+    font-size: 0.75rem;
   }
 }
 
