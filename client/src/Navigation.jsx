@@ -43,7 +43,7 @@ export default function Navigation() {
           </g>
         </svg>
         <Typography className="Lisgo-Logo-Heading" variant="h6">
-          Lisgo Construction Ltd. {width}
+          Lisgo Construction Ltd.
         </Typography>
       </div>
       {width > 768 ? (

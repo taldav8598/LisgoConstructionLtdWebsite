@@ -60,7 +60,7 @@ export default function Home() {
           container
           style={{
             display: "flex",
-            justifyContent: "space-around",
+            justifyContent: "center",
           }}
         >
           <Grid size="grow">
