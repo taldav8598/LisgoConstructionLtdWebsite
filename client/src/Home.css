@@ -43,9 +43,10 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  margin: 0;
   padding: 0;
-  margin-top: 9em;
   background-color: #272727;
+  border: 1px solid red;
 }
 
 .ReviewContainer a {
@@ -80,6 +81,7 @@
   width: 100vw;
   height: 150px;
   background-color: #272727;
+  border: none;
 }
 
 .Carousel div {
@@ -192,84 +194,4 @@
 
 .cheveron {
   animation: bounce 5s linear infinite;
-}
-
-.check-a-trade-container {
-  background-color: white !important;
-  max-height: 100px;
-  width: 100%;
-  color: black;
-}
-.check-a-trade-container img {
-  max-width: 250px;
-  max-height: 70px;
-}
-
-.star {
-  color: #ebcb2b;
-  font-size: 2rem !important;
-}
-
-.rating-container {
-  display: flex;
-  margin-right: 1rem;
-  margin-top: 1rem;
-}
-
-.rating-and-img {
-  display: flex;
-  justify-content: space-around;
-}
-
-.rating-container h5 {
-  margin-top: 0.4rem;
-  margin-right: 1rem;
-}
-
-.rating-container h6 {
-  display: inline-block;
-}
-
-.as-of {
-  color: black;
-  text-align: right;
-  margin-top: -1rem;
-  padding-right: 1rem;
-}
-
-@media screen and (max-width: 700px) {
-  /* CSS rules inside this block will apply when the screen width is 768px or wider */
-
-  /* Example rule */
-  .check-a-trade-container img {
-    max-width: 180px;
-    max-height: 70px;
-  }
-  .star {
-    font-size: 20px !important;
-  }
-  .rating-container h5 {
-    font-size: 16px;
-    margin: 0;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  /* CSS rules inside this block will apply when the screen width is 768px or wider */
-
-  /* Example rule */
-  .check-a-trade-container img {
-    max-width: 150px;
-    max-height: 70px;
-  }
-  .star {
-    font-size: 14px !important;
-  }
-  .rating-container h5 {
-    font-size: 14px;
-    margin: 0;
-  }
-  .as-of span {
-    font-size: 14px;
-  }
 }
