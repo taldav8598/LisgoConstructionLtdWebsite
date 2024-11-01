@@ -53,9 +53,11 @@ video {
   max-width: 100%;
 }
 
-.main-container {
-  max-width: 2000px;
-  margin: 0 auto;
+.app-container {
+  max-width: 2000px !important;
+  margin: 0;
+  padding: 0 !important;
+  width: 100%;
 }
 
 @keyframes fadeInAnimation {

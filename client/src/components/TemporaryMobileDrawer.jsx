@@ -58,7 +58,7 @@ export default function TemporaryMobileDrawer({ open, toggleDrawer }) {
         "& .MuiDrawer-paper": {
           backgroundColor: "#121212",
           color: "#fff",
-          borderRight: "4px solid #FFD70D",
+          borderLeft: "4px solid #FFD70D",
         },
       }}
       anchor="right"
