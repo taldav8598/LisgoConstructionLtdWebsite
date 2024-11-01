@@ -29,7 +29,7 @@
 .leading-company-heading {
   font-size: 5rem;
   text-align: center;
-  margin: 0.4em 0;
+  margin: 0.025em 0;
 }
 
 .ReviewContainer {
@@ -76,6 +76,8 @@
   height: 150px;
   background-color: #272727;
   padding: 0.5em;
+  font-weight: 100 !important;
+  line-height: auto;
 }
 
 .Carousel div {
@@ -86,6 +88,7 @@
   color: #ffffff;
   box-shadow: none;
   font-style: italic;
+  margin: 0.2em auto;
 }
 
 .Carousel > :nth-child(4) {
