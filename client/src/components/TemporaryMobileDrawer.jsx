@@ -6,6 +6,14 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 
 export default function TemporaryMobileDrawer({ open, toggleDrawer }) {
+  const pageLinkArr = [
+    "#home",
+    "#about-us",
+    "#enquire",
+    "#services",
+    "#gallery",
+    "#contact-us",
+  ];
   const DrawerList = (
     <Box
       sx={{ width: 250, height: "100%" }}
@@ -27,9 +35,13 @@ export default function TemporaryMobileDrawer({ open, toggleDrawer }) {
           "Services",
           "Gallery",
           "Contact us",
-        ].map((text) => (
+        ].map((text, index) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton style={{ textAlign: "center" }}>
+            <ListItemButton
+              href={pageLinkArr[index]}
+              style={{ textAlign: "center" }}
+              onClick={toggleDrawer(false)}
+            >
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
