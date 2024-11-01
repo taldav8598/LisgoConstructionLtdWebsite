@@ -3,7 +3,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useState, useEffect } from "react";
 import "./Navigation.css";
 
-export default function Navigation() {
+export default function Navigation({ toggleDrawer, open }) {
   const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -46,7 +46,7 @@ export default function Navigation() {
           Lisgo Construction Ltd.
         </Typography>
       </div>
-      {width > 768 ? (
+      {width > 768 && !open ? (
         <>
           <Link
             href="#home"
@@ -98,7 +98,7 @@ export default function Navigation() {
           </Link>
         </>
       ) : (
-        <Button>
+        <Button onClick={toggleDrawer(true)}>
           <MenuIcon className="menu-icon"></MenuIcon>
         </Button>
       )}

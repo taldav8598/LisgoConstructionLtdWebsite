@@ -8,12 +8,14 @@ import AboutUs from "./AboutUs";
 import Services from "./Services";
 import Gallery from "./Gallery";
 import ContactUs from "./ContactUs";
+import TemporaryMobileDrawer from "./components/TemporaryMobileDrawer";
 import "./App.css";
 
 import { useState, useEffect } from "react";
 
 function App() {
   const [width, setWidth] = useState(window.innerWidth);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
@@ -21,9 +23,13 @@ function App() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const toggleDrawer = (newOpen) => () => {
+    setOpen(newOpen);
+  };
+
   return (
     <>
-      <Navigation />
+      <Navigation toggleDrawer={toggleDrawer} open={open} />
       <Container className="app-container" maxWidth="lg">
         <Home />
         <EnquireNow />
@@ -34,6 +40,7 @@ function App() {
         <Gallery />
         <ContactUs />
       </Container>
+      <TemporaryMobileDrawer open={open} toggleDrawer={toggleDrawer} />
       {width > 769 ? <Footer /> : null}
     </>
   );
