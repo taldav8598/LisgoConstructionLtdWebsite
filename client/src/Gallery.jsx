@@ -36,16 +36,19 @@ export default function Gallery() {
         <Grid
           className="images-container"
           container
-          rowSpacing={1}
-          columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+          }}
         >
-          <Grid item lg={6} xs={12}>
+          <Grid item size="stretch">
             <Typography variant="h5">Before</Typography>
-            <img src={imageLinks[page][0]} alt="" />
+            <img className="before-image" src={imageLinks[page][0]} alt="" />
           </Grid>
-          <Grid item lg={6} xs={12}>
+          <Grid size="stretch">
             <Typography variant="h5">After</Typography>
-            <img src={imageLinks[page][1]} alt="" />
+            <img className="after-image" src={imageLinks[page][1]} alt="" />
           </Grid>
         </Grid>
         {/* <div className='pagination'>

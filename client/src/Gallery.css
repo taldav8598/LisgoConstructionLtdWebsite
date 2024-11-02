@@ -1,45 +1,66 @@
-
 .gallery-container {
-    display: grid; 
-    grid-template-rows: 1fr 1fr;
-    /* grid-template-columns: 1fr 1fr 1fr; */
-    gap: 0.75em;
-    margin-bottom: 1rem;
- }
- .gallery-container h3 {
-   text-align: center;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  gap: 0.75em;
+  margin-top: 5rem;
+}
+.gallery-container h3 {
+  text-align: center;
 }
 
-.images-container h5  {
-   text-align: center;
+.images-container h5 {
+  text-align: center;
 }
-.images-container img  {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      height: 300px;
-      width: 400px;
+.images-container img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  width: 400px;
 }
 
 .pagination {
-   margin: 0 auto;
+  margin: 0em auto;
 }
 .pagination p {
-   text-align: center;
+  text-align: center;
 }
 
 .pagination button {
-   background-color: #E0C123 !important;
+  background-color: #e0c123 !important;
 }
 .pagination button:hover {
-   opacity: 0.8;
+  opacity: 0.8;
 }
 
 .pagination svg {
-   color: black;
+  color: black;
 }
 
 .MuiPaginationItem-root.Mui-selected {
-   scale: 1.2;
-   margin: 0.5rem;
- }
+  scale: 1.2;
+  margin: 0.5rem;
+}
+
+.before-image {
+  border-radius: 0.75em 0 0 0.75em;
+}
+
+.after-image {
+  border-radius: 0 0.75em 0.75em 0;
+}
+
+#gallery > div > div.pagination > nav > ul > li > button {
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 799px) {
+  .before-image {
+    border-radius: 0.75em;
+  }
+
+  .after-image {
+    border-radius: 0.75em;
+  }
+}
