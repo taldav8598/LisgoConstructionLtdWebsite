@@ -8,23 +8,40 @@ import AboutUs from "./AboutUs";
 import Services from "./Services";
 import Gallery from "./Gallery";
 import ContactUs from "./ContactUs";
+import TemporaryMobileDrawer from "./components/TemporaryMobileDrawer";
 import "./App.css";
 
+import { useState, useEffect } from "react";
+
 function App() {
+  const [width, setWidth] = useState(window.innerWidth);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const toggleDrawer = (newOpen) => () => {
+    setOpen(newOpen);
+  };
+
   return (
     <>
-      <Navigation />
+      <Navigation toggleDrawer={toggleDrawer} open={open} />
       <Container className="app-container" maxWidth="lg">
         <Home />
         <EnquireNow />
         <Services />
-        <div id="aboutUs">
-          <AboutUs />
-        </div>
+        {/* <div id="aboutUs"> */}
+        <AboutUs />
+        {/* </div> */}
         <Gallery />
         <ContactUs />
       </Container>
-      <Footer />
+      <TemporaryMobileDrawer open={open} toggleDrawer={toggleDrawer} />
+      {width > 769 ? <Footer /> : null}
     </>
   );
 }

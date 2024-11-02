@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 1em;
+  margin: 0;
 }
 
 .enquire-now-container h3 {
@@ -34,10 +34,6 @@
   justify-content: space-between;
 }
 
-.enquire-now-form {
-  padding: 0;
-}
-
 svg {
   color: #fff;
 }
@@ -48,4 +44,40 @@ svg {
 
 #submit-button:disabled {
   color: #a3a3a3b4;
+}
+
+.css-1xp5a9o-MuiInputBase-root-MuiOutlinedInput-root.Mui-error
+  .MuiOutlinedInput-notchedOutline {
+  border: none;
+}
+.css-v0pjtz-MuiStack-root {
+  overflow: hidden !important;
+}
+.css-1fdw02k-MuiStack-root > .MuiTextField-root,
+.css-1fdw02k-MuiStack-root > .MuiPickersTextField-root {
+  min-width: 0px !important;
+}
+
+@media only screen and (max-width: 600px) {
+  span.MuiTypography-root {
+    font-size: clamp(0.7rem, 0.3vw + 0.5rem, 5rem) !important;
+  }
+  label.MuiFormLabel-root {
+    white-space: normal;
+    font-size: clamp(0.7rem, 0.3vw + 0.5rem, 5rem) !important;
+  }
+  div.MuiInputBase-root {
+    font-size: clamp(0.7rem, 0.3vw + 0.5rem, 5rem) !important;
+  }
+  #enquire
+    > div
+    > form
+    > div.MuiStack-root.css-v0pjtz-MuiStack-root
+    > div
+    > div
+    > div
+    > div
+    > button {
+    margin-right: 0.25em;
+  }
 }

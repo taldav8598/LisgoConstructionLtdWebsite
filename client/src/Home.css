@@ -1,7 +1,7 @@
 .HomeSection {
-  margin-bottom: 3rem;
   padding: 0;
   scroll-margin-top: 6em;
+  width: 100% !important;
 }
 
 .HomeHeadingContainer {
@@ -19,11 +19,6 @@
   color: #ffffff;
 }
 
-.LisgoHomeLogoContainer > svg {
-  height: 450px !important;
-  width: 450px !important;
-}
-
 .LisgoHomeLogo {
   height: 18rem;
   width: 18rem;
@@ -34,7 +29,7 @@
 .leading-company-heading {
   font-size: 5rem;
   text-align: center;
-  margin: 0.4em 0;
+  margin: 0.025em 0;
 }
 
 .ReviewContainer {
@@ -43,8 +38,8 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  margin: 0;
   padding: 0;
-  margin-top: 9em;
   background-color: #272727;
 }
 
@@ -72,6 +67,10 @@
   padding: 0;
 }
 
+.css-1m9128y {
+  margin-top: 40px;
+}
+
 .Carousel {
   display: flex;
   flex-direction: column;
@@ -80,6 +79,8 @@
   width: 100vw;
   height: 150px;
   background-color: #272727;
+  font-weight: 100 !important;
+  line-height: auto;
 }
 
 .Carousel div {
@@ -90,10 +91,6 @@
   color: #ffffff;
   box-shadow: none;
   font-style: italic;
-}
-
-.Carousel > :nth-child(4) {
-  margin: 0.5em;
 }
 
 .Carousel > :nth-child(4) > button:active {
@@ -129,36 +126,16 @@
   color: white;
 }
 
-.LisgoHeadingContainer {
-  display: flex;
-  justify-content: center;
-  align-items: start;
-}
-
-.lisgo-heading {
-  font-size: 3.75rem !important;
-}
-
-.about-us-heading {
-  font-size: 2rem !important;
-}
-
-.enquire-now-heading {
-  font-size: 2rem !important;
-}
-.LisgoHeadingContainer h3 {
-  margin: 1.5em 0 0.25em 0 !important;
-}
-
-.LisgoHeadingContainer h4 {
-  margin-top: 4rem;
-}
-
 .home-title-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
   margin-top: 0;
+  width: 100%;
+}
+
+.LisgoHomeLogoContainer > svg {
+  margin-left: 1em;
 }
 
 .cheveron-container {
@@ -194,82 +171,77 @@
   animation: bounce 5s linear infinite;
 }
 
-.check-a-trade-container {
-  background-color: white !important;
-  max-height: 100px;
-  width: 100%;
-  color: black;
-}
-.check-a-trade-container img {
-  max-width: 250px;
-  max-height: 70px;
-}
-
-.star {
-  color: #ebcb2b;
-  font-size: 2rem !important;
-}
-
-.rating-container {
-  display: flex;
-  margin-right: 1rem;
-  margin-top: 1rem;
-}
-
-.rating-and-img {
-  display: flex;
-  justify-content: space-around;
-}
-
-.rating-container h5 {
-  margin-top: 0.4rem;
-  margin-right: 1rem;
-}
-
-.rating-container h6 {
-  display: inline-block;
-}
-
-.as-of {
-  color: black;
-  text-align: right;
-  margin-top: -1rem;
-  padding-right: 1rem;
-}
-
-@media screen and (max-width: 700px) {
-  /* CSS rules inside this block will apply when the screen width is 768px or wider */
-
-  /* Example rule */
-  .check-a-trade-container img {
-    max-width: 180px;
-    max-height: 70px;
+@media only screen and (max-width: 600px) {
+  .MuiGrid-root.MuiGrid-container.css-11lq3yg-MuiGrid-root {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 1em;
   }
-  .star {
-    font-size: 20px !important;
+  #home > div.ReviewContainer > div.Carousel {
+    padding-top: 2.5em;
   }
-  .rating-container h5 {
-    font-size: 16px;
-    margin: 0;
+  .LisgoHomeLogoContainer > svg {
+    margin-top: 2em;
+  }
+  .cheveron-container {
+    margin-top: 1em !important;
   }
 }
 
-@media screen and (max-width: 700px) {
-  /* CSS rules inside this block will apply when the screen width is 768px or wider */
+@media only screen and (min-width: 768px) {
+  .leading-company-heading {
+    font-size: clamp(2.5rem, 2.75vw + 0.5rem, 7rem);
+  }
+  .LisgoHomeLogoContainer > svg {
+    height: clamp(225px, 17.5vw + 1vw, 465px) !important;
+    width: clamp(225px, 17.5vw + 1vw, 465px) !important;
+  }
+  .LisgoHeadingContainer {
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+  }
+  .lisgo-heading {
+    font-size: clamp(2rem, 2.15vw + 0.5rem, 5rem) !important;
+  }
+  .about-us-heading {
+    font-size: clamp(1.25rem, 1.25vw + 0.5rem, 5rem) !important;
+  }
+  .enquire-now-heading {
+    font-size: clamp(1.25rem, 1.25vw + 0.5rem, 5rem) !important;
+  }
+  .see-more-reviews-link {
+    font-size: clamp(0.75rem, 0.3vw + 0.5rem, 5rem) !important;
+  }
+}
 
-  /* Example rule */
-  .check-a-trade-container img {
-    max-width: 150px;
-    max-height: 70px;
+@media only screen and (max-width: 768px) {
+  .leading-company-heading {
+    font-size: 2.5rem;
   }
-  .star {
-    font-size: 14px !important;
+  .LisgoHeadingContainer {
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
   }
-  .rating-container h5 {
-    font-size: 14px;
-    margin: 0;
+  .LisgoHomeLogoContainer > svg {
+    height: 225px !important;
+    width: 225px !important;
   }
-  .as-of span {
-    font-size: 14px;
+  .MuiGrid-root.css-vj1n65-MuiGrid-root {
+    align-items: space-evenly !important;
+  }
+  .lisgo-heading {
+    font-size: 2rem !important;
+  }
+  .about-us-heading {
+    font-size: 1.25rem !important;
+  }
+  .enquire-now-heading {
+    font-size: 1.25rem !important;
+  }
+  .see-more-reviews-link {
+    font-size: 0.75rem !important;
   }
 }

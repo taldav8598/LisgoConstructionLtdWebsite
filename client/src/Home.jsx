@@ -45,6 +45,7 @@ export default function Home() {
         </Carousel>
 
         <Link
+          className="see-more-reviews-link"
           target="_blank"
           href="https://www.google.com/search?q=lisgo+construction+ltd&rlz=1C5GCCM_en&oq=lisgo+co&gs_lcrp=EgZjaHJvbWUqDAgAECMYJxiABBiKBTIMCAAQIxgnGIAEGIoFMg0IARAuGK8BGMcBGIAEMgYIAhBFGDkyCAgDEAAYFhgeqAIAsAIA&sourceid=chrome&ie=UTF-8#lrd=0xa51f849c094cefd3:0xc770e71668c7846d,1,,,,"
         >
@@ -60,7 +61,7 @@ export default function Home() {
           container
           style={{
             display: "flex",
-            justifyContent: "space-around",
+            justifyContent: "center",
           }}
         >
           <Grid size="grow">

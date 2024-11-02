@@ -1,70 +1,79 @@
-*, *::before, *::after {
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    font: inherit;
+  margin: 0;
+  padding: 0;
+  font: inherit;
 }
 
 html {
-    color-scheme: dark light;
-    scroll-behavior: smooth;
-    /* scroll-snap-type: y mandatory; */
-    /* scroll-padding-top: 6em; */
-    overflow-y: scroll;
-    overflow-x: hidden;
-    background-color: #121212;
-    color: white;
-    animation: fadeInAnimation ease 1s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+  color-scheme: dark light;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: #121212;
+  color: white;
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 body {
-    min-height: 100vh;
-    font-family: 'roboto';
-    margin: 0 auto;
+  min-height: 100vh;
+  font-family: "roboto";
+  margin: 0;
+  padding: 0;
 }
-
-/* section {
-    /* background-color: seagreen; */
-    /* scroll-snap-align: start; */
-    /* border: 2px solid black; */
-/* } */
 
 .cheveron-container {
-    margin: 0 auto;
-    cursor: pointer;
+  margin: 0 auto;
+  cursor: pointer;
 }
 .cheveron {
-    height: 5rem !important;
-    width: 5rem !important;
-    cursor: pointer;
-    margin-left: -1rem;
-    color: white;
+  height: 5rem !important;
+  width: 5rem !important;
+  cursor: pointer;
+  margin-left: -1rem;
+  color: white;
 }
 
 a {
-    text-decoration-color: white !important
+  text-decoration-color: white !important;
 }
 
-img, picture, svg, video {
-    display: block;
-    max-width: 100%;
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
 }
 
-.main-container {
-    max-width: 2000px;
-    margin: 0 auto;
+.app-container {
+  max-width: 1200px !important;
+  margin: 0;
+  padding: 0 !important;
+  width: 100%;
 }
 
 @keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  h3.MuiTypography-root {
+    font-size: clamp(2rem, 2.15vw + 0.5rem, 5rem);
+  }
+  h4.MuiTypography-root {
+    font-size: clamp(1.75rem, 2vw + 0.5rem, 5rem);
+  }
 }
