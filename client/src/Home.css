@@ -67,6 +67,10 @@
   padding: 0;
 }
 
+.css-1m9128y {
+  margin-top: 40px;
+}
+
 .Carousel {
   display: flex;
   flex-direction: column;
@@ -75,7 +79,6 @@
   width: 100vw;
   height: 150px;
   background-color: #272727;
-  padding: 0.5em;
   font-weight: 100 !important;
   line-height: auto;
 }
@@ -88,11 +91,6 @@
   color: #ffffff;
   box-shadow: none;
   font-style: italic;
-  margin: 0.2em auto;
-}
-
-.Carousel > :nth-child(4) {
-  margin: 0.5em;
 }
 
 .Carousel > :nth-child(4) > button:active {
@@ -179,6 +177,9 @@
     align-items: center;
     text-align: center;
     margin-top: 1em;
+  }
+  #home > div.ReviewContainer > div.Carousel {
+    padding-top: 2.5em;
   }
   .LisgoHomeLogoContainer > svg {
     margin-top: 2em;
