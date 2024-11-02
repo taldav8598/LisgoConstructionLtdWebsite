@@ -46,30 +46,6 @@ const theme = createTheme({
         },
       },
     },
-    MuiButton: {
-      // styleOverrides: {
-      //   root: {
-      //     fontSize: '1rem',
-      //     color: '#ffffff',
-      //     border: '4px solid #FFD70D',
-      //     borderRadius: '14px',
-      //     backgroundColor: '#111111',
-      //     textTransform: 'lowercase',
-      //     margin: '3em 0',
-      //     fontWeight: 'bolder',
-      //     ":hover": {
-      //         fontSize: '1rem',
-      //     color: '#FFD70D',
-      //     border: '4px solid #FFD70D',
-      //     borderRadius: '14px',
-      //     backgroundColor: '#111111',
-      //     textTransform: 'lowercase',
-      //     margin: '3em 0',
-      //     fontWeight: 'bolder',
-      //     }
-      //   },
-      // },
-    },
     MuiInputBase: {
       styleOverrides: {
         root: {
@@ -341,11 +317,11 @@ export default function EnquireNow() {
           >
             Enquire now
           </Typography>
-          <p>
+          <Typography variant="body">
             Please see the services section if you’re unsure about your enquiry
-            or want to find out more about the <a href="#services">services</a>{" "}
-            we offer.
-          </p>
+            or want to find out more about the{" "}
+            <Link href="#services">services</Link> we offer.
+          </Typography>
           <br />
           <form
             className="enquire-now-form"
@@ -421,6 +397,10 @@ export default function EnquireNow() {
                 <DemoItem>
                   <CssBaseline />
                   <DateTimePicker
+                    sx={{
+                      color: "red",
+                    }}
+                    className="date-time-picker"
                     defaultValue={today}
                     shouldDisableDate={disabledDates}
                     shouldDisableTime={disabledTimes}

@@ -7,7 +7,6 @@
   flex-direction: column;
   align-items: left;
   margin: 2em auto;
-  font-size: 1.25rem;
   letter-spacing: 1pt;
 }
 
@@ -24,18 +23,18 @@
 
 @media only screen and (min-width: 768px) {
   .review {
-    font-size: clamp(0.75rem, 0.75vw + 0.5rem, 1.3rem);
+    font-size: clamp(0.6rem, 0.8vw + 0.5rem, 1.3rem);
   }
   .reviewName {
-    font-size: clamp(0.75rem, 0.75vw + 0.5rem, 1.3rem);
+    font-size: clamp(0.6rem, 0.8vw + 0.5rem, 1.3rem);
   }
 }
 
 @media only screen and (max-width: 768px) {
   .review {
-    font-size: 0.75rem !important;
+    font-size: clamp(0.05rem, 0.5vw + 0.4rem, 1.3rem) !important;
   }
   .reviewName {
-    font-size: 0.75rem !important;
+    font-size: clamp(0.05rem, 0.5vw + 0.4rem, 1.3rem) !important;
   }
 }
