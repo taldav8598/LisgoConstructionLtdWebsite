@@ -89,6 +89,8 @@ export default function EnquireNow() {
   const [validEmail, setValidEmail] = useState(true);
   const [validPostcode, setValidPostcode] = useState(true);
 
+  console.log("dateLists", dateLists);
+
   // RFC 3339 format
 
   const days = {
@@ -109,8 +111,8 @@ export default function EnquireNow() {
         const { items } = data;
 
         let dateObjectList = {
-          dates: [],
-          dateTimes: { start: [], end: [] },
+          dates: [20241110, 20241110],
+          dateTimes: { start: [90000, 113000], end: [93000, 120000] },
         };
 
         items.forEach((item) => {
@@ -167,71 +169,49 @@ export default function EnquireNow() {
   const disabledTimes = (date) => {
     let day = new Date(date["$d"]).getDay();
     let hour = date["$H"];
+    let minutes = date["$m"];
     const formattedDate = `${date["$y"]}${
       date["$M"] + 1 < 10 ? "0" + (date["$M"] + 1) : date["$M"] + 1
     }${date["$D"] < 10 ? "0" + date["$D"] : date["$D"]}`;
-
-    if (days[day] === "Sunday") {
-      if (!(hour >= 9 && hour < 17)) {
+    console.log(hour, minutes, formattedDate);
+    if (
+      days[day] === "Sunday" &&
+      !dateLists.dateObjectList?.dates.includes(Number(formattedDate))
+    ) {
+      if (!(hour >= 9 && hour <= 17)) {
         return true;
-      } else {
-        return false;
+      }
+    } else if (
+      days[day] === "Sunday" &&
+      dateLists.dateObjectList?.dates.includes(Number(formattedDate))
+    ) {
+      const indicesArr = dateLists.dateObjectList?.dates
+        .map((date, index) => {
+          if (date === Number(formattedDate)) {
+            return index;
+          }
+        })
+        .filter((element) => element !== undefined);
+
+      const selectedDateTimes = {};
+
+      for (let i = 0; i < indicesArr.length; i++) {
+        selectedDateTimes[dateLists.dateObjectList.dateTimes.start[i] / 100] =
+          dateLists.dateObjectList.dateTimes.start[i] / 100;
+        selectedDateTimes[dateLists.dateObjectList.dateTimes.end[i] / 100] =
+          dateLists.dateObjectList.dateTimes.end[i] / 100;
+      }
+
+      if (!(hour >= 9 && hour <= 17)) {
+        return true;
+      } else if (
+        (`${hour}${minutes === 0 ? minutes + "0" : minutes}`,
+        selectedDateTimes[`${hour}${minutes === 0 ? minutes + "0" : minutes}`])
+      ) {
+        return true;
       }
     } else {
-      // Previous -> if day is Sunday
-
-      // get the
-      let minutes = date["$m"];
-
-      if (dateLists.dateObjectList?.dates.includes(Number(formattedDate))) {
-        if (!(hour >= 9 && hour < 17)) {
-          return true;
-        } else {
-          let mappedObj = dateLists.dateObjectList?.dates.map(
-            (individualDate, index) => {
-              if (individualDate === Number(formattedDate)) {
-                return index;
-              }
-            }
-          );
-          let timeIndexes = mappedObj.filter(Number);
-
-          return timeIndexes.find((index) => {
-            let startTime = dateLists.dateObjectList?.dateTimes.start[index];
-            let endTime = dateLists.dateObjectList?.dateTimes.end[index];
-
-            let startHour = startTime / 10000;
-            let endHour = endTime / 10000;
-
-            if (
-              hour >= startHour &&
-              hour < endHour &&
-              (!String(startTime).includes("30") ||
-                !String(endTime).includes("30"))
-            ) {
-              return true;
-            }
-
-            if (String(endHour).includes(".3")) {
-              endHour = endHour - 1;
-            }
-
-            if (hour >= startHour && hour < endHour) {
-              return true;
-            }
-
-            let time = `${hour}${minutes}${minutes == 30 ? "00" : "000"}`;
-
-            if (minutes === 0 || minutes === 30) {
-              if (Number(time) >= startTime && Number(time) < endTime) {
-                return true;
-              } else {
-                return false;
-              }
-            }
-          });
-        }
-      }
+      return false;
     }
   };
 
