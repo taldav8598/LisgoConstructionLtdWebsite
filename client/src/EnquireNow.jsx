@@ -104,7 +104,7 @@ export default function EnquireNow() {
     const date = new Date();
     const formattedMinDate = date.toISOString();
     await axios
-      .get(`${apiUrl}${formattedMinDate}`)
+      .get(`${apiUrl}&timeMin=${formattedMinDate}`)
       .then(({ data }) => {
         const { items } = data;
 

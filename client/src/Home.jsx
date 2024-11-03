@@ -70,7 +70,7 @@ export default function Home() {
                 Lisgo Construction Ltd.
               </Typography>
               <Typography className="about-us-heading" variant="h4">
-                <Link href="#aboutUs" className="about-us-link">
+                <Link href="#about-us" className="about-us-link">
                   About us
                 </Link>
               </Typography>
