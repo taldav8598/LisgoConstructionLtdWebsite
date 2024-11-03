@@ -89,8 +89,6 @@ export default function EnquireNow() {
   const [validEmail, setValidEmail] = useState(true);
   const [validPostcode, setValidPostcode] = useState(true);
 
-  console.log("dateLists", dateLists);
-
   // RFC 3339 format
 
   const days = {
@@ -169,11 +167,11 @@ export default function EnquireNow() {
   const disabledTimes = (date) => {
     let day = new Date(date["$d"]).getDay();
     let hour = date["$H"];
-    let minutes = date["$m"];
+
     const formattedDate = `${date["$y"]}${
       date["$M"] + 1 < 10 ? "0" + (date["$M"] + 1) : date["$M"] + 1
     }${date["$D"] < 10 ? "0" + date["$D"] : date["$D"]}`;
-    console.log(hour, minutes, formattedDate);
+
     if (
       days[day] === "Sunday" &&
       !dateLists.dateObjectList?.dates.includes(Number(formattedDate))
@@ -204,11 +202,12 @@ export default function EnquireNow() {
 
       if (!(hour >= 9 && hour <= 17)) {
         return true;
-      } else if (
-        (`${hour}${minutes === 0 ? minutes + "0" : minutes}`,
-        selectedDateTimes[`${hour}${minutes === 0 ? minutes + "0" : minutes}`])
-      ) {
+      } else if (selectedDateTimes[`${hour}00`]) {
         return true;
+      } else if (selectedDateTimes[`${hour}30`]) {
+        return true;
+      } else {
+        return false;
       }
     } else {
       return false;
