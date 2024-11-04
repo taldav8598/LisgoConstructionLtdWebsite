@@ -109,8 +109,11 @@ export default function EnquireNow() {
         const { items } = data;
 
         let dateObjectList = {
-          dates: [20241110, 20241110],
-          dateTimes: { start: [90000, 113000], end: [93000, 120000] },
+          dates: [20241110, 20241110, 20241124, 20241124],
+          dateTimes: {
+            start: [90000, 113000, 100000, 103000],
+            end: [93000, 120000, 103000, 110000],
+          },
         };
 
         items.forEach((item) => {
@@ -183,6 +186,8 @@ export default function EnquireNow() {
       days[day] === "Sunday" &&
       dateLists.dateObjectList?.dates.includes(Number(formattedDate))
     ) {
+      let minute = date["$m"];
+
       const indicesArr = dateLists.dateObjectList?.dates
         .map((date, index) => {
           if (date === Number(formattedDate)) {
@@ -191,23 +196,35 @@ export default function EnquireNow() {
         })
         .filter((element) => element !== undefined);
 
-      const selectedDateTimes = {};
+      const selectedDateTimes = {
+        9: [],
+        10: [],
+        11: [],
+        12: [],
+        13: [],
+        14: [],
+        15: [],
+        16: [],
+        17: [],
+      };
 
       for (let i = 0; i < indicesArr.length; i++) {
-        selectedDateTimes[dateLists.dateObjectList.dateTimes.start[i] / 100] =
-          dateLists.dateObjectList.dateTimes.start[i] / 100;
-        selectedDateTimes[dateLists.dateObjectList.dateTimes.end[i] / 100] =
-          dateLists.dateObjectList.dateTimes.end[i] / 100;
+        const timeStr = String(dateLists.dateObjectList.dateTimes.start[i]);
+        const minutes = Number(timeStr.at(-4) + timeStr.at(-3));
+
+        selectedDateTimes[
+          (
+            dateLists.dateObjectList.dateTimes.start[indicesArr[i]] / 10000
+          ).toFixed()
+        ].push(minutes);
       }
 
       if (!(hour >= 9 && hour <= 17)) {
         return true;
-      } else if (selectedDateTimes[`${hour}00`]) {
+      } else if (selectedDateTimes[hour]?.includes(minute)) {
         return true;
-      } else if (selectedDateTimes[`${hour}30`]) {
+      } else if (selectedDateTimes[hour].length === 2) {
         return true;
-      } else {
-        return false;
       }
     } else {
       return false;
