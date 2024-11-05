@@ -451,6 +451,7 @@ export default function EnquireNow() {
                     }
                     disablePast={true}
                     timeSteps={{ minutes: 30 }}
+                    minutesStep={30}
                     onChange={handleDateChange}
                   />
                 </DemoItem>
