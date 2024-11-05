@@ -406,29 +406,26 @@ export default function EnquireNow() {
               value={phoneNumber}
               onChange={({ target }) => setPhoneNumber(target.value)}
             ></Input>
-            <div>
-              <InputLabel htmlFor="message-input">
-                Message - Please be as detailed as possible *
-              </InputLabel>
-              <TextField
-                id="message-input"
-                name="message-input"
-                value={message}
-                multiline
-                rows={4}
-                fullWidth={true}
-                placeholder="Please provide a description of your enquiry"
-                onChange={({ target }) => setMessage(target.value)}
-              />
-            </div>
+            <InputLabel htmlFor="enquiry-description-textfield">
+              Message - * Please be as detailed as possible
+            </InputLabel>
+            <TextField
+              id="enquiry-description-textfield"
+              name="enquiry-description-textfield"
+              multiline
+              rows={4}
+              fullWidth={true}
+              placeholder="Please provide a description of your enquiry"
+              onChange={({ target }) => setMessage(target.value)}
+            />
+            <InputLabel htmlFor="dateTimePicker">
+              Choose a date or time of when you want the work to start or when
+              you would like an appointment
+            </InputLabel>
+            <Typography variant="body">
+              * Note: on Sunday we do in person quotations
+            </Typography>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <InputLabel htmlFor="dateTimePicker">
-                Choose a date or time of when you want the work to start or when
-                you would like an appointment
-              </InputLabel>
-              <Typography variant="body">
-                * Note: on Sunday we do in person quotations
-              </Typography>
               <DemoContainer components={["DateTimePicker"]}>
                 <DemoItem>
                   <CssBaseline />
