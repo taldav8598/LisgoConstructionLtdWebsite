@@ -29,7 +29,7 @@
 .leading-company-heading {
   font-size: 5rem;
   text-align: center;
-  margin: 0.025em 0;
+  margin: 0;
 }
 
 .ReviewContainer {
@@ -109,18 +109,6 @@
   }
 }
 
-.about-us-link {
-  margin-bottom: 1em;
-}
-
-.enquire-now-link {
-  margin-bottom: 0;
-}
-
-.enquire-now-link a {
-  text-decoration: none;
-  color: white;
-}
 .enquire-now-link a {
   text-decoration: none;
   color: white;
@@ -142,10 +130,17 @@
 }
 
 .cheveron-container {
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#home > div.home-title-container > div.cheveron-container > svg {
+  position: relative;
+  top: -0.5em;
+  padding: 0;
 }
 
 .cheveron-container > svg {
@@ -160,7 +155,7 @@
   50%,
   80%,
   100% {
-    transform: translateY(0);
+    transform: translateY(-5px);
   }
   40% {
     transform: translateY(-15px);
@@ -171,6 +166,7 @@
 }
 
 .cheveron {
+  margin-top: 0;
   animation: bounce 5s linear infinite;
 }
 
@@ -216,6 +212,9 @@
   }
   .see-more-reviews-link {
     font-size: clamp(0.75rem, 0.3vw + 0.5rem, 5rem) !important;
+  }
+  .enquire-now-link {
+    font-size: clamp(1.25rem, 1.15vw + 0.5rem, 5rem) !important;
   }
 }
 

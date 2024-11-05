@@ -69,12 +69,12 @@ export default function Home() {
               <Typography className="lisgo-heading" variant="h2">
                 Lisgo Construction Ltd.
               </Typography>
-              <Typography className="about-us-heading" variant="h4">
+              <Typography className="about-us-heading" variant="h3">
                 <Link href="#about-us" className="about-us-link">
                   About us
                 </Link>
               </Typography>
-              <Typography className="enquire-now-heading" variant="h4">
+              <Typography className="enquire-now-heading" variant="h3">
                 <Link href="#enquire">Enquire now</Link>
               </Typography>
             </div>
@@ -115,7 +115,7 @@ export default function Home() {
           onClick={() => document.getElementById("enquire").scrollIntoView()}
           className="cheveron-container"
         >
-          <Typography href="#enquire" className="enquire-now-link" variant="h5">
+          <Typography href="#enquire" className="enquire-now-link" variant="h4">
             <Link href="#enquire">Enquire now</Link>
           </Typography>
           <ExpandMoreIcon className="cheveron" color="white" fontSize="small" />

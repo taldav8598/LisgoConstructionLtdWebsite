@@ -90,8 +90,8 @@
   white-space: normal;
 }
 
-.MuiTypography-h4 {
-  margin-top: 1em !important;
+#contact-us > div > div > div > h4 {
+  margin-top: 1em;
 }
 
 .MuiTypography-body {
