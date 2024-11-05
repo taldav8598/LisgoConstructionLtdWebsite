@@ -62,6 +62,7 @@ export default function Home() {
           style={{
             display: "flex",
             justifyContent: "center",
+            padding: "0 1rem",
           }}
         >
           <Grid size="grow">
