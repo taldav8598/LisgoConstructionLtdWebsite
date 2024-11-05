@@ -1,15 +1,16 @@
-.MuiPaper-root {
-  padding: 2em;
-}
-
 .reviewContainer {
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: center;
   letter-spacing: 1pt;
+  margin: 2rem 2rem 0 2rem;
+}
+.review {
+  display: flex;
+  flex-direction: column;
 }
 
-.review {
+.reviewBody {
   margin: 0.25em 0.25em 0 0.25em !important;
   word-wrap: normal;
   word-break: normal;
@@ -21,20 +22,19 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .review {
-    font-size: clamp(0.6rem, 0.8vw + 0.5rem, 1.3rem) !important;
+  .reviewBody {
+    font-size: clamp(0.5rem, 0.8vw + 0.5rem, 1.2rem) !important;
   }
   .reviewName {
-    font-size: clamp(0.6rem, 0.8vw + 0.5rem, 1.3rem) !important;
+    font-size: clamp(0.5rem, 0.8vw + 0.5rem, 1.2rem) !important;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .MuiTypography-root.review {
-    font-size: clamp(0.2rem, 0.7vw + 0.4rem, 1.3rem) !important;
-    /* border: 1px solid seagreen; */
+  .MuiTypography-root.reviewBody {
+    font-size: clamp(0.2rem, 0.7vw + 0.4rem, 1.2rem) !important;
   }
   .reviewName {
-    font-size: clamp(0.2rem, 0.7vw + 0.4rem, 1.3rem) !important;
+    font-size: clamp(0.2rem, 0.7vw + 0.4rem, 1.2rem) !important;
   }
 }

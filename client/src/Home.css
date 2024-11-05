@@ -32,28 +32,42 @@
   margin: 0;
 }
 
-.ReviewContainer {
+#home
+  > div.ReviewContainer
+  > div
+  > div.css-1f8sh1y
+  > div
+  > div
+  > div
+  > div
+  > div {
+  background-color: transparent;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+#home > div.ReviewContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+  justify-self: center;
+  text-align: left;
+  width: 100vw;
   background-color: #272727;
 }
 
-.ReviewContainer a {
-  width: 100vw;
-  text-align: center;
-  color: white;
-  text-decoration-color: white;
-  background-color: #272727;
-  padding: 1em 0;
+#home > div.ReviewContainer > div {
+  text-align: left;
+  background-color: transparent !important;
 }
-.ReviewHeading {
-  font-size: 2rem;
-  margin: 0 1em 1em 1em;
+
+#home > div.ReviewContainer > div > div.css-1m9128y {
+  margin-top: 3rem;
+}
+#home > div.ReviewContainer > a {
+  display: flex;
+  justify-self: center !important;
+  color: #ffffff;
+  margin: 1rem auto;
 }
 
 #home > div.ReviewContainer > div > div.css-1m9128y > button > svg {
@@ -65,32 +79,6 @@
 #home > div.ReviewContainer > div > div.css-1m9128y > button > svg > circle {
   color: inherit;
   padding: 0;
-}
-
-.css-1m9128y {
-  margin-top: 40px;
-}
-
-.Carousel {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 150px;
-  background-color: #272727;
-  font-weight: 100 !important;
-  line-height: auto;
-}
-
-.Carousel div {
-  display: flex;
-  justify-content: center;
-  background-color: transparent !important;
-  border: none;
-  color: #ffffff;
-  box-shadow: none;
-  font-style: italic;
 }
 
 .Carousel > :nth-child(4) > button:active {
@@ -118,8 +106,6 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-top: 0;
-  padding: 0 !important;
 }
 
 .lisgo-heading {
@@ -177,9 +163,7 @@
     text-align: center;
     margin-top: 1em;
   }
-  #home > div.ReviewContainer > div.Carousel {
-    padding-top: 2.5em;
-  }
+
   #home > div.home-title-container > div > div > div > h3 {
     margin-top: 0.75em !important;
   }

@@ -9,6 +9,10 @@
   text-align: center;
 }
 
+.images-container {
+  padding: 0 1rem;
+}
+
 .images-container h5 {
   text-align: center;
 }

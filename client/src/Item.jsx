@@ -6,12 +6,14 @@ export default function Item({ item }) {
   return (
     <Paper>
       <div className="reviewContainer">
-        <Typography variant="span" className="review">
-          {item.review}
-        </Typography>
-        <Typography className="reviewName" variant="span">
-          {item.name}
-        </Typography>
+        <div className="review">
+          <Typography variant="span" className="reviewBody">
+            {item.review}
+          </Typography>
+          <Typography className="reviewName" variant="span">
+            {item.name}
+          </Typography>
+        </div>
       </div>
     </Paper>
   );
