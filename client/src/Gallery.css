@@ -43,6 +43,21 @@
   margin: 0.5rem;
 }
 
+#gallery
+  > div
+  > div.MuiGrid-root.MuiGrid-container.images-container.css-1ehnomt-MuiGrid-root
+  > div.MuiGrid-root.MuiGrid-item.css-13i4rnv-MuiGrid-root
+  > h4 {
+  text-align: center;
+}
+
+#gallery
+  > div
+  > div.MuiGrid-root.MuiGrid-container.images-container.css-1ehnomt-MuiGrid-root
+  > div.MuiGrid-root.css-vj1n65-MuiGrid-root
+  > h4 {
+  text-align: center;
+}
 .before-image {
   border-radius: 0.75em 0 0 0.75em;
 }

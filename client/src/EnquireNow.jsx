@@ -483,14 +483,14 @@ export default function EnquireNow() {
             onClick={() => document.getElementById("services").scrollIntoView()}
             className="cheveron-container"
           >
-            <ExpandMoreIcon className="cheveron" color="white" />
             <Typography
               href="#services"
               className="enquire-now-link"
-              variant="h5"
+              variant="h4"
             >
               <Link href="#services">Services</Link>
             </Typography>
+            <ExpandMoreIcon className="cheveron" color="white" />
           </div>
         </Container>
       </ThemeProvider>
