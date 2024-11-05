@@ -12,9 +12,7 @@
   border-right: 4px solid #ffd70d;
   border-left: 4px solid #ffd70d;
   padding: 2rem;
-}
-.about-container div {
-  margin-left: -10px !important;
+  margin: 0 2rem;
 }
 
 .first-journey-part {
@@ -24,20 +22,24 @@
 }
 .inner-journey-part-one {
   border-right: 4px solid #ffd70d;
+  padding: 1rem;
 }
 
 .inner-journey-part-two {
   border-left: 4px solid #ffd70d;
+  padding: 1rem;
 }
 
 .last-journey-part {
   text-align: center;
   margin-top: 1rem;
+  padding: 1rem;
 }
 
 .mention-container {
   border-right: 4px solid #ffd70d;
   border-left: 4px solid #ffd70d;
+  margin: 1rem 2rem 0 2rem;
 }
 
 .cheveron-container {
@@ -48,7 +50,7 @@
   opacity: 0.7;
   font-style: italic;
   margin-top: 1rem;
-  padding: 1rem;
+  padding: 2rem;
 }
 .mention p {
   margin-bottom: 1rem;
