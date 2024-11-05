@@ -66,7 +66,7 @@ export default function Home() {
         >
           <Grid size="grow">
             <div className="LisgoHeadingContainer">
-              <Typography className="lisgo-heading" variant="h3">
+              <Typography className="lisgo-heading" variant="h2">
                 Lisgo Construction Ltd.
               </Typography>
               <Typography className="about-us-heading" variant="h4">

@@ -134,6 +134,9 @@
   width: 100%;
 }
 
+.lisgo-heading {
+  font-weight: 400 !important;
+}
 .LisgoHomeLogoContainer > svg {
   margin-left: 1em;
 }
