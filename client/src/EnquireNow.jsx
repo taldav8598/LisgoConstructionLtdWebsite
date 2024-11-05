@@ -361,24 +361,24 @@ export default function EnquireNow() {
             onSubmit={name && email && postcode ? handleSubmit : null}
           >
             <div className="label-wrapper">
-              <InputLabel htmlFor="name-input">Name</InputLabel>
-              <InputLabel htmlFor="name-input">* Required field</InputLabel>
+              <InputLabel htmlFor="name">Name</InputLabel>
+              <Typography variant="body">* Required field</Typography>
             </div>
             <Input
-              name="from_name"
-              id="name-input"
+              name="name"
+              id="name"
               variant="outlined"
               onChange={({ target }) => setName(target.value)}
               value={name}
             ></Input>
             <div className="label-wrapper">
-              <InputLabel htmlFor="email-input">Email</InputLabel>
-              <InputLabel htmlFor="name-input">* Required field</InputLabel>
+              <InputLabel htmlFor="email">Email</InputLabel>
+              <Typography variant="body">* Required field</Typography>
             </div>
 
             <Input
               name="email"
-              id="email-input"
+              id="email"
               variant="outlined"
               value={email}
               onChange={({ target }) => setEmail(target.value)}
@@ -386,11 +386,11 @@ export default function EnquireNow() {
             {!validEmail && <p> * Not a valid email. Please try again.</p>}
             <div className="label-wrapper">
               <InputLabel htmlFor="postcode">Postcode</InputLabel>
-              <InputLabel htmlFor="postcode-input">* Required field</InputLabel>
+              <Typography variant="body">* Required field</Typography>
             </div>
             <Input
               name="postcode"
-              id="postcode-input"
+              id="postcode"
               variant="outlined"
               value={postcode}
               onChange={({ target }) => setPostcode(target.value)}
@@ -406,30 +406,35 @@ export default function EnquireNow() {
               value={phoneNumber}
               onChange={({ target }) => setPhoneNumber(target.value)}
             ></Input>
-            <InputLabel htmlFor="enquiry-description-textfield">
-              Message - Please be as detailed as possible *
-            </InputLabel>
-            <TextField
-              id="enquiry-description-textfield"
-              name="message"
-              multiline
-              rows={4}
-              fullWidth={true}
-              placeholder="Please provide a description of your enquiry"
-              onChange={({ target }) => setMessage(target.value)}
-            />
-            <InputLabel htmlFor="name-input">
-              Choose a date or time of when you want the work to start or when
-              you would like an appointment
-            </InputLabel>
-            <InputLabel htmlFor="name-input">
-              * Note: on Sunday we do in person quotations
-            </InputLabel>
+            <div>
+              <InputLabel htmlFor="message-input">
+                Message - Please be as detailed as possible *
+              </InputLabel>
+              <TextField
+                id="message-input"
+                name="message-input"
+                value={message}
+                multiline
+                rows={4}
+                fullWidth={true}
+                placeholder="Please provide a description of your enquiry"
+                onChange={({ target }) => setMessage(target.value)}
+              />
+            </div>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <InputLabel htmlFor="dateTimePicker">
+                Choose a date or time of when you want the work to start or when
+                you would like an appointment
+              </InputLabel>
+              <Typography variant="body">
+                * Note: on Sunday we do in person quotations
+              </Typography>
               <DemoContainer components={["DateTimePicker"]}>
                 <DemoItem>
                   <CssBaseline />
                   <DateTimePicker
+                    name="dateTimePicker"
+                    id="dateTimePicker"
                     sx={{
                       color: "red",
                     }}
@@ -450,7 +455,6 @@ export default function EnquireNow() {
                     disablePast={true}
                     timeSteps={{ minutes: 30 }}
                     onChange={handleDateChange}
-                    name="start_date"
                   />
                 </DemoItem>
               </DemoContainer>
