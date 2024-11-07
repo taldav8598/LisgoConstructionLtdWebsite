@@ -343,18 +343,20 @@ export default function EnquireNow() {
     <section id="enquire" className="enquire-now-section">
       <ThemeProvider theme={theme}>
         <Container className="enquire-now-container">
-          <Typography
-            className="enquire-now-heading"
-            variant="h3"
-            sx={{ textAlign: "center" }}
-          >
-            Enquire now
-          </Typography>
-          <Typography variant="body">
-            Please see the services section if you’re unsure about your enquiry
-            or want to find out more about the{" "}
-            <Link href="#services">services</Link> we offer.
-          </Typography>
+          <Container className="enquire-now-info">
+            <Typography
+              className="enquire-now-heading"
+              variant="h1"
+              sx={{ textAlign: "center" }}
+            >
+              Enquire now
+            </Typography>
+            <Typography variant="body">
+              Please see the services section if you’re unsure about your
+              enquiry or want to find out more about the{" "}
+              <Link href="#services">services</Link> we offer.
+            </Typography>
+          </Container>
           <br />
           <form
             className="enquire-now-form"
@@ -487,7 +489,7 @@ export default function EnquireNow() {
             <Typography
               href="#services"
               className="enquire-now-link"
-              variant="h4"
+              variant="h2"
             >
               <Link href="#services">Services</Link>
             </Typography>

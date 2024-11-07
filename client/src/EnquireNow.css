@@ -24,6 +24,22 @@
   color: green;
 }
 
+#enquire > div > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#enquire > div > div > h1 {
+  font-weight: 400;
+  margin: 0.5rem 0;
+}
+
+#enquire > div > div > span {
+  text-align: center;
+}
+
 .MuiTypography-h2 {
   text-align: center;
 }
@@ -60,8 +76,8 @@ svg {
 }
 
 @media only screen and (max-width: 600px) {
-  #enquire > div > span {
-    font-size: clamp(0.7rem, 0.3vw + 0.5rem, 5rem) !important;
+  #enquire > div > div > span {
+    font-size: clamp(0.7rem, 0.3vw + 0.5rem, 1.25rem) !important;
   }
   label.MuiFormLabel-root {
     white-space: normal;
@@ -90,13 +106,16 @@ svg {
 }
 
 @media only screen and (min-width: 768px) {
-  #enquire > div > h3 {
-    font-size: clamp(2rem, 2.15vw + 0.5rem, 5rem) !important;
+  #enquire > div > div > h1 {
+    font-size: clamp(2rem, 2.15vw + 0.5rem, 3rem) !important;
+  }
+  #enquire > div > div > span {
+    font-size: clamp(0.7rem, 0.9vw + 0.5rem, 1.25rem) !important;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  #enquire > div > h3 {
-    font-size: clamp(2rem, 2.15vw + 0.5rem, 5rem) !important;
+  #enquire > div > div > h1 {
+    font-size: clamp(2rem, 2.15vw + 0.5rem, 3rem) !important;
   }
 }
