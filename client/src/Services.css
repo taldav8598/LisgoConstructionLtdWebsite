@@ -3,8 +3,12 @@
   margin-bottom: 3rem;
 }
 
-.services-container h3 {
+.services-container h1 {
   margin: 1em;
+}
+
+#services > div > h1 {
+  font-weight: 400;
 }
 
 .accordion {
@@ -24,4 +28,20 @@
 .accordion svg {
   color: white;
   font-size: 30px;
+}
+
+#services > div.cheveron-container > h2 > a {
+  font-weight: 400;
+}
+
+@media only screen and (min-width: 768px) {
+  #services > div > h1 {
+    font-size: clamp(2rem, 2.15vw + 0.5rem, 3rem) !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #services > div > h1 {
+    font-size: clamp(2rem, 2.15vw + 0.5rem, 3rem) !important;
+  }
 }

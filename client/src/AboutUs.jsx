@@ -5,7 +5,7 @@ import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 export default function AboutUs() {
   return (
     <section id="about-us" className="about-us-section">
-      <Typography className="header" variant="h3">
+      <Typography className="header" variant="h1">
         About us
       </Typography>
       <div className="about-container">
@@ -49,7 +49,7 @@ export default function AboutUs() {
       <br />
       <br />
       <div className="mention-container">
-        <Typography className="header" variant="h4">
+        <Typography className="header" variant="h2">
           Testimonials
         </Typography>
         <div className="mention">
@@ -91,7 +91,7 @@ export default function AboutUs() {
         className="cheveron-container"
       >
         <ExpandLessIcon className="cheveron" color="white" />
-        <Typography href="#enquire" className="enquire-now-link" variant="h5">
+        <Typography href="#enquire" className="enquire-now-link">
           <Link href="#enquire">Enquire now</Link>
         </Typography>
       </div>

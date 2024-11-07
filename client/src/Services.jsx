@@ -15,7 +15,7 @@ export default function Services() {
   return (
     <section id="services" className="services-section">
       <Container className="services-container">
-        <Typography className="header" variant="h3">
+        <Typography className="header" variant="h1">
           Services
         </Typography>
         <Accordion className="accordion">
@@ -84,7 +84,7 @@ export default function Services() {
         className="cheveron-container"
       >
         <ExpandLessIcon className="cheveron" color="white" />
-        <Typography href="#enquire" className="enquire-now-link" variant="h4">
+        <Typography href="#enquire" className="enquire-now-link" variant="h2">
           <Link href="#enquire">Enquire now</Link>
         </Typography>
       </div>

@@ -44,6 +44,10 @@
   text-align: center;
 }
 
+#enquire > div > div.cheveron-container > h2 > a {
+  font-weight: 400;
+}
+
 .label-wrapper {
   display: flex;
   flex-direction: row;
