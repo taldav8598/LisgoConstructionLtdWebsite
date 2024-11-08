@@ -30,6 +30,10 @@
   font-size: 30px;
 }
 
+#services > div.cheveron-container > h2 {
+  margin-top: -1rem;
+}
+
 #services > div.cheveron-container > h2 > a {
   font-weight: 400;
 }

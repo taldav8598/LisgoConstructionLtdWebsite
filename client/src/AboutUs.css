@@ -60,6 +60,10 @@
   margin-bottom: 1rem;
 }
 
+#about-us > div.cheveron-container > p {
+  margin-top: -1.5rem;
+}
+
 @media only screen and (max-width: 600px) {
   .about-container {
     padding: 2rem;
