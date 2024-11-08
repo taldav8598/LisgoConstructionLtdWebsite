@@ -10,6 +10,10 @@
   margin: 7.5em 0;
 }
 
+#contact-us > div > h1 {
+  font-weight: 400;
+}
+
 .contact-us-grid {
   margin-top: 7.5em;
 }
