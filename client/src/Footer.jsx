@@ -2,7 +2,6 @@ import { Typography, Grid } from "@mui/material";
 import "./Footer.css";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import LisgoLogo from "./assets/LisgoLogo.jpg";
 
 export default function Footer() {
   return (
@@ -13,11 +12,7 @@ export default function Footer() {
           <p className="info">
             Leading contruction company with 4 years in industry.
           </p>
-          <div className="social-media-content">
-            <img src={LisgoLogo} alt="" />
-            {/* <img src={ alt="" /> */}
-            <img src={LisgoLogo} alt="" />
-          </div>
+          <div className="social-media-content"></div>
         </Grid>
         <Grid item size="grow">
           <Typography variant="h6">Social media</Typography>

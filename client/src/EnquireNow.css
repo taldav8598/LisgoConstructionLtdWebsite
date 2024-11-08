@@ -48,6 +48,11 @@
   font-weight: 400;
 }
 
+#enquire > div > form > div > span {
+  margin-top: 0.25rem !important;
+  padding: 0;
+}
+
 .label-wrapper {
   display: flex;
   flex-direction: row;

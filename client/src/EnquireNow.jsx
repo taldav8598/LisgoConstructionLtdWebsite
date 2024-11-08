@@ -420,13 +420,24 @@ export default function EnquireNow() {
               placeholder="Please provide a description of your enquiry"
               onChange={({ target }) => setMessage(target.value)}
             />
-            <InputLabel htmlFor="dateTimePicker">
-              Choose a date or time of when you want the work to start or when
-              you would like an appointment
-            </InputLabel>
-            <Typography variant="body">
-              * Note: on Sunday we do in person quotations
-            </Typography>
+            <Container
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "start",
+                alignItems: "left",
+                padding: "0 !important",
+                margin: 0,
+              }}
+            >
+              <Typography variant="body">
+                Choose a date or time of when you want the work to start or when
+                you would like an appointment
+              </Typography>
+              <Typography variant="body">
+                * Note: on Sunday we do in person quotations
+              </Typography>
+            </Container>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DemoContainer components={["DateTimePicker"]}>
                 <DemoItem>
