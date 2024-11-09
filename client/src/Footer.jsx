@@ -8,25 +8,25 @@ export default function Footer() {
     <section className="footer-container">
       <Grid container>
         <Grid item size="grow">
-          <Typography variant="h6">Lisgo Construction Ltd.</Typography>
+          <Typography variant="h1">Lisgo Construction Ltd.</Typography>
           <p className="info">
             Leading contruction company with 4 years in industry.
           </p>
           <div className="social-media-content"></div>
         </Grid>
         <Grid item size="grow">
-          <Typography variant="h6">Social media</Typography>
+          <Typography variant="h1">Social media</Typography>
           <div className="social-media-content">
-            <InstagramIcon />
+            <InstagramIcon aria-label="Instagram icon" />
             <p>Instagram</p>
           </div>
           <div className="social-media-content">
-            <FacebookIcon />
+            <FacebookIcon aria-label="Facebook icon" />
             <p>Facebook</p>
           </div>
         </Grid>
         <Grid item size="grow">
-          <Typography variant="h6">Useful links</Typography>
+          <Typography variant="h1">Useful links</Typography>
           <p className="info">
             <a href="#">example.com</a>
           </p>
@@ -35,7 +35,7 @@ export default function Footer() {
           </p>
         </Grid>
         <Grid item size="grow">
-          <Typography variant="h6">Contact information</Typography>
+          <Typography variant="h1">Contact information</Typography>
           <p className="info">Manchester, WA, Lancashire/Cheshire</p>
           <p className="info">
             <a href="tel:">Phone number</a>

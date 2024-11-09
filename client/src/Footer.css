@@ -13,6 +13,14 @@
   justify-content: space-evenly;
 }
 
+#root > section > div > div > h1 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  letter-spacing: 0.0075em;
+}
+
 #root > section > div > div {
   padding: 0 0.3em;
   max-width: 250px;
