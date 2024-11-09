@@ -39,7 +39,7 @@ export default function Home() {
           }}
           indicatorIconButtonProps={{
             style: {
-              scale: "2",
+              scale: "1.75",
               margin: "0 1rem",
             },
           }}

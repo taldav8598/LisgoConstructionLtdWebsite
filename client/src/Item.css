@@ -8,7 +8,9 @@
 .review {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  justify-content: center;
+  align-items: start;
+  max-width: 1500px;
 }
 
 .reviewBody {
