@@ -28,7 +28,7 @@ export default function Home() {
     },
   ];
   return (
-    <section id="home" className="HomeSection">
+    <section id="home" className="HomeSection" aria-label="Home">
       <div className="ReviewContainer">
         <Carousel
           className="Carousel"
@@ -49,7 +49,7 @@ export default function Home() {
           className="see-more-reviews-link"
           target="_blank"
           href="https://www.google.com/search?q=lisgo+construction+ltd&rlz=1C5GCCM_en&oq=lisgo+co&gs_lcrp=EgZjaHJvbWUqDAgAECMYJxiABBiKBTIMCAAQIxgnGIAEGIoFMg0IARAuGK8BGMcBGIAEMgYIAhBFGDkyCAgDEAAYFhgeqAIAsAIA&sourceid=chrome&ie=UTF-8#lrd=0xa51f849c094cefd3:0xc770e71668c7846d,1,,,,"
-          aria-label="See more reviews link"
+          aria-label="See more reviews"
         >
           See more reviews
         </Link>
@@ -83,13 +83,13 @@ export default function Home() {
                 <Link
                   href="#about-us"
                   className="about-us-link"
-                  aria-label="About us link"
+                  aria-label="About us"
                 >
                   About us
                 </Link>
               </Typography>
               <Typography className="enquire-now-heading" variant="h3">
-                <Link href="#enquire" aria-label="Enquire now link">
+                <Link href="#enquire" aria-label="Enquire now">
                   Enquire now
                 </Link>
               </Typography>
@@ -133,7 +133,7 @@ export default function Home() {
           className="cheveron-container"
         >
           <Typography href="#enquire" className="enquire-now-link" variant="h4">
-            <Link href="#enquire" aria-label="Enquire now link">
+            <Link href="#enquire" aria-label="Enquire now">
               Enquire now
             </Link>
           </Typography>
@@ -141,7 +141,7 @@ export default function Home() {
             className="cheveron"
             color="white"
             fontSize="small"
-            aria-label="Enquire now link"
+            aria-label="Enquire now cheveron"
           />
         </div>
       </div>

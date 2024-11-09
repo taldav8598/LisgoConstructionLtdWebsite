@@ -22,6 +22,7 @@ export default function Navigation({ toggleDrawer, open }) {
           height="1000"
           fill="none"
           viewBox="0 0 1000 1000"
+          aria-label="Lisgo Construction Ltd. logo"
         >
           <mask
             id="a"
@@ -42,7 +43,11 @@ export default function Navigation({ toggleDrawer, open }) {
             />
           </g>
         </svg>
-        <Typography className="Lisgo-Logo-Heading" variant="h6">
+        <Typography
+          className="Lisgo-Logo-Heading"
+          variant="h6"
+          aria-label="Lisgo Construction Ltd."
+        >
           Lisgo Construction Ltd.
         </Typography>
       </div>
@@ -53,6 +58,7 @@ export default function Navigation({ toggleDrawer, open }) {
             className="navigation-link"
             underline="hover"
             variant="h6"
+            aria-label="Home"
           >
             Home
           </Link>
@@ -61,6 +67,7 @@ export default function Navigation({ toggleDrawer, open }) {
             className="navigation-link"
             underline="hover"
             variant="h6"
+            aria-label="About us"
           >
             About us
           </Link>
@@ -69,6 +76,7 @@ export default function Navigation({ toggleDrawer, open }) {
             className="navigation-link"
             underline="hover"
             variant="h6"
+            aria-label="Enquire now"
           >
             Enquire now
           </Link>
@@ -77,6 +85,7 @@ export default function Navigation({ toggleDrawer, open }) {
             className="navigation-link"
             underline="hover"
             variant="h6"
+            aria-label="Services"
           >
             Services
           </Link>
@@ -85,6 +94,7 @@ export default function Navigation({ toggleDrawer, open }) {
             className="navigation-link"
             underline="hover"
             variant="h6"
+            aria-label="Gallery"
           >
             Gallery
           </Link>
@@ -93,13 +103,14 @@ export default function Navigation({ toggleDrawer, open }) {
             className="navigation-link"
             underline="hover"
             variant="h6"
+            aria-label="Contact us"
           >
             Contact us
           </Link>
         </>
       ) : (
-        <Button onClick={toggleDrawer(true)}>
-          <MenuIcon className="menu-icon"></MenuIcon>
+        <Button onClick={toggleDrawer(true)} aria-label="Menu">
+          <MenuIcon className="menu-icon" aria-label="Menu"></MenuIcon>
         </Button>
       )}
     </Container>
