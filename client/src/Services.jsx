@@ -18,7 +18,7 @@ export default function Services() {
         <Typography className="header" variant="h1">
           Services
         </Typography>
-        <Accordion className="accordion">
+        <Accordion className="accordion" aria-label="Doors information summary">
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1-content"
@@ -36,7 +36,10 @@ export default function Services() {
             <br /> <a href="#enquire">Enquire now</a>
           </AccordionDetails>
         </Accordion>
-        <Accordion className="accordion">
+        <Accordion
+          className="accordion"
+          aria-label="Flooring information summary"
+        >
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel2-content"
@@ -50,7 +53,10 @@ export default function Services() {
             malesuada lacus ex, sit amet blandit leo lobortis eget.
           </AccordionDetails>
         </Accordion>
-        <Accordion className="accordion">
+        <Accordion
+          className="accordion"
+          aria-label="Bannisters information summary"
+        >
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel3-content"
@@ -64,7 +70,10 @@ export default function Services() {
             malesuada lacus ex, sit amet blandit leo lobortis eget.
           </AccordionDetails>
         </Accordion>
-        <Accordion className="accordion">
+        <Accordion
+          className="accordion"
+          aria-label="Other services information summary"
+        >
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel4-content"
@@ -83,7 +92,11 @@ export default function Services() {
         onClick={() => document.getElementById("enquire").scrollIntoView()}
         className="cheveron-container"
       >
-        <ExpandLessIcon className="cheveron" color="white" />
+        <ExpandLessIcon
+          className="cheveron"
+          color="white"
+          aria-label="Enquire now cheveron"
+        />
         <Typography href="#enquire" className="enquire-now-link" variant="h2">
           <Link href="#enquire">Enquire now</Link>
         </Typography>
