@@ -89,6 +89,7 @@ export default function AboutUs() {
       <div
         onClick={() => document.getElementById("enquire").scrollIntoView()}
         className="cheveron-container"
+        aria-label="Enquire now cheveron"
       >
         <ExpandLessIcon className="cheveron" color="white" />
         <Typography href="#enquire" className="enquire-now-link">

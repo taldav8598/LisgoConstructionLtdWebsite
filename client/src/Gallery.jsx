@@ -36,11 +36,21 @@ export default function Gallery() {
         >
           <Grid item size="stretch">
             <Typography variant="h2">Before</Typography>
-            <img className="before-image" src={imageLinks[page][0]} alt="" />
+            <img
+              className="before-image"
+              src={imageLinks[page][0]}
+              alt=""
+              aria-label="Before"
+            />
           </Grid>
           <Grid size="stretch">
             <Typography variant="h2">After</Typography>
-            <img className="after-image" src={imageLinks[page][1]} alt="" />
+            <img
+              className="after-image"
+              src={imageLinks[page][1]}
+              alt=""
+              aria-label="After"
+            />
           </Grid>
         </Grid>
         <div className="pagination">
@@ -49,6 +59,7 @@ export default function Gallery() {
             onChange={handleChange}
             count={5}
             size="large"
+            aria-label="Pagination for gallery images"
           />
         </div>
 
@@ -56,7 +67,11 @@ export default function Gallery() {
           onClick={() => document.getElementById("enquire").scrollIntoView()}
           className="cheveron-container"
         >
-          <ExpandLessIcon className="cheveron" color="white" />
+          <ExpandLessIcon
+            className="cheveron"
+            color="white"
+            aria-label="Enquire now cheveron"
+          />
           <Typography href="#enquire" className="enquire-now-link">
             <Link href="#enquire">Enquire now</Link>
           </Typography>
