@@ -38,6 +38,7 @@ export default function Home() {
             },
           }}
           interval={7500}
+          aria-label="Review carousel"
         >
           {reviews.map((item, i) => (
             <Item className="item" key={i} item={item} />
@@ -48,13 +49,17 @@ export default function Home() {
           className="see-more-reviews-link"
           target="_blank"
           href="https://www.google.com/search?q=lisgo+construction+ltd&rlz=1C5GCCM_en&oq=lisgo+co&gs_lcrp=EgZjaHJvbWUqDAgAECMYJxiABBiKBTIMCAAQIxgnGIAEGIoFMg0IARAuGK8BGMcBGIAEMgYIAhBFGDkyCAgDEAAYFhgeqAIAsAIA&sourceid=chrome&ie=UTF-8#lrd=0xa51f849c094cefd3:0xc770e71668c7846d,1,,,,"
+          aria-label="See more reviews link"
         >
           See more reviews
         </Link>
       </div>
 
       <div className="home-title-container">
-        <h1 className="leading-company-heading">
+        <h1
+          className="leading-company-heading"
+          aria-label="Leading Construction Company"
+        >
           Leading Construction Company
         </h1>
         <Grid
@@ -67,16 +72,26 @@ export default function Home() {
         >
           <Grid size="grow">
             <div className="LisgoHeadingContainer">
-              <Typography className="lisgo-heading" variant="h2">
+              <Typography
+                className="lisgo-heading"
+                variant="h2"
+                aria-label="Lisgo Construction Ltd."
+              >
                 Lisgo Construction Ltd.
               </Typography>
               <Typography className="about-us-heading" variant="h3">
-                <Link href="#about-us" className="about-us-link">
+                <Link
+                  href="#about-us"
+                  className="about-us-link"
+                  aria-label="About us link"
+                >
                   About us
                 </Link>
               </Typography>
               <Typography className="enquire-now-heading" variant="h3">
-                <Link href="#enquire">Enquire now</Link>
+                <Link href="#enquire" aria-label="Enquire now link">
+                  Enquire now
+                </Link>
               </Typography>
             </div>
           </Grid>
@@ -89,6 +104,7 @@ export default function Home() {
                 height="1000"
                 fill="none"
                 viewBox="0 0 1000 1000"
+                aria-label="Lisgo Construction Ltd. Logo"
               >
                 <mask
                   id="a"
@@ -117,9 +133,16 @@ export default function Home() {
           className="cheveron-container"
         >
           <Typography href="#enquire" className="enquire-now-link" variant="h4">
-            <Link href="#enquire">Enquire now</Link>
+            <Link href="#enquire" aria-label="Enquire now link">
+              Enquire now
+            </Link>
           </Typography>
-          <ExpandMoreIcon className="cheveron" color="white" fontSize="small" />
+          <ExpandMoreIcon
+            className="cheveron"
+            color="white"
+            fontSize="small"
+            aria-label="Enquire now link"
+          />
         </div>
       </div>
     </section>
