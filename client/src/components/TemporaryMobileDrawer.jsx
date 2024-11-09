@@ -47,13 +47,15 @@ export default function TemporaryMobileDrawer({ open, toggleDrawer }) {
               borderBottom: "4px solid #FFD70D",
               padding: "1rem",
             }}
+            aria-label={text}
           >
             <ListItemButton
               href={pageLinkArr[index]}
               style={{ textAlign: "center" }}
               onClick={toggleDrawer(false)}
+              aria-label={text}
             >
-              <ListItemText primary={text} />
+              <ListItemText primary={text} aria-label={text} />
             </ListItemButton>
           </ListItem>
         ))}
