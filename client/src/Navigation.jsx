@@ -43,11 +43,7 @@ export default function Navigation({ toggleDrawer, open }) {
             />
           </g>
         </svg>
-        <Typography
-          className="Lisgo-Logo-Heading"
-          variant="h6"
-          aria-label="Lisgo Construction Ltd."
-        >
+        <Typography className="Lisgo-Logo-Heading" variant="h6">
           Lisgo Construction Ltd.
         </Typography>
       </div>
@@ -58,7 +54,6 @@ export default function Navigation({ toggleDrawer, open }) {
             className="navigation-link"
             underline="hover"
             variant="h6"
-            aria-label="Home"
           >
             Home
           </Link>
@@ -67,7 +62,6 @@ export default function Navigation({ toggleDrawer, open }) {
             className="navigation-link"
             underline="hover"
             variant="h6"
-            aria-label="About us"
           >
             About us
           </Link>
@@ -76,7 +70,6 @@ export default function Navigation({ toggleDrawer, open }) {
             className="navigation-link"
             underline="hover"
             variant="h6"
-            aria-label="Enquire now"
           >
             Enquire now
           </Link>
@@ -85,7 +78,6 @@ export default function Navigation({ toggleDrawer, open }) {
             className="navigation-link"
             underline="hover"
             variant="h6"
-            aria-label="Services"
           >
             Services
           </Link>
@@ -94,7 +86,6 @@ export default function Navigation({ toggleDrawer, open }) {
             className="navigation-link"
             underline="hover"
             variant="h6"
-            aria-label="Gallery"
           >
             Gallery
           </Link>
@@ -103,7 +94,6 @@ export default function Navigation({ toggleDrawer, open }) {
             className="navigation-link"
             underline="hover"
             variant="h6"
-            aria-label="Contact us"
           >
             Contact us
           </Link>

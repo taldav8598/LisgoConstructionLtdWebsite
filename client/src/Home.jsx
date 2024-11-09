@@ -49,17 +49,13 @@ export default function Home() {
           className="see-more-reviews-link"
           target="_blank"
           href="https://www.google.com/search?q=lisgo+construction+ltd&rlz=1C5GCCM_en&oq=lisgo+co&gs_lcrp=EgZjaHJvbWUqDAgAECMYJxiABBiKBTIMCAAQIxgnGIAEGIoFMg0IARAuGK8BGMcBGIAEMgYIAhBFGDkyCAgDEAAYFhgeqAIAsAIA&sourceid=chrome&ie=UTF-8#lrd=0xa51f849c094cefd3:0xc770e71668c7846d,1,,,,"
-          aria-label="See more reviews"
         >
           See more reviews
         </Link>
       </div>
 
       <div className="home-title-container">
-        <h1
-          className="leading-company-heading"
-          aria-label="Leading Construction Company"
-        >
+        <h1 className="leading-company-heading">
           Leading Construction Company
         </h1>
         <Grid
@@ -72,26 +68,16 @@ export default function Home() {
         >
           <Grid size="grow">
             <div className="LisgoHeadingContainer">
-              <Typography
-                className="lisgo-heading"
-                variant="h2"
-                aria-label="Lisgo Construction Ltd."
-              >
+              <Typography className="lisgo-heading" variant="h2">
                 Lisgo Construction Ltd.
               </Typography>
               <Typography className="about-us-heading" variant="h3">
-                <Link
-                  href="#about-us"
-                  className="about-us-link"
-                  aria-label="About us"
-                >
+                <Link href="#about-us" className="about-us-link">
                   About us
                 </Link>
               </Typography>
               <Typography className="enquire-now-heading" variant="h3">
-                <Link href="#enquire" aria-label="Enquire now">
-                  Enquire now
-                </Link>
+                <Link href="#enquire">Enquire now</Link>
               </Typography>
             </div>
           </Grid>
@@ -133,9 +119,7 @@ export default function Home() {
           className="cheveron-container"
         >
           <Typography href="#enquire" className="enquire-now-link" variant="h4">
-            <Link href="#enquire" aria-label="Enquire now">
-              Enquire now
-            </Link>
+            <Link href="#enquire">Enquire now</Link>
           </Typography>
           <ExpandMoreIcon
             className="cheveron"
