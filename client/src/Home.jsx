@@ -37,6 +37,12 @@ export default function Home() {
               color: "#ffd70d",
             },
           }}
+          indicatorIconButtonProps={{
+            style: {
+              scale: "2",
+              margin: "0 1rem",
+            },
+          }}
           interval={7500}
           aria-label="Review carousel"
         >

@@ -61,7 +61,7 @@
 }
 
 #home > div.ReviewContainer > div > div.css-1m9128y {
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 #home > div.ReviewContainer > a {
   display: flex;
@@ -83,6 +83,11 @@
 
 .Carousel > :nth-child(4) > button:active {
   color: yellow;
+}
+
+#home > div.ReviewContainer > a {
+  font-size: 1.1rem !important;
+  margin-top: 1rem;
 }
 
 @keyframes rotate {

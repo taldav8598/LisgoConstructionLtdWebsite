@@ -16,21 +16,21 @@ export default function ContactUs() {
         <Typography variant="h1">Contact Us</Typography>
         <Grid container className="contact-us-grid">
           <Grid size={10} className="contact-us-item-container">
-            <div className="email-container" aria-label="Email">
+            <div className="email-container">
               <EmailIcon className="email-icon" aria-label="Email icon" />
             </div>
             <Typography variant="h2">Email</Typography>
             <Typography variant="body">lisgoconstruction@gmail.com</Typography>
           </Grid>
           <Grid size={10} className="contact-us-item-container">
-            <div className="phone-no-container" aria-label="Phone number">
+            <div className="phone-no-container">
               <LocalPhoneIcon className="phone-icon" aria-label="Phone icon" />
             </div>
             <Typography variant="h2">Phone</Typography>
             <Typography variant="body">07732 107825</Typography>
           </Grid>
           <Grid size={10} className="contact-us-item-container">
-            <div className="facebook-container" aria-label="Facebook">
+            <div className="facebook-container">
               <FacebookIcon
                 className="facebook-icon"
                 aria-label="Facebook icon"
@@ -45,7 +45,7 @@ export default function ContactUs() {
             </Link>
           </Grid>
           <Grid size={10} className="contact-us-item-container">
-            <div className="location-on-container" aria-label="Location">
+            <div className="location-on-container">
               <LocationOnIcon
                 className="location-on-icon"
                 aria-label="Location icon"
