@@ -88,6 +88,7 @@
 #home > div.ReviewContainer > a {
   font-size: 1.1rem !important;
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 @keyframes rotate {
