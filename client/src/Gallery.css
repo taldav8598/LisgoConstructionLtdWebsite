@@ -17,14 +17,20 @@
   padding: 0 1rem;
 }
 
+#gallery > div > div > div {
+  width: 100%;
+  max-width: 500px;
+}
+
 .images-container h2 {
   font-weight: 400;
   text-align: center;
 }
 
 .images-container img {
-  height: clamp(200px, 15vw + 2.5vw, 400px);
-  width: clamp(300px, 20vw + 2.5vw, 500px);
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 
 .pagination {
