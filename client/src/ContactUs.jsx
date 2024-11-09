@@ -7,27 +7,34 @@ import "./ContactUs.css";
 
 export default function ContactUs() {
   return (
-    <section id="contact-us" className="contact-us-section">
+    <section
+      id="contact-us"
+      className="contact-us-section"
+      aria-label="Contact us"
+    >
       <div className="contact-us-container">
         <Typography variant="h1">Contact Us</Typography>
         <Grid container className="contact-us-grid">
           <Grid size={10} className="contact-us-item-container">
-            <div className="email-container">
-              <EmailIcon className="email-icon" />
+            <div className="email-container" aria-label="Email">
+              <EmailIcon className="email-icon" aria-label="Email icon" />
             </div>
             <Typography variant="h2">Email</Typography>
             <Typography variant="body">lisgoconstruction@gmail.com</Typography>
           </Grid>
           <Grid size={10} className="contact-us-item-container">
-            <div className="phone-no-container">
-              <LocalPhoneIcon className="phone-icon" />
+            <div className="phone-no-container" aria-label="Phone number">
+              <LocalPhoneIcon className="phone-icon" aria-label="Phone icon" />
             </div>
             <Typography variant="h2">Phone</Typography>
             <Typography variant="body">07732 107825</Typography>
           </Grid>
           <Grid size={10} className="contact-us-item-container">
-            <div className="facebook-container">
-              <FacebookIcon className="facebook-icon" />
+            <div className="facebook-container" aria-label="Facebook">
+              <FacebookIcon
+                className="facebook-icon"
+                aria-label="Facebook icon"
+              />
             </div>
             <Typography variant="h2">Facebook</Typography>
             <Link
@@ -38,8 +45,11 @@ export default function ContactUs() {
             </Link>
           </Grid>
           <Grid size={10} className="contact-us-item-container">
-            <div className="location-on-container">
-              <LocationOnIcon className="location-on-icon" />
+            <div className="location-on-container" aria-label="Location">
+              <LocationOnIcon
+                className="location-on-icon"
+                aria-label="Location icon"
+              />
             </div>
             <Typography variant="h2">Location</Typography>
             <Typography variant="body" className="address">

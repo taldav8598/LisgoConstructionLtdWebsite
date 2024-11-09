@@ -22,7 +22,7 @@ export default function Gallery() {
   };
 
   return (
-    <section id="gallery" className="gallery-section">
+    <section id="gallery" className="gallery-section" aria-label="Gallery">
       <div className="gallery-container">
         <Typography variant="h1">Gallery</Typography>
         <Grid

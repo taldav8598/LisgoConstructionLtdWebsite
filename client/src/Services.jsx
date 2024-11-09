@@ -13,7 +13,7 @@ import "./Services.css";
 
 export default function Services() {
   return (
-    <section id="services" className="services-section">
+    <section id="services" className="services-section" aria-label="Services">
       <Container className="services-container">
         <Typography className="header" variant="h1">
           Services

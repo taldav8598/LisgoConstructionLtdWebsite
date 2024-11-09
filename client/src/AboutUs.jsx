@@ -4,7 +4,7 @@ import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 
 export default function AboutUs() {
   return (
-    <section id="about-us" className="about-us-section">
+    <section id="about-us" className="about-us-section" aria-label="About us">
       <Typography className="header" variant="h1">
         About us
       </Typography>
