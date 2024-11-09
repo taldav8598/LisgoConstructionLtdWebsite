@@ -4,8 +4,8 @@ import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 
 export default function AboutUs() {
   return (
-    <section id="about-us" className="about-us-section">
-      <Typography className="header" variant="h3">
+    <section id="about-us" className="about-us-section" aria-label="About us">
+      <Typography className="header" variant="h1">
         About us
       </Typography>
       <div className="about-container">
@@ -49,7 +49,7 @@ export default function AboutUs() {
       <br />
       <br />
       <div className="mention-container">
-        <Typography className="header" variant="h4">
+        <Typography className="header" variant="h2">
           Testimonials
         </Typography>
         <div className="mention">
@@ -89,9 +89,10 @@ export default function AboutUs() {
       <div
         onClick={() => document.getElementById("enquire").scrollIntoView()}
         className="cheveron-container"
+        aria-label="Enquire now cheveron"
       >
         <ExpandLessIcon className="cheveron" color="white" />
-        <Typography href="#enquire" className="enquire-now-link" variant="h5">
+        <Typography href="#enquire" className="enquire-now-link" variant="h2">
           <Link href="#enquire">Enquire now</Link>
         </Typography>
       </div>

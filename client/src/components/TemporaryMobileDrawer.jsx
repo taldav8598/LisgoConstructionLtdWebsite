@@ -26,6 +26,9 @@ export default function TemporaryMobileDrawer({ open, toggleDrawer }) {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-evenly",
+          overflow: "hidden",
+          padding: "0 2rem",
+          margin: "0",
         }}
       >
         {[
@@ -36,11 +39,20 @@ export default function TemporaryMobileDrawer({ open, toggleDrawer }) {
           "Gallery",
           "Contact us",
         ].map((text, index) => (
-          <ListItem key={text} disablePadding>
+          <ListItem
+            key={text}
+            disablePadding
+            sx={{
+              margin: "0",
+              borderBottom: "4px solid #FFD70D",
+              padding: "1rem",
+            }}
+          >
             <ListItemButton
               href={pageLinkArr[index]}
               style={{ textAlign: "center" }}
               onClick={toggleDrawer(false)}
+              aria-label={text}
             >
               <ListItemText primary={text} />
             </ListItemButton>

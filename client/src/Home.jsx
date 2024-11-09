@@ -28,7 +28,7 @@ export default function Home() {
     },
   ];
   return (
-    <section id="home" className="HomeSection">
+    <section id="home" className="HomeSection" aria-label="Home">
       <div className="ReviewContainer">
         <Carousel
           className="Carousel"
@@ -37,7 +37,14 @@ export default function Home() {
               color: "#ffd70d",
             },
           }}
+          indicatorIconButtonProps={{
+            style: {
+              scale: "1.75",
+              margin: "0 1rem",
+            },
+          }}
           interval={7500}
+          aria-label="Review carousel"
         >
           {reviews.map((item, i) => (
             <Item className="item" key={i} item={item} />
@@ -62,19 +69,20 @@ export default function Home() {
           style={{
             display: "flex",
             justifyContent: "center",
+            padding: "0 1rem",
           }}
         >
           <Grid size="grow">
             <div className="LisgoHeadingContainer">
-              <Typography className="lisgo-heading" variant="h3">
+              <Typography className="lisgo-heading" variant="h2">
                 Lisgo Construction Ltd.
               </Typography>
-              <Typography className="about-us-heading" variant="h4">
+              <Typography className="about-us-heading" variant="h3">
                 <Link href="#about-us" className="about-us-link">
                   About us
                 </Link>
               </Typography>
-              <Typography className="enquire-now-heading" variant="h4">
+              <Typography className="enquire-now-heading" variant="h3">
                 <Link href="#enquire">Enquire now</Link>
               </Typography>
             </div>
@@ -88,6 +96,7 @@ export default function Home() {
                 height="1000"
                 fill="none"
                 viewBox="0 0 1000 1000"
+                aria-label="Lisgo Construction Ltd. Logo"
               >
                 <mask
                   id="a"
@@ -115,10 +124,15 @@ export default function Home() {
           onClick={() => document.getElementById("enquire").scrollIntoView()}
           className="cheveron-container"
         >
-          <Typography href="#enquire" className="enquire-now-link" variant="h5">
+          <Typography href="#enquire" className="enquire-now-link" variant="h4">
             <Link href="#enquire">Enquire now</Link>
           </Typography>
-          <ExpandMoreIcon className="cheveron" color="white" fontSize="small" />
+          <ExpandMoreIcon
+            className="cheveron"
+            color="white"
+            fontSize="small"
+            aria-label="Enquire now cheveron"
+          />
         </div>
       </div>
     </section>

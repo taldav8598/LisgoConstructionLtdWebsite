@@ -1,29 +1,51 @@
 .services-section {
-    scroll-margin-top: 6em;
-    margin-bottom: 3rem;
+  scroll-margin-top: 6em;
+  margin-bottom: 3rem;
 }
 
-.services-container h3 {
-    margin: 1em;
+.services-container h1 {
+  margin: 1em;
+}
+
+#services > div > h1 {
+  font-weight: 400;
 }
 
 .accordion {
-    padding: 0;
-    margin-bottom: 1rem;
-    background-color: black !important;
-    color: white !important;
-    border: 2px solid #FFD70D;
-    margin: 2rem 0;
-    border-radius: 5px;
+  padding: 0;
+  margin-bottom: 1rem;
+  background-color: black !important;
+  color: white !important;
+  border: 3px solid #ffd70d;
+  margin: 2rem 0;
+  border-radius: 5px;
 }
 
 .accordion a {
-    color: white;
+  color: white;
 }
 
 .accordion svg {
-    color: white;
-    font-size: 30px;
+  color: white;
+  font-size: 30px;
 }
 
+#services > div.cheveron-container > h2 {
+  margin-top: -1rem;
+}
 
+#services > div.cheveron-container > h2 > a {
+  font-weight: 400;
+}
+
+@media only screen and (min-width: 768px) {
+  #services > div > h1 {
+    font-size: clamp(2rem, 2.15vw + 0.5rem, 3rem) !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #services > div > h1 {
+    font-size: clamp(2rem, 2.15vw + 0.5rem, 3rem) !important;
+  }
+}

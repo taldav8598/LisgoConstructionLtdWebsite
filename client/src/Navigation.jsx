@@ -13,7 +13,7 @@ export default function Navigation({ toggleDrawer, open }) {
   }, []);
 
   return (
-    <Container className="navigation-container">
+    <Container className="navigation-container" aria-label="Navigation">
       <div className="LisgoLogoContainer">
         <svg
           className="LisgoLogo"
@@ -22,6 +22,7 @@ export default function Navigation({ toggleDrawer, open }) {
           height="1000"
           fill="none"
           viewBox="0 0 1000 1000"
+          aria-label="Lisgo Construction Ltd. logo"
         >
           <mask
             id="a"
@@ -98,8 +99,8 @@ export default function Navigation({ toggleDrawer, open }) {
           </Link>
         </>
       ) : (
-        <Button onClick={toggleDrawer(true)}>
-          <MenuIcon className="menu-icon"></MenuIcon>
+        <Button onClick={toggleDrawer(true)} aria-label="Menu">
+          <MenuIcon className="menu-icon" aria-label="Menu"></MenuIcon>
         </Button>
       )}
     </Container>

@@ -22,17 +22,9 @@ export default function Gallery() {
   };
 
   return (
-    <section id="gallery" className="gallery-section">
+    <section id="gallery" className="gallery-section" aria-label="Gallery">
       <div className="gallery-container">
-        <Typography variant="h3">Gallery</Typography>
-        <div className="pagination">
-          <Pagination
-            page={page}
-            onChange={handleChange}
-            count={5}
-            size="large"
-          />
-        </div>
+        <Typography variant="h1">Gallery</Typography>
         <Grid
           className="images-container"
           container
@@ -43,24 +35,44 @@ export default function Gallery() {
           }}
         >
           <Grid item size="stretch">
-            <Typography variant="h5">Before</Typography>
-            <img className="before-image" src={imageLinks[page][0]} alt="" />
+            <Typography variant="h2">Before</Typography>
+            <img
+              className="before-image"
+              src={imageLinks[page][0]}
+              alt=""
+              aria-label="Before"
+            />
           </Grid>
           <Grid size="stretch">
-            <Typography variant="h5">After</Typography>
-            <img className="after-image" src={imageLinks[page][1]} alt="" />
+            <Typography variant="h2">After</Typography>
+            <img
+              className="after-image"
+              src={imageLinks[page][1]}
+              alt=""
+              aria-label="After"
+            />
           </Grid>
         </Grid>
-        {/* <div className='pagination'>
-                <Pagination  page={page} onChange={handleChange} count={5} size="large" />
-                </div> */}
+        <div className="pagination">
+          <Pagination
+            page={page}
+            onChange={handleChange}
+            count={5}
+            size="large"
+            aria-label="Pagination for gallery images"
+          />
+        </div>
 
         <div
           onClick={() => document.getElementById("enquire").scrollIntoView()}
           className="cheveron-container"
         >
-          <ExpandLessIcon className="cheveron" color="white" />
-          <Typography href="#enquire" className="enquire-now-link" variant="h5">
+          <ExpandLessIcon
+            className="cheveron"
+            color="white"
+            aria-label="Enquire now cheveron"
+          />
+          <Typography href="#enquire" className="enquire-now-link" variant="h2">
             <Link href="#enquire">Enquire now</Link>
           </Typography>
         </div>

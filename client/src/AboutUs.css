@@ -12,9 +12,11 @@
   border-right: 4px solid #ffd70d;
   border-left: 4px solid #ffd70d;
   padding: 2rem;
+  margin: 0 2rem;
 }
-.about-container div {
-  margin-left: -10px !important;
+
+#about-us > h1 {
+  font-weight: 400;
 }
 
 .first-journey-part {
@@ -24,20 +26,24 @@
 }
 .inner-journey-part-one {
   border-right: 4px solid #ffd70d;
+  padding: 1rem;
 }
 
 .inner-journey-part-two {
   border-left: 4px solid #ffd70d;
+  padding: 1rem;
 }
 
 .last-journey-part {
   text-align: center;
   margin-top: 1rem;
+  padding: 1rem;
 }
 
 .mention-container {
   border-right: 4px solid #ffd70d;
   border-left: 4px solid #ffd70d;
+  margin: 1rem 2rem 0 2rem;
 }
 
 .cheveron-container {
@@ -48,10 +54,18 @@
   opacity: 0.7;
   font-style: italic;
   margin-top: 1rem;
-  padding: 1rem;
+  padding: 2rem;
 }
 .mention p {
   margin-bottom: 1rem;
+}
+
+#about-us > div.cheveron-container > p {
+  margin-top: -1.5rem;
+}
+
+#about-us > div.cheveron-container > h2 > a {
+  font-weight: 400;
 }
 
 @media only screen and (max-width: 600px) {
@@ -69,5 +83,29 @@
   }
   .inner-journey-part-two {
     border: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #about-us > h1 {
+    font-size: clamp(2rem, 2.15vw + 0.5rem, 3rem) !important;
+  }
+  #about-us > div.mention-container > h2 {
+    font-size: clamp(1.75rem, 2vw + 0.5rem, 2.75rem) !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .about-container {
+    margin: 0 1rem;
+  }
+  .mention-container {
+    margin: 1rem 1rem 0 1rem;
+  }
+  #about-us > h1 {
+    font-size: clamp(2rem, 2.15vw + 0.5rem, 3rem) !important;
+  }
+  #about-us > div.mention-container > h2 {
+    font-size: clamp(1.75rem, 2vw + 0.5rem, 2.75rem) !important;
   }
 }

@@ -340,60 +340,70 @@ export default function EnquireNow() {
   };
 
   return (
-    <section id="enquire" className="enquire-now-section">
+    <section
+      id="enquire"
+      className="enquire-now-section"
+      aria-label="Enquire now"
+    >
       <ThemeProvider theme={theme}>
         <Container className="enquire-now-container">
-          <Typography
-            className="enquire-now-heading"
-            variant="h3"
-            sx={{ textAlign: "center" }}
-          >
-            Enquire now
-          </Typography>
-          <Typography variant="body">
-            Please see the services section if you’re unsure about your enquiry
-            or want to find out more about the{" "}
-            <Link href="#services">services</Link> we offer.
-          </Typography>
+          <Container className="enquire-now-info">
+            <Typography
+              className="enquire-now-heading"
+              variant="h1"
+              sx={{ textAlign: "center" }}
+            >
+              Enquire now
+            </Typography>
+            <Typography variant="body">
+              Please see the services section if you’re unsure about your
+              enquiry or want to find out more about the{" "}
+              <Link href="#services">services</Link> we offer.
+            </Typography>
+          </Container>
           <br />
           <form
             className="enquire-now-form"
             onSubmit={name && email && postcode ? handleSubmit : null}
+            aria-label="Enquire now form"
           >
             <div className="label-wrapper">
-              <InputLabel htmlFor="name-input">Name</InputLabel>
-              <InputLabel htmlFor="name-input">* Required field</InputLabel>
+              <InputLabel htmlFor="name">Name</InputLabel>
+              <Typography variant="body">* Required field</Typography>
             </div>
             <Input
-              name="from_name"
-              id="name-input"
+              name="name"
+              id="name"
               variant="outlined"
               onChange={({ target }) => setName(target.value)}
               value={name}
+              aria-label="Your name"
             ></Input>
             <div className="label-wrapper">
-              <InputLabel htmlFor="email-input">Email</InputLabel>
-              <InputLabel htmlFor="name-input">* Required field</InputLabel>
+              <InputLabel htmlFor="email">Email</InputLabel>
+              <Typography variant="body">* Required field</Typography>
             </div>
 
             <Input
               name="email"
-              id="email-input"
+              id="email"
               variant="outlined"
               value={email}
               onChange={({ target }) => setEmail(target.value)}
+              aria-label="Your email"
             ></Input>
             {!validEmail && <p> * Not a valid email. Please try again.</p>}
             <div className="label-wrapper">
               <InputLabel htmlFor="postcode">Postcode</InputLabel>
-              <InputLabel htmlFor="postcode-input">* Required field</InputLabel>
+              <Typography variant="body">* Required field</Typography>
             </div>
             <Input
               name="postcode"
-              id="postcode-input"
+              id="postcode"
               variant="outlined"
               value={postcode}
               onChange={({ target }) => setPostcode(target.value)}
+              aria-label="Your Postcode"
             ></Input>
             {!validPostcode && (
               <p> * Not a valid postcode. Please try again.</p>
@@ -405,31 +415,46 @@ export default function EnquireNow() {
               variant="outlined"
               value={phoneNumber}
               onChange={({ target }) => setPhoneNumber(target.value)}
+              aria-label="Your Phone Number"
             ></Input>
             <InputLabel htmlFor="enquiry-description-textfield">
-              Message - Please be as detailed as possible *
+              Message - * Please be as detailed as possible
             </InputLabel>
             <TextField
               id="enquiry-description-textfield"
-              name="message"
+              name="enquiry-description-textfield"
               multiline
               rows={4}
               fullWidth={true}
               placeholder="Please provide a description of your enquiry"
               onChange={({ target }) => setMessage(target.value)}
+              aria-label="Your message regarding your enquiry"
             />
-            <InputLabel htmlFor="name-input">
-              Choose a date or time of when you want the work to start or when
-              you would like an appointment
-            </InputLabel>
-            <InputLabel htmlFor="name-input">
-              * Note: on Sunday we do in person quotations
-            </InputLabel>
+            <Container
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "start",
+                alignItems: "left",
+                padding: "0 !important",
+                margin: 0,
+              }}
+            >
+              <Typography variant="body">
+                Choose a date or time of when you want the work to start or when
+                you would like an appointment
+              </Typography>
+              <Typography variant="body">
+                * Note: on Sunday we do in person quotations
+              </Typography>
+            </Container>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DemoContainer components={["DateTimePicker"]}>
                 <DemoItem>
                   <CssBaseline />
                   <DateTimePicker
+                    name="dateTimePicker"
+                    id="dateTimePicker"
                     sx={{
                       color: "red",
                     }}
@@ -449,8 +474,9 @@ export default function EnquireNow() {
                     }
                     disablePast={true}
                     timeSteps={{ minutes: 30 }}
+                    minutesStep={30}
                     onChange={handleDateChange}
-                    name="start_date"
+                    aria-label="Your chosen date or time of appointment"
                   />
                 </DemoItem>
               </DemoContainer>
@@ -482,14 +508,18 @@ export default function EnquireNow() {
             onClick={() => document.getElementById("services").scrollIntoView()}
             className="cheveron-container"
           >
-            <ExpandMoreIcon className="cheveron" color="white" />
             <Typography
               href="#services"
               className="enquire-now-link"
-              variant="h5"
+              variant="h2"
             >
               <Link href="#services">Services</Link>
             </Typography>
+            <ExpandMoreIcon
+              className="cheveron"
+              color="white"
+              aria-label="Services cheveron"
+            />
           </div>
         </Container>
       </ThemeProvider>
