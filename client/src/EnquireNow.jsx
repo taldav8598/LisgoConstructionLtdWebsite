@@ -340,7 +340,11 @@ export default function EnquireNow() {
   };
 
   return (
-    <section id="enquire" className="enquire-now-section">
+    <section
+      id="enquire"
+      className="enquire-now-section"
+      aria-label="Enquire now"
+    >
       <ThemeProvider theme={theme}>
         <Container className="enquire-now-container">
           <Container className="enquire-now-info">
@@ -361,6 +365,7 @@ export default function EnquireNow() {
           <form
             className="enquire-now-form"
             onSubmit={name && email && postcode ? handleSubmit : null}
+            aria-label="Enquire now form"
           >
             <div className="label-wrapper">
               <InputLabel htmlFor="name">Name</InputLabel>
@@ -372,6 +377,7 @@ export default function EnquireNow() {
               variant="outlined"
               onChange={({ target }) => setName(target.value)}
               value={name}
+              aria-label="Your name"
             ></Input>
             <div className="label-wrapper">
               <InputLabel htmlFor="email">Email</InputLabel>
@@ -384,6 +390,7 @@ export default function EnquireNow() {
               variant="outlined"
               value={email}
               onChange={({ target }) => setEmail(target.value)}
+              aria-label="Your email"
             ></Input>
             {!validEmail && <p> * Not a valid email. Please try again.</p>}
             <div className="label-wrapper">
@@ -396,6 +403,7 @@ export default function EnquireNow() {
               variant="outlined"
               value={postcode}
               onChange={({ target }) => setPostcode(target.value)}
+              aria-label="Your Postcode"
             ></Input>
             {!validPostcode && (
               <p> * Not a valid postcode. Please try again.</p>
@@ -407,6 +415,7 @@ export default function EnquireNow() {
               variant="outlined"
               value={phoneNumber}
               onChange={({ target }) => setPhoneNumber(target.value)}
+              aria-label="Your Phone Number"
             ></Input>
             <InputLabel htmlFor="enquiry-description-textfield">
               Message - * Please be as detailed as possible
@@ -419,6 +428,7 @@ export default function EnquireNow() {
               fullWidth={true}
               placeholder="Please provide a description of your enquiry"
               onChange={({ target }) => setMessage(target.value)}
+              aria-label="Your message regarding your enquiry"
             />
             <Container
               sx={{
@@ -466,6 +476,7 @@ export default function EnquireNow() {
                     timeSteps={{ minutes: 30 }}
                     minutesStep={30}
                     onChange={handleDateChange}
+                    aria-label="Your chosen date or time of appointment"
                   />
                 </DemoItem>
               </DemoContainer>
@@ -504,7 +515,11 @@ export default function EnquireNow() {
             >
               <Link href="#services">Services</Link>
             </Typography>
-            <ExpandMoreIcon className="cheveron" color="white" />
+            <ExpandMoreIcon
+              className="cheveron"
+              color="white"
+              aria-label="Services cheveron"
+            />
           </div>
         </Container>
       </ThemeProvider>

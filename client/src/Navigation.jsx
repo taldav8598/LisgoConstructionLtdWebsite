@@ -13,7 +13,7 @@ export default function Navigation({ toggleDrawer, open }) {
   }, []);
 
   return (
-    <Container className="navigation-container">
+    <Container className="navigation-container" aria-label="Navigation">
       <div className="LisgoLogoContainer">
         <svg
           className="LisgoLogo"

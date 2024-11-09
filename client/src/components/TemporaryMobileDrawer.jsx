@@ -47,7 +47,6 @@ export default function TemporaryMobileDrawer({ open, toggleDrawer }) {
               borderBottom: "4px solid #FFD70D",
               padding: "1rem",
             }}
-            aria-label={text}
           >
             <ListItemButton
               href={pageLinkArr[index]}
@@ -55,7 +54,7 @@ export default function TemporaryMobileDrawer({ open, toggleDrawer }) {
               onClick={toggleDrawer(false)}
               aria-label={text}
             >
-              <ListItemText primary={text} aria-label={text} />
+              <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
         ))}
