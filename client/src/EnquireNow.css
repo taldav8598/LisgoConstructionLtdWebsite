@@ -33,7 +33,7 @@
 
 #enquire > div > div > h1 {
   font-weight: 400;
-  margin: 0.5rem 0;
+  margin: 0.75rem 0 0 0;
 }
 
 #enquire > div > div > span {
@@ -70,6 +70,10 @@ svg {
 
 #submit-button:disabled {
   color: #a3a3a3b4;
+}
+
+#enquire > div > div.cheveron-container {
+  margin-top: 3rem;
 }
 
 .css-1xp5a9o-MuiInputBase-root-MuiOutlinedInput-root.Mui-error

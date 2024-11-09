@@ -95,6 +95,10 @@
   margin-top: -1.5rem;
 }
 
+#gallery > div > div.cheveron-container > h2 > a {
+  font-weight: 400;
+}
+
 @media only screen and (min-width: 768px) {
   .MuiPaginationItem-root.Mui-selected {
     color: #ffd70d;

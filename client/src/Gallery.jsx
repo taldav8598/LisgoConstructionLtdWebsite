@@ -72,7 +72,7 @@ export default function Gallery() {
             color="white"
             aria-label="Enquire now cheveron"
           />
-          <Typography href="#enquire" className="enquire-now-link">
+          <Typography href="#enquire" className="enquire-now-link" variant="h2">
             <Link href="#enquire">Enquire now</Link>
           </Typography>
         </div>

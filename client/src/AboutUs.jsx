@@ -92,7 +92,7 @@ export default function AboutUs() {
         aria-label="Enquire now cheveron"
       >
         <ExpandLessIcon className="cheveron" color="white" />
-        <Typography href="#enquire" className="enquire-now-link">
+        <Typography href="#enquire" className="enquire-now-link" variant="h2">
           <Link href="#enquire">Enquire now</Link>
         </Typography>
       </div>
