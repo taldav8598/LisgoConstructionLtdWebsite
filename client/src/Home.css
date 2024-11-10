@@ -213,10 +213,6 @@
 }
 
 @media only screen and (max-width: 768px) {
-  #home > div.ReviewContainer > div > div.css-1m9128y > button {
-    scale: 1.25 !important;
-    margin: 0 0.5rem !important;
-  }
   .leading-company-heading {
     font-size: 2.5rem;
   }

@@ -180,7 +180,7 @@ export default function EnquireNow() {
         16: [],
       };
 
-      for (let i = 0; i < indicesArr.length; i++) {
+      for (let i = 0; i < indicesArr?.length; i++) {
         const timeStr = String(dateLists.dateObjectList.dateTimes.start[i]);
         const minutes = Number(timeStr.at(-4) + timeStr.at(-3));
 
@@ -245,7 +245,7 @@ export default function EnquireNow() {
         16: [],
       };
 
-      for (let i = 0; i < indicesArr.length; i++) {
+      for (let i = 0; i < indicesArr?.length; i++) {
         const timeStr = String(dateLists.dateObjectList.dateTimes.start[i]);
         const minutes = Number(timeStr.at(-4) + timeStr.at(-3));
 

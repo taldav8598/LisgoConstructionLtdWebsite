@@ -42,7 +42,7 @@ export default function AboutUs() {
           </Grid>
         </Grid>
         <p className="last-journey-part">
-          With 3 years in the industry, we have honed our expertise to deliver
+          With 4 years in the industry, we have honed our expertise to deliver
           exceptional construction solutions tailored to meet your unique needs.
         </p>
       </div>

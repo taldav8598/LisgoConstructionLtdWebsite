@@ -39,8 +39,8 @@ export default function Home() {
           }}
           indicatorIconButtonProps={{
             style: {
-              scale: "1.75",
-              margin: "0 1rem",
+              scale: "1.25",
+              margin: "0 0.5rem",
             },
           }}
           interval={7500}
