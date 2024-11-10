@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /uploads/
+Disallow: /downloads/
+Allow: /public/
+Allow: /images/
