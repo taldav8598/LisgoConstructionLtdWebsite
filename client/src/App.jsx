@@ -34,9 +34,7 @@ function App() {
         <Home />
         <EnquireNow />
         <Services />
-        {/* <div id="aboutUs"> */}
         <AboutUs />
-        {/* </div> */}
         <Gallery />
         <ContactUs />
       </Container>
