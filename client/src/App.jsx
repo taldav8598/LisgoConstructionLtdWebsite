@@ -5,7 +5,7 @@ import Home from "./pages/Home/Home";
 import EnquireNow from "./pages/EnquireNow/EnquireNow";
 import Footer from "./Footer";
 import AboutUs from "./pages/AboutUs/AboutUs";
-import Services from "./Services";
+import Services from "./pages/Services/Services";
 import Gallery from "./Gallery";
 import ContactUs from "./ContactUs";
 import TemporaryMobileDrawer from "./components/TemporaryMobileDrawer";
