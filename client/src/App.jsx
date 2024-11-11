@@ -1,7 +1,7 @@
 import { Container } from "@mui/material";
 
 import Navigation from "./Navigation";
-import Home from "./Home";
+import Home from "./pages/Home/Home";
 import EnquireNow from "./EnquireNow";
 import Footer from "./Footer";
 import AboutUs from "./AboutUs";
