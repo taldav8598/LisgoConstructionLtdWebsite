@@ -29,7 +29,7 @@ function App() {
 
   return (
     <>
-      <Navigation toggleDrawer={toggleDrawer} open={open} />
+      <Navigation toggleDrawer={toggleDrawer} open={open} width={width} />
       <Container className="app-container" maxWidth="lg">
         <Home />
         <EnquireNow />

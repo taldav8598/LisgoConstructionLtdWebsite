@@ -1,17 +1,8 @@
 import { Button, Container, Link, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useState, useEffect } from "react";
 import "./Navigation.css";
 
-export default function Navigation({ toggleDrawer, open }) {
-  const [width, setWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
+export default function Navigation({ width, toggleDrawer, open }) {
   return (
     <Container className="navigation-container" aria-label="Navigation">
       <div className="LisgoLogoContainer">
