@@ -3,7 +3,7 @@ import { Container } from "@mui/material";
 import Navigation from "./components/Navigation/Navigation";
 import Home from "./pages/Home/Home";
 import EnquireNow from "./pages/EnquireNow/EnquireNow";
-import Footer from "./Footer";
+import Footer from "./components/Footer/Footer";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import Services from "./pages/Services/Services";
 import Gallery from "./pages/Gallery/Gallery";
