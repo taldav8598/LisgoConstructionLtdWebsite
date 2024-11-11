@@ -12,10 +12,12 @@ import TemporaryMobileDrawer from "./components/TemporaryMobileDrawer";
 import "./App.css";
 
 import { useState, useEffect } from "react";
+import Loading from "./components/LoadingSpinner/Loading";
 
 function App() {
   const [width, setWidth] = useState(window.innerWidth);
   const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
@@ -23,23 +25,37 @@ function App() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    setTimeout(() => toggleLoading(), 2500);
+  });
+
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   };
 
+  const toggleLoading = () => {
+    setLoading(false);
+  };
+
   return (
     <>
-      <Navigation toggleDrawer={toggleDrawer} open={open} width={width} />
-      <Container className="app-container" maxWidth="lg">
-        <Home />
-        <EnquireNow />
-        <Services />
-        <AboutUs />
-        <Gallery />
-        <ContactUs />
-      </Container>
-      <TemporaryMobileDrawer open={open} toggleDrawer={toggleDrawer} />
-      {width > 769 ? <Footer /> : null}
+      {loading ? (
+        <Loading />
+      ) : (
+        <>
+          <Navigation toggleDrawer={toggleDrawer} open={open} width={width} />
+          <Container className="app-container" maxWidth="lg">
+            <Home />
+            <EnquireNow />
+            <Services />
+            <AboutUs />
+            <Gallery />
+            <ContactUs />
+          </Container>
+          <TemporaryMobileDrawer open={open} toggleDrawer={toggleDrawer} />
+          {width > 769 ? <Footer /> : null}
+        </>
+      )}
     </>
   );
 }

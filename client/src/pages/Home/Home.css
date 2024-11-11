@@ -23,7 +23,7 @@
   height: 18rem;
   width: 18rem;
   border-radius: 50%;
-  animation: rotate 10s linear infinite;
+  animation: LisgoHomeLogorotate 10s linear infinite;
 }
 
 .leading-company-heading {
@@ -91,7 +91,7 @@
   margin-bottom: 1rem;
 }
 
-@keyframes rotate {
+@keyframes LisgoHomeLogorotate {
   0% {
     transform: rotate(0deg);
   }
