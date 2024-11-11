@@ -22,7 +22,6 @@ import { dateFormatting } from "./utils/dateFormatting";
 import { disabledDates } from "./utils/disabledDates";
 import { disabledTimes } from "./utils/disabledTimes";
 import emailjs from "emailjs-com";
-// import axios from "axios";
 import "./EnquireNow.css";
 
 const theme = createTheme({
