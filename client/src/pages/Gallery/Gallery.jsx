@@ -2,8 +2,8 @@ import { Typography, Pagination, Grid, Link } from "@mui/material";
 import "./Gallery.css";
 import { useState } from "react";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
-import imageTwo from "./assets/imageTwo.jpg";
-import imageSeven from "./assets/imageSeven.jpg";
+import imageTwo from "../../assets/imageTwo.jpg";
+import imageSeven from "../../assets/imageSeven.jpg";
 
 export default function Gallery() {
   const [page, setPage] = useState(1);
