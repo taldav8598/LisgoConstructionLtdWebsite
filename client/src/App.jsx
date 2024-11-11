@@ -2,7 +2,7 @@ import { Container } from "@mui/material";
 
 import Navigation from "./Navigation";
 import Home from "./pages/Home/Home";
-import EnquireNow from "./EnquireNow";
+import EnquireNow from "./pages/EnquireNow/EnquireNow";
 import Footer from "./Footer";
 import AboutUs from "./AboutUs";
 import Services from "./Services";

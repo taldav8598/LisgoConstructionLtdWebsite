@@ -18,9 +18,9 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CssBaseline from "@mui/material/CssBaseline";
 
 import { useEffect, useState } from "react";
-import { dateFormatting } from "./utils/dateFormatting";
-import { disabledDates } from "./utils/disabledDates";
-import { disabledTimes } from "./utils/disabledTimes";
+import { dateFormatting } from "../../utils/dateFormatting";
+import { disabledDates } from "../../utils/disabledDates";
+import { disabledTimes } from "../../utils/disabledTimes";
 import emailjs from "emailjs-com";
 import "./EnquireNow.css";
 
