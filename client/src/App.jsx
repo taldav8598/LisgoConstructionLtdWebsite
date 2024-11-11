@@ -4,7 +4,7 @@ import Navigation from "./Navigation";
 import Home from "./pages/Home/Home";
 import EnquireNow from "./pages/EnquireNow/EnquireNow";
 import Footer from "./Footer";
-import AboutUs from "./AboutUs";
+import AboutUs from "./pages/AboutUs/AboutUs";
 import Services from "./Services";
 import Gallery from "./Gallery";
 import ContactUs from "./ContactUs";
