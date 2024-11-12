@@ -9,7 +9,7 @@
   height: 18rem;
   width: 18rem;
   border-radius: 50%;
-  animation: rotate 5s linear infinite;
+  animation: rotate 1s linear infinite;
 }
 
 @keyframes rotate {
