@@ -27,7 +27,7 @@ function App() {
 
   useEffect(() => {
     setTimeout(() => toggleLoading(), 2500);
-  });
+  }, []);
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
