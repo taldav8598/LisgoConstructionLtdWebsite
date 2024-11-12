@@ -20,14 +20,16 @@ export default function ContactUs() {
               <EmailIcon className="email-icon" aria-label="Email icon" />
             </div>
             <Typography variant="h2">Email</Typography>
-            <Typography variant="body">lisgoconstruction@gmail.com</Typography>
+            <Typography variant="body"><a href="mailto:lisgoconstruction@gmail.com?subject=Enquiry">
+              lisgocontruction@gmail.com
+            </a></Typography>
           </Grid>
           <Grid size={10} className="contact-us-item-container">
             <div className="phone-no-container">
               <LocalPhoneIcon className="phone-icon" aria-label="Phone icon" />
             </div>
             <Typography variant="h2">Phone</Typography>
-            <Typography variant="body">07732 107825</Typography>
+            <Typography variant="body"><a href="tel:">Phone number</a></Typography>
           </Grid>
           <Grid size={10} className="contact-us-item-container">
             <div className="facebook-container">

@@ -2,7 +2,6 @@
   display: flex;
   justify-self: center;
   flex-direction: column;
-  width: 100vw;
 }
 .gallery-container h1 {
   font-weight: 400;
@@ -83,10 +82,12 @@
 }
 .before-image {
   border-radius: 0.75em 0 0 0.75em;
+  padding: 1rem;
 }
 
 .after-image {
   border-radius: 0 0.75em 0.75em 0;
+  padding: 1rem;
 }
 
 #gallery > div > div.pagination > nav > ul > li > button {

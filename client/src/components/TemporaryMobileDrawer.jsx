@@ -44,7 +44,7 @@ export default function TemporaryMobileDrawer({ open, toggleDrawer }) {
             disablePadding
             sx={{
               margin: "0",
-              borderBottom: "4px solid #FFD70D",
+              borderBottom: "2px solid #FFD70D",
               padding: "1rem",
             }}
           >

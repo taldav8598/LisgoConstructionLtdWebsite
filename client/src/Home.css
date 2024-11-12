@@ -1,0 +1,246 @@
+.HomeSection {
+  padding: 0;
+  scroll-margin-top: 6em;
+  width: 100% !important;
+}
+
+.HomeHeadingContainer {
+  margin: 0;
+}
+
+.LisgoHeadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-self: center;
+}
+
+.LisgoHeadingContainer a {
+  color: #ffffff;
+}
+
+.LisgoHomeLogo {
+  height: 18rem;
+  width: 18rem;
+  border-radius: 50%;
+  animation: rotate 10s linear infinite;
+}
+
+.leading-company-heading {
+  font-size: 5rem;
+  text-align: center;
+  margin: 0;
+}
+
+#home
+  > div.ReviewContainer
+  > div
+  > div.css-1f8sh1y
+  > div
+  > div
+  > div
+  > div
+  > div {
+  background-color: transparent;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+#home > div.ReviewContainer {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  text-align: left;
+  width: 100vw;
+  background-color: #272727;
+}
+
+#home > div.ReviewContainer > div {
+  text-align: left;
+  background-color: transparent !important;
+}
+
+#home > div.ReviewContainer > div > div.css-1m9128y {
+  margin-top: 2rem;
+}
+#home > div.ReviewContainer > a {
+  display: flex;
+  /* justify-self: center !important; */
+  color: #ffffff;
+  margin: 0.6rem auto;
+}
+
+#home > div.ReviewContainer > div > div.css-1m9128y > button > svg {
+  color: inherit;
+  border: none;
+  padding: 0;
+}
+
+#home > div.ReviewContainer > div > div.css-1m9128y > button > svg > circle {
+  color: inherit;
+  padding: 0;
+}
+
+.Carousel > :nth-child(4) > button:active {
+  color: yellow;
+}
+
+#home > div.ReviewContainer > a {
+  font-size: 1.1rem !important;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg); /* Starting position */
+  }
+  50% {
+    transform: rotate(90deg); /* Rotate 90 degrees clockwise */
+  }
+  100% {
+    transform: rotate(0deg); /* Back to starting position */
+  }
+}
+
+.enquire-now-link a {
+  text-decoration: none;
+  color: white;
+}
+
+.home-title-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.lisgo-heading {
+  font-weight: 400 !important;
+}
+.LisgoHomeLogoContainer > svg {
+  margin-left: 1em;
+}
+
+.cheveron-container {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#home > div.home-title-container > div.cheveron-container > svg {
+  position: relative;
+  top: -0.5em;
+  padding: 0;
+}
+
+.cheveron-container > svg {
+  margin: 0 auto;
+  height: 4rem !important;
+  width: 4rem !important;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(-5px);
+  }
+  40% {
+    transform: translateY(-15px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+.cheveron {
+  margin-top: 0;
+  animation: bounce 5s linear infinite;
+}
+
+@media only screen and (max-width: 600px) {
+  .MuiGrid-root.MuiGrid-container.css-11lq3yg-MuiGrid-root {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 1em;
+  }
+
+  #home > div.home-title-container > div > div > div > h3 {
+    margin-top: 0.75em !important;
+  }
+  .LisgoHomeLogoContainer > svg {
+    margin-top: 2em;
+  }
+  .cheveron-container {
+    margin-top: 1em !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .leading-company-heading {
+    font-size: clamp(2.5rem, 2.75vw + 0.5rem, 7rem);
+  }
+  .LisgoHomeLogoContainer > svg {
+    height: clamp(225px, 17.5vw + 1vw, 465px) !important;
+    width: clamp(225px, 17.5vw + 1vw, 465px) !important;
+  }
+  .LisgoHeadingContainer {
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    margin-right: 4rem;
+  }
+  .lisgo-heading {
+    font-size: clamp(2rem, 2.15vw + 0.5rem, 5rem) !important;
+  }
+  .about-us-heading {
+    font-size: clamp(1.25rem, 1.25vw + 0.5rem, 5rem) !important;
+  }
+  .enquire-now-heading {
+    font-size: clamp(1.25rem, 1.25vw + 0.5rem, 5rem) !important;
+  }
+  .see-more-reviews-link {
+    font-size: clamp(0.75rem, 0.3vw + 0.5rem, 5rem) !important;
+  }
+  .enquire-now-link {
+    font-size: clamp(1rem, 1.1vw + 0.5rem, 5rem) !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .leading-company-heading {
+    font-size: 2.5rem;
+  }
+  .LisgoHeadingContainer {
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+  }
+  .LisgoHomeLogoContainer > svg {
+    height: 225px !important;
+    width: 225px !important;
+  }
+  .MuiGrid-root.css-vj1n65-MuiGrid-root {
+    align-items: space-evenly !important;
+  }
+  .lisgo-heading {
+    font-size: 2rem !important;
+  }
+  .about-us-heading {
+    font-size: 1.25rem !important;
+  }
+  .enquire-now-heading {
+    font-size: 1.25rem !important;
+  }
+  .see-more-reviews-link {
+    font-size: 0.75rem !important;
+  }
+  .enquire-now-link {
+    font-size: 1.2rem !important;
+  }
+}

@@ -14,7 +14,7 @@ export default function Gallery() {
       "https://i.natgeofe.com/n/da0bcdca-34f9-40d9-bda8-86709c75fdf2/MM10127_231214_10486_2x3.jpg?w=718&h=1077",
       "https://i.natgeofe.com/n/da0bcdca-34f9-40d9-bda8-86709c75fdf2/MM10127_231214_10486_2x3.jpg?w=718&h=1077",
     ],
-    3: [],
+    3: [imageTwo, imageSeven],
   };
 
   const handleChange = (event, value) => {
@@ -57,7 +57,7 @@ export default function Gallery() {
           <Pagination
             page={page}
             onChange={handleChange}
-            count={5}
+            count={3}
             size="large"
             aria-label="Pagination for gallery images"
           />
