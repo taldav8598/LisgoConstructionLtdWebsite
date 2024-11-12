@@ -1,7 +1,7 @@
 import Carousel from "react-material-ui-carousel";
 import { Link, Typography, Grid } from "@mui/material";
 import "./Home.css";
-import Item from "./Item";
+import Item from "../../components/CarouselItem/Item";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 export default function Home() {
