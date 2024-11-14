@@ -8,4 +8,8 @@ export default defineConfig({
   define: {
     "process.env": {},
   },
+  build: {
+    outDir: "dist",
+    assetsDir: "assets",
+  },
 });
