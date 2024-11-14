@@ -9,7 +9,7 @@ export default defineConfig({
     "process.env": {},
   },
   build: {
-    outDir: "build",
+    outDir: "dist",
     assetsDir: "assets",
   },
 });
