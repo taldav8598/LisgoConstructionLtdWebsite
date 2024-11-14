@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://taldav8598.github.io/LisgoConstructionLtdWebsite/",
+  "homepage": "http://taldav8598.github.io/LisgoConstructionLtdWebsite/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
