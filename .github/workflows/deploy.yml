@@ -15,12 +15,6 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build-and-deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    if: github.ref === 'refs/heads/main'
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
