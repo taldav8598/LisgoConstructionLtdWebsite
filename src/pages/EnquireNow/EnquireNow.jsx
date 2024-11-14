@@ -159,6 +159,12 @@ export default function EnquireNow() {
           }
         );
     }
+    setName("");
+    setEmail("");
+    setPostcode("");
+    setPhoneNumber("");
+    setMessage("");
+    setDateInput("");
   };
 
   const handleDateChange = (date) => {
@@ -278,11 +284,13 @@ export default function EnquireNow() {
               }}
             >
               <Typography variant="body">
-                Choose a date of when you want the work to start or when
-                you would like an appointment
+                Choose a date of when you want the work to start or when you
+                would like an appointment
               </Typography>
               <Typography variant="body">
-                * Note: on Sunday we do in person quotations. Please specify in the description box if you would prefer morning or afternoon. Thank you.
+                * Note: on Sunday we do in person quotations. Please specify in
+                the description box if you would prefer morning or afternoon.
+                Thank you.
               </Typography>
             </Container>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -296,7 +304,6 @@ export default function EnquireNow() {
                       color: "red",
                     }}
                     className="date-time-picker"
-                    defaultValue={today}
                     shouldDisableDate={(date) =>
                       disabledDates(date, dateLists, days)
                     }
