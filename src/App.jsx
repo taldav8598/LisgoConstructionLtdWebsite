@@ -46,7 +46,7 @@ function App() {
           <Navigation toggleDrawer={toggleDrawer} open={open} width={width} />
           <Container className="app-container" maxWidth="lg">
             <Home />
-            <EnquireNow />
+            <EnquireNow width={width} />
             <Services />
             <AboutUs />
             <Gallery />

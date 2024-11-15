@@ -14,6 +14,7 @@ import { DemoContainer, DemoItem } from "@mui/x-date-pickers/internals/demo";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
+import { MobileDateTimePicker } from "@mui/x-date-pickers/MobileDateTimePicker";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CssBaseline from "@mui/material/CssBaseline";
 
@@ -77,7 +78,7 @@ const theme = createTheme({
   },
 });
 
-export default function EnquireNow() {
+export default function EnquireNow({ width }) {
   const apiUrl = import.meta.env.VITE_API_URL;
   const today = dayjs();
   const [dateLists, setDateLists] = useState({});
@@ -293,42 +294,79 @@ export default function EnquireNow() {
                 Thank you.
               </Typography>
             </Container>
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DemoContainer components={["DateTimePicker"]}>
-                <DemoItem>
-                  <CssBaseline />
-                  <DateTimePicker
-                    name="dateTimePicker"
-                    id="dateTimePicker"
-                    sx={{
-                      color: "red",
-                    }}
-                    className="date-time-picker"
-                    shouldDisableDate={(date) =>
-                      disabledDates(date, dateLists, days)
-                    }
-                    shouldDisableTime={(date) =>
-                      disabledTimes(date, dateLists, days)
-                    }
-                    format={
-                      days[new Date(dateInput).getDay()] === "Sunday"
-                        ? "DD/MM/YYYY hh:mm"
-                        : "DD/MM/YYYY"
-                    }
-                    views={
-                      days[new Date(dateInput).getDay()] === "Sunday"
-                        ? ["day", "hours", "minutes"]
-                        : ["day"]
-                    }
-                    disablePast={true}
-                    timeSteps={{ minutes: 30 }}
-                    minutesStep={30}
-                    onChange={handleDateChange}
-                    aria-label="Your chosen date or time of appointment"
-                  />
-                </DemoItem>
-              </DemoContainer>
-            </LocalizationProvider>
+            {width > 768 ? (
+              <>
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                  <DemoContainer components={["DateTimePicker"]}>
+                    <DemoItem>
+                      <CssBaseline />
+                      <DateTimePicker
+                        name="dateTimePicker"
+                        id="dateTimePicker"
+                        className="date-time-picker"
+                        shouldDisableDate={(date) =>
+                          disabledDates(date, dateLists, days)
+                        }
+                        shouldDisableTime={(date) =>
+                          disabledTimes(date, dateLists, days)
+                        }
+                        format={
+                          days[new Date(dateInput).getDay()] === "Sunday"
+                            ? "DD/MM/YYYY hh:mm"
+                            : "DD/MM/YYYY"
+                        }
+                        views={
+                          days[new Date(dateInput).getDay()] === "Sunday"
+                            ? ["day", "hours", "minutes"]
+                            : ["day"]
+                        }
+                        disablePast={true}
+                        timeSteps={{ minutes: 30 }}
+                        minutesStep={30}
+                        onChange={handleDateChange}
+                        aria-label="Your chosen date or time of appointment"
+                      />
+                    </DemoItem>
+                  </DemoContainer>
+                </LocalizationProvider>
+              </>
+            ) : (
+              <>
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                  <DemoContainer components={["MobileDateTimePicker"]}>
+                    <DemoItem>
+                      <CssBaseline />
+                      <MobileDateTimePicker
+                        name="dateTimePicker"
+                        id="dateTimePicker"
+                        className="date-time-picker"
+                        shouldDisableDate={(date) =>
+                          disabledDates(date, dateLists, days)
+                        }
+                        shouldDisableTime={(date) =>
+                          disabledTimes(date, dateLists, days)
+                        }
+                        format={
+                          days[new Date(dateInput).getDay()] === "Sunday"
+                            ? "DD/MM/YYYY hh:mm"
+                            : "DD/MM/YYYY"
+                        }
+                        views={
+                          days[new Date(dateInput).getDay()] === "Sunday"
+                            ? ["day", "hours", "minutes"]
+                            : ["day"]
+                        }
+                        disablePast={true}
+                        timeSteps={{ minutes: 30 }}
+                        minutesStep={30}
+                        onChange={handleDateChange}
+                        aria-label="Your chosen date or time of appointment"
+                      />
+                    </DemoItem>
+                  </DemoContainer>
+                </LocalizationProvider>
+              </>
+            )}
             <Button
               id="submit-button"
               type="submit"
