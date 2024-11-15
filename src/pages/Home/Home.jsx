@@ -66,8 +66,9 @@ export default function Home() {
           style={{
             display: "flex",
             justifyContent: "center",
-            marginTop: "1.5rem",
+            margin: "1.5rem 0 0 0",
           }}
+          className="home-title-logo-container"
         >
           <Grid size="grow">
             <div className="LisgoHeadingContainer">
