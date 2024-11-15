@@ -132,7 +132,7 @@
     > :not(button.Mui-selected):not(
       #gallery > div > div.pagination > nav > ul > li:nth-child(1) > button
     ):not(
-      #gallery > div > div.pagination > nav > ul > li:nth-child(7) > button
+      #gallery > div > div.pagination > nav > ul > li:nth-child(5) > button
     ) {
     display: none;
   }
