@@ -53,7 +53,7 @@ function App() {
             <ContactUs />
           </Container>
           <TemporaryMobileDrawer open={open} toggleDrawer={toggleDrawer} />
-          {width > 769 ? <Footer /> : null}
+          <Footer />
         </>
       )}
     </>

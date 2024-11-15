@@ -45,3 +45,16 @@
 .social-media-content svg {
   color: black;
 }
+
+@media only screen and (min-width: 769px) {
+  .footer-container {
+    display: flex;
+  }
+}
+
+@media only screen and (max-width: 768px) and (orientation: portrait),
+  only screen and (max-width: 768px) and (orientation: landscape) {
+  .footer-container {
+    display: none !important;
+  }
+}
