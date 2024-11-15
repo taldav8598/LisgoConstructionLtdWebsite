@@ -8,11 +8,11 @@
 }
 
 .about-container {
-  border-bottom: 2px solid #ffd70d;
+  border-bottom: 4px solid #ffd70d;
   border-right: 4px solid #ffd70d;
   border-left: 4px solid #ffd70d;
   padding: 1rem;
-  margin: 0 auto;
+  margin: 1rem auto 0 auto;
   max-width: 1200px !important;
 }
 
@@ -20,12 +20,28 @@
   font-weight: 400;
 }
 
-.first-journey-part {
-  padding: 0.5rem;
-  margin-bottom: 0.5rem !important;
+.empty-grid-item {
+  padding: 1rem;
 }
+
+.border {
+  background-color: red;
+  width: 10px;
+}
+
+.first-journey-part:nth-child(3) {
+  padding: 0.75rem;
+  margin-top: 0rem;
+  margin-left: -0.5rem;
+  border-top: 4px solid #ffd70d;
+}
+
+.first-journey-part > div:nth-child(2) {
+  padding: 1rem;
+}
+
 .inner-journey-part-one {
-  border-right: 2px solid #ffd70d;
+  border-right: 4px solid #ffd70d;
   padding: 1rem;
 }
 
@@ -38,6 +54,7 @@
   text-align: center;
   margin-top: 1rem;
   padding: 1rem;
+  border-top: 4px solid #ffd70d;
 }
 
 .mention-container {
@@ -45,7 +62,6 @@
   border-left: 4px solid #ffd70d;
   margin: 0 auto;
   max-width: 1200px;
-
 }
 
 .cheveron-container {

@@ -23,12 +23,12 @@ export default function AboutUs() {
           </Grid>
           <Grid className="empty-grid-item" item xs={6}></Grid>
         </Grid>
-        <br />
+        <br className="horizontal-line" />
         <Grid className="first-journey-part" container spacing={2}>
           <Grid className="empty-grid-item" item xs={4}>
             <p></p>
           </Grid>
-
+          <br className="border" />
           <Grid
             className="inner-journey-part-two"
             item
