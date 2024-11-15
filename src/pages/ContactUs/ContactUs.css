@@ -94,7 +94,6 @@
 
 .address {
   margin-top: 2em;
-  /* text-wrap: wrap; */
   white-space: normal;
 }
 
@@ -125,6 +124,11 @@
 }
 
 @media only screen and (max-width: 768px) {
+  #contact-us > div > div {
+    display: flex;
+    align-items: center;
+    flex-direction: column !important;
+  }
   #contact-us > div > div > div > div {
     margin-top: 1em;
     height: 100px;
