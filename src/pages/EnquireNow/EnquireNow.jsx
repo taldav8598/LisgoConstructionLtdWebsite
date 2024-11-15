@@ -294,7 +294,7 @@ export default function EnquireNow({ width }) {
                 Thank you.
               </Typography>
             </Container>
-            {width > 768 ? (
+            {width < 768 ? (
               <>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <DemoContainer components={["DateTimePicker"]}>
