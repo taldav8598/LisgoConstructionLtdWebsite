@@ -46,7 +46,7 @@
   color: black;
 }
 
-@media only screen and (min-width: 768px) and (orientation: portrait),
+@media only screen and (orientation: portrait),
   only screen and (min-width: 768px) and (orientation: landscape) {
   .footer-container {
     display: none !important;
