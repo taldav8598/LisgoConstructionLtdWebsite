@@ -46,13 +46,8 @@
   color: black;
 }
 
-@media only screen and (min-width: 768px) and (orientation: portrait) {
-  .footer-container {
-    display: none !important;
-  }
-}
-
-@media only screen and (min-width: 800px) and (orientation: landscape) {
+@media only screen and (max-width: 768px) and (orientation: portrait),
+  only screen and (max-width: 768px) and (orientation: landscape) {
   .footer-container {
     display: none !important;
   }
