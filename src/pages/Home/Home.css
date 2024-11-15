@@ -229,7 +229,7 @@
   .LisgoHeadingContainer {
     flex-direction: column;
     justify-content: space-evenly;
-    height: 100%;
+    margin-right: 0;
   }
   .LisgoHomeLogoContainer > svg {
     height: 225px !important;

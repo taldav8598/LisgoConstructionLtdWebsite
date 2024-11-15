@@ -200,7 +200,7 @@ export default function EnquireNow() {
             </Typography>
             <Typography variant="body">
               Please see the services section if you’re unsure about your
-              enquiry or want to find out more about the{" "}
+              enquiry or would like to find out more about the{" "}
               <Link href="#services">services</Link> we offer.
             </Typography>
           </Container>
