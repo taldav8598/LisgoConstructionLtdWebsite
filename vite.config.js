@@ -1,9 +1,11 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
+// /https://taldav8598.github.io/LisgoConstructionLtdWebsite
+
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/https://taldav8598.github.io/LisgoConstructionLtdWebsite",
+  base: "/",
   plugins: [react()],
   define: {
     "process.env": {},
