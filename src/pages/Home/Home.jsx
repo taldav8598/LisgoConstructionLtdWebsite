@@ -61,29 +61,22 @@ export default function Home() {
       </div>
 
       <div className="home-title-container">
-        <h1 className="leading-company-heading">
-          Leading Construction Company
-        </h1>
         <Grid
           container
           style={{
             display: "flex",
             justifyContent: "center",
-            padding: "0 1rem",
+            margin: "1.5rem 0 0 0",
           }}
+          className="home-title-logo-container"
         >
           <Grid size="grow">
             <div className="LisgoHeadingContainer">
+              <h1 className="leading-company-heading">
+                Leading Construction Company
+              </h1>
               <Typography className="lisgo-heading" variant="h2">
                 Lisgo Construction Ltd.
-              </Typography>
-              <Typography className="about-us-heading" variant="h3">
-                <Link href="#about-us" className="about-us-link">
-                  About us
-                </Link>
-              </Typography>
-              <Typography className="enquire-now-heading" variant="h3">
-                <Link href="#enquire">Enquire now</Link>
               </Typography>
             </div>
           </Grid>
@@ -124,7 +117,7 @@ export default function Home() {
           onClick={() => document.getElementById("enquire").scrollIntoView()}
           className="cheveron-container"
         >
-          <Typography href="#enquire" className="enquire-now-link" variant="h4">
+          <Typography href="#enquire" className="enquire-now-link" variant="h3">
             <Link href="#enquire">Enquire now</Link>
           </Typography>
           <ExpandMoreIcon
