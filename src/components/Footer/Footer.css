@@ -52,7 +52,7 @@
   }
 }
 
-@media only screen and (orientation: landscape) {
+@media only screen and (min-width: 800px) and (orientation: landscape) {
   .footer-container {
     display: none !important;
   }
